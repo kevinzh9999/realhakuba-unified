@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import clsx from 'clsx';
-import { Globe } from 'lucide-react'; // 添加地球图标
+import { Globe } from 'lucide-react';
 
 const LANGS = [
-  { locale: 'en', label: 'English' },
-  { locale: 'ja', label: '日本語' }
+  { locale: 'en', label: 'English', short: 'EN' },
+  { locale: 'ja', label: '日本語', short: 'JA' }
 ] as const;
 
 export default function LanguageSwitcher() {
@@ -51,14 +51,20 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={containerRef}>
       <button
         onClick={() => setOpen(v => !v)}
-        className="flex items-center gap-2 h-9 px-3 rounded-full hover:bg-gray-100 transition-colors text-sm"
+        className={clsx(
+          "flex items-center gap-1.5 h-9 rounded-full hover:bg-gray-100 transition-colors text-sm",
+          // 移动端更紧凑的内边距
+          "px-2.5 sm:px-3"
+        )}
         aria-label="Change language"
       >
-        <Globe size={16} className="text-gray-600" />
-        <span className="text-gray-700">{current.label}</span>
+        <Globe className="h-4 w-4 text-gray-600 shrink-0" />
+        {/* 桌面端显示完整名称，移动端显示缩写 */}
+        <span className="hidden sm:inline text-gray-700">{current.label}</span>
+        <span className="sm:hidden text-gray-700 font-medium text-xs">{current.short}</span>
         <svg 
           className={clsx(
-            "w-3.5 h-3.5 text-gray-500 transition-transform duration-200",
+            "w-3 h-3 text-gray-500 transition-transform duration-200 shrink-0",
             open && "rotate-180"
           )} 
           fill="none" 
@@ -72,12 +78,14 @@ export default function LanguageSwitcher() {
       {open && (
         <ul
           className={clsx(
-            'absolute right-0 mt-2 w-40 rounded-xl bg-white shadow-xl border border-gray-100',
-            'flex flex-col p-1'
+            'absolute right-0 mt-2 rounded-xl bg-white shadow-xl border border-gray-100',
+            'flex flex-col p-1',
+            // 移动端下拉菜单宽度调整
+            'w-32 sm:w-40'
           )}
         >
           {LANGS.map(l => (
-            <li key={l.locale}  className="px-1">
+            <li key={l.locale} className="px-1">
               <button
                 onClick={() => change(l.locale)}
                 className={clsx(
@@ -85,6 +93,7 @@ export default function LanguageSwitcher() {
                   l.locale === current.locale && 'font-semibold bg-gray-50'
                 )}
               >
+                {/* 下拉菜单中始终显示完整名称 */}
                 {l.label}
               </button>
             </li>
