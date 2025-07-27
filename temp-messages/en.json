@@ -1,0 +1,86 @@
+{
+  "ClientPage": {
+    "headerGallery": "Gallery",
+    "headerHighlights": "Highlights",
+    "headerLocation": "Location",
+    "guest": "guest",
+    "guests": "guests",
+    "bedroom": "bedroom",
+    "bedrooms": "bedrooms",
+    "bathroom": "bathroom",
+    "bathrooms": "bathrooms",
+    "petsAllowed": "Pets allowed",
+    "petsNotAllowed": "Pets not allowed",
+    "whatWeOffer": "What we offer",
+    "bedroomCard": "Bedroom",
+    "doubleBed": "double bed",
+    "doubleBeds": "double beds",
+    "singleBed": "single bed",
+    "singleBeds": "single beds",
+    "tatamiFuton": "tatami futon",
+    "tatamiFutons": "tatami futons",
+    "whereYouBe": "Where you'll be"
+  },
+  "BedroomCard": {
+    "bedroom": "Bedroom",
+    "doubleBed": "double bed",
+    "doubleBeds": "double beds",
+    "singleBed": "single bed",
+    "singleBeds": "single beds",
+    "tatamiFuton": "tatami futon",
+    "tatamiFutons": "tatami futons"
+  },
+  "Amenities": {
+    "wifi": "WiFi",
+    "kitchen": "Kitchen",
+    "washer": "Free washer – In unit",
+    "projector": "Projector",
+    "loghouse": "Loghouse",
+    "selfCheckIn": "Self check-in",
+    "goodLocation": "Good location"
+  },
+  "BookingCard": {
+    "forNights": "for {count} night{count, plural, one {} other {s}}",
+    "addDatesForPrices": "Add dates for prices",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "addDate": "Add date",
+    "guests": "Guests",
+    "guestsLabel": "guests",
+    "guestLabel": "guest",
+    "adults": "Adults",
+    "adultsAge": "Age 13+",
+    "children": "Children",
+    "childrenAge": "Ages 3-12",
+    "close": "Close",
+    "maxCapacityExceeded": "Max capacity exceeded",
+    "reserve": "Reserve",
+    "checkAvailability": "Check availability"
+  },
+    "DateRangePicker": {
+    "nights": "{count} night{count, plural, =1 {} other {s}}",
+    "selectDates": "Select dates",
+    "addDatesHint": "Add your travel dates for exact pricing",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "clearDates": "Clear dates",
+    "close": "Close"
+  },
+    "MobileCalendar": {
+    "clearDates": "Clear dates",
+    "save": "Save",
+    "adults": "Adults",
+    "adultsAge": "Age 13+",
+    "children": "Children",
+    "childrenAge": "Ages 3-12"
+  },
+    "MobileFooter": {
+    "addDatesForPrices": "Add dates for prices",
+    "selectDates": "Select dates",
+    "editDates": "Edit dates",
+    "reserve": "Reserve",
+    "checkAvailability": "Check availability",
+    "maxCapacityExceeded": "Max capacity exceeded",
+    "guestsSummary": "{count} guest{count, plural, one {} other {s}}"
+  }
+}

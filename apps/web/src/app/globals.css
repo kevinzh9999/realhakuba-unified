@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* 让 html, body 占满 100% 高度，scroll snap 才精准 */
+  html,
+  body {
+    height: 100%;
+  }
+
+  :root {
+    --header-h: 3.5rem;   /* 56 px，对应原先 h-14 */
+  }
+
+  /* h-screen-dock
+     竖屏移动端 ➜ 高度 = 100dvh – safe-area-bottom
+     其他场景   ➜ 等同 100dvh
+  ---------------------------------------------------------------- */
+  .h-screen-dock {
+    height: calc(100dvh - env(safe-area-inset-bottom));
+  }
+}
+
+/* 隐藏所有平台的水平滚动条 */
+.no-scrollbar::-webkit-scrollbar { display: none; } /* Chrome / Safari */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; } /* IE / Firefox */
+
+/* 新增：兼容旧代码的 scrollbar-hide 类 */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.perspective { perspective: 1000px; }
+.backface-hidden { backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }
+.transform-style-preserve-3d { transform-style: preserve-3d; }
+
+/* ====== 覆盖 Swiper 默认导航按钮 ====== */
+
+/* 1. 按钮容器：白色半透明圆形背景 + 缩小尺寸 + 居中对齐箭头 */
+.swiper-button-prev,
+.swiper-button-next {
+  /* 按钮宽高 */
+  width: 2.5rem !important;      /* 40px */
+  height: 2.5rem !important;     /* 40px */
+
+  /* 半透明白底 & 圆形 */
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-radius: 9999px           !important;
+
+  /* Flex 居中里层伪元素箭头 */
+  display: flex     !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  /* 确保按钮优先级最高，不被图片覆盖 */
+  z-index: 9999    !important;
+}
+
+/* 2. Hover 时切换为不透明白底 */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+/* 3. 调整伪元素箭头的大小和颜色 */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 1rem   !important;   /* 16px */
+  color: #000       !important;   /* 黑色箭头 */
+  font-weight: bold !important;
+}
+
+/* ========================= */
+/* Swiper Mobile Pagination  */
+/* ========================= */
+
+/* 1. 把分页容器顶到 header 下方 10px，居中对齐（和 logo 同心） */
+.swiper-pagination {
+  position: absolute !important;
+  top: calc(var(--header-h) + 10px) !important;
+  bottom: auto !important;
+
+  display: inline-flex !important;         /* ✅ 改为 inline-flex，宽度随 bullets */
+  justify-content: center !important;
+  align-items: center !important;
+
+  padding: 4px 10px !important;
+  border-radius: 9999px !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+
+  left: 50% !important;                   /* ✅ 居中对齐 */
+  transform: translateX(-50%) !important;
+
+  pointer-events: none !important;
+  z-index: 9999 !important;
+}
+
+/* 2. 把原来灰/蓝的 bullet 换成白色系列 */
+.swiper-pagination-bullet {
+  width: 0.5rem               !important;  /* 8px */
+  height: 0.5rem              !important;  /* 8px */
+  margin: 0 0.25rem           !important;  /* 左右间距 */
+  background-color: rgba(255,255,255,0.7) !important; /* 其它页：70% 不透明白 */
+  opacity: 1                  !important;  /* 取消 Swiper 自带的淡化 */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgba(255,255,255,1) !important; /* 当前页：100% 不透明白 */
+}
+
+/* ===========================================
+   DayPicker / Calendar 样式（新增）
+   ========================================== */
+
+/* 1. 覆盖 rdp-caption 样式 */
+.custom-daypicker .rdp-caption {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+/* 2. 覆盖 rdp-month 最大/最小宽度，始终撑满父容器 */
+.custom-daypicker .rdp-month {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 0;
+  margin: 0;
+  border-spacing: 0;
+}
+
+/* 3. 表格宽度撑满 */
+.custom-daypicker .rdp-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+  margin: 0 !important;
+  padding: 0;
+  border-spacing: 0;
+  box-sizing: border-box !important;
+}
+
+/* 4. 保持日格正方形 */
+.custom-daypicker .rdp-day {
+  max-width: none !important; 
+  width: 100% !important;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  box-sizing: border-box !important;
+  border-spacing: 0;
+}
+
+/* 5. 单元格样式 */
+.custom-daypicker .rdp-cell {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-spacing: 0;
+  box-sizing: border-box !important;
+}
+
+/* 6. MobileCalendar 特定样式 */
+.mobile-calendar-daypicker {
+  width: 100% !important;
+}
+
+.mobile-calendar-daypicker .rdp {
+  width: 100% !important;
+}
+
+.mobile-calendar-daypicker .rdp-months {
+  width: 100% !important;
+  justify-content: center;
+}
+
+/* ===========================================
+   Drawer 样式修复（新增）
+   ========================================== */
+
+/* Drawer 背景和内容 */
+[data-vaul-drawer] {
+  background-color: white !important;
+}
+
+[data-vaul-drawer-wrapper] {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* 半透明遮罩 */
+}
+
+/* Drawer 内容区域 */
+.drawer-content,
+[data-vaul-drawer-wrapper] [role="dialog"] {
+  background-color: white !important;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+}
+
+/* Drawer 顶部拖拽条 */
+[data-vaul-handle] {
+  background-color: #9ca3af !important; /* 更深的灰色 */
+  opacity: 1 !important;
+  width: 3rem !important;
+  height: 0.25rem !important;
+  border-radius: 9999px !important;
+  margin: 0.75rem auto 0.5rem auto !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.drawer-content [data-vaul-handle],
+[role="dialog"] [data-vaul-handle] {
+  background-color: #6b7280 !important; /* 深灰色 */
+  opacity: 1 !important;
+  width: 3rem !important;
+  height: 0.25rem !important;
+  border-radius: 9999px !important;
+  margin: 0.75rem auto 0.5rem auto !important;
+  display: block !important;
+  visibility: visible !important;
+}

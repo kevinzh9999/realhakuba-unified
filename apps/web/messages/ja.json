@@ -1,0 +1,210 @@
+{
+  "Header": {
+    "siteName": "Real Hakuba",
+    "menuOpen": "メニューを開く",
+    "menuClose": "メニューを閉じる",
+    "navStays": "宿泊施設",
+    "navFun": "アクティビティ",
+    "navAbout": "会社情報",
+    "share": "シェア",
+    "contact": "お問い合わせ",
+    "home": "ホーム"
+  },
+  "SectionHero": {
+    "title": "Real Hakuba",
+    "subtitle": "雪に包まれた冬から、緑豊かな山々に囲まれた夏まで\n白馬の魅力を存分に楽しもう"
+  },
+  "SectionProperties": {
+    "title": "宿泊施設",
+    "subtitle": "白馬全域から厳選した一棟貸し・ロッジ・ヴィラをご紹介します。",
+    "cta": "すべての宿を見る"
+  },
+  "SectionPropertiesCarousel": {
+    "ariaPrev": "前のスライド",
+    "ariaNext": "次のスライド",
+    "swipeHint": "スワイプして宿をチェック",
+    "cta": "詳細を見る"
+  },
+  "SectionFun": {
+    "weatherTitle": "天気予報",
+    "activitiesTitle": "アクティビティ",
+    "loading": "天気予報を読み込み中…",
+    "error": "天気データを読み込めませんでした。時間をおいて再度お試しください。",
+    "activities": {
+      "bike": {
+        "title": "サイクリング",
+        "desc": "エメラルド色の田んぼと杉林を抜け、北アルプスを横目に走る。静かな里道から川沿いのトレイル、アルプスのワインディングへ。湧き水でボトルを満たし、信州アップルパイを味わいながら、絵葉書のような景色をペダルで巡ります。"
+      },
+      "bbq": {
+        "title": "バーベキュー",
+        "desc": "谷を染める黄金色の光、パチパチと焼けるグリル。信州和牛や甘いスイートコーンがジュージューと香り、松林を蛍が舞う。シャレーデッキや川辺で、薪の煙と山の空気がディナーを忘れられない体験に。"
+      },
+      "sup": {
+        "title": "SUP",
+        "desc": "雪山を映す鏡のような湖面をすべるように進む。聞こえるのはパドルが水を切る音と野花の香りだけ。初心者は入り江で練習し、上級者は朝焼けの稜線の下でヨガポーズを決める。"
+      },
+      "plunge": {
+        "title": "サウナ",
+        "desc": "杉のサウナから氷河の雪解け水が流れる沢へ。10秒の氷水が身体を研ぎ澄まし、生まれ変わったように爽快。パウダーデイ後の筋肉痛を和らげ、集中力を高めるアルプスの儀式です。"
+      }
+    }
+  },
+  "SectionFooter": {
+    "aboutTitle": "私たちについて",
+    "contactsTitle": "お問い合わせ",
+    "about": {
+      "company": "Real Hakuba 合同会社",
+      "disclosure": "特定商取引法に基づく表記",
+      "locals": "地元メンバーによる運営"
+    },
+    "contacts": {
+      "email": "inquiry@realhakuba.com",
+      "phone": "090-7905-5323",
+      "address": "〒399-9301 長野県北安曇郡白馬村北城2546"
+    },
+    "copyright": "© {year} Real Hakuba 合同会社",
+    "social": {
+      "facebook": "Facebook",
+      "x": "X（旧Twitter）",
+      "instagram": "Instagram"
+    }
+  },
+  "ContactModal": {
+    "title": "お問い合わせ",
+    "namePlaceholder": "お名前",
+    "emailPlaceholder": "メールアドレス",
+    "messagePlaceholder": "メッセージを入力してください",
+    "cancel": "キャンセル",
+    "send": "送信",
+    "errorFill": "すべての項目を入力してください",
+    "successTitle": "メッセージを送信しました！",
+    "successSubtitle": "追ってご連絡いたします。",
+    "close": "閉じる"
+  },
+  "ReservationApp": {
+    "ReservationPage": {
+      "confirmAndPay": "予約内容と支払い",
+      "nonRefundable": "この予約は返金不可です。",
+      "checkInSoon": "チェックイン日まで30日未満です。",
+      "freeCancel": "無料キャンセル",
+      "cancelBefore": "{date}までのキャンセルは無料です。",
+      "freeCancelBefore": "{date}まで無料でキャンセルできます。",
+      "priceBreakdown": "料金の内訳",
+      "pricePerNightLabel": "泊",
+      "totalLabel": "合計",
+      "close": "閉じる",
+      "print": "印刷",
+      "thankYou": "ご予約ありがとうございます！",
+      "yourReservationId": "予約ID",
+      "guestInfo": "ゲスト情報",
+      "tripDetails": "滞在情報",
+      "cancelPolicy": "キャンセルポリシー",
+      "priceDetails": "料金詳細",
+      "paymentDetails": "支払い情報",
+      "paidAmount": "支払い金額 {amount}",
+      "chargedOn": "{date}に請求されます",
+      "back": "戻る",
+      "adultLabel": "{count}名様",
+      "childLabel": "{count}名お子様",
+      "next": "次へ",
+      "makePayment": "支払い",
+      "pay": "支払う",
+      "notChargedUntil": "下記の日付まで請求されません：",
+      "messageToUs": "メッセージ",
+      "optionalMessage": "任意のメッセージ",
+      "fullName": "氏名",
+      "email": "メールアドレス",
+      "invalidEmail": "無効なメールアドレスです",
+      "paymentFailure": "決済エラー: {error}",
+      "orderFailure": "注文エラー: {error}",
+      "beds24Error": "Beds24エラー: {error}",
+      "storageError": "保存エラー: {error}"
+    }
+  },
+  "StaysApp": {
+    "ClientPage": {
+      "headerGallery": "ギャラリー",
+      "headerHighlights": "ハイライト",
+      "headerLocation": "ロケーション",
+      "guest": "名様",
+      "guests": "名様",
+      "bedroom": "寝室",
+      "bedrooms": "寝室",
+      "bathroom": "バスルーム",
+      "bathrooms": "バスルーム",
+      "petsAllowed": "ペット可",
+      "petsNotAllowed": "ペット不可",
+      "whatWeOffer": "設備・アメニティ",
+      "bedroomCard": "寝室",
+      "doubleBed": "ダブルベッド",
+      "doubleBeds": "ダブルベッド",
+      "singleBed": "シングルベッド",
+      "singleBeds": "シングルベッド",
+      "tatamiFuton": "畳布団",
+      "tatamiFutons": "畳布団",
+      "whereYouBe": "周辺エリア"
+    },
+    "BedroomCard": {
+      "bedroom": "寝室",
+      "doubleBed": "ダブルベッド",
+      "doubleBeds": "ダブルベッド",
+      "singleBed": "シングルベッド",
+      "singleBeds": "シングルベッド",
+      "tatamiFuton": "布団",
+      "tatamiFutons": "布団"
+    },
+    "Amenities": {
+      "wifi": "Wi-Fi",
+      "kitchen": "キッチン",
+      "washer": "無料洗濯機（館内）",
+      "projector": "プロジェクター",
+      "loghouse": "ログハウス",
+      "selfCheckIn": "セルフチェックイン",
+      "goodLocation": "便利な立地"
+    },
+    "BookingCard": {
+      "forNights": "{count}泊",
+      "addDatesForPrices": "日付を選択して料金表示",
+      "checkIn": "チェックイン",
+      "checkOut": "チェックアウト",
+      "addDate": "日付を追加",
+      "guests": "ゲスト",
+      "guestsLabel": "名様",
+      "guestLabel": "名様",
+      "adults": "大人",
+      "adultsAge": "13歳以上",
+      "children": "子供",
+      "childrenAge": "3歳～12歳",
+      "close": "閉じる",
+      "maxCapacityExceeded": "最大定員を超えました",
+      "reserve": "予約する",
+      "checkAvailability": "空室状況を確認"
+    },
+    "DateRangePicker": {
+      "nights": "{count}泊",
+      "selectDates": "日付を選択",
+      "addDatesHint": "日付を選択して料金表示",
+      "checkIn": "チェックイン",
+      "checkOut": "チェックアウト",
+      "clearDates": "日付をクリア",
+      "close": "閉じる"
+    },
+    "MobileCalendar": {
+      "clearDates": "日付をクリア",
+      "save": "保存",
+      "adults": "大人",
+      "adultsAge": "13歳以上",
+      "children": "子供",
+      "childrenAge": "3〜12歳"
+    },
+    "MobileFooter": {
+      "addDatesForPrices": "料金表示のため日付を追加",
+      "selectDates": "日付を選択",
+      "editDates": "日付を編集",
+      "reserve": "予約する",
+      "checkAvailability": "空室状況を確認",
+      "maxCapacityExceeded": "定員を超えています",
+      "guestsSummary": "{count}名様"
+    }
+  }
+}

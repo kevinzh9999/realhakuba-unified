@@ -1,0 +1,87 @@
+{
+  "ClientPage": {
+    "headerGallery": "ギャラリー",
+    "headerHighlights": "ハイライト",
+    "headerLocation": "ロケーション",
+    "guest": "名様",
+    "guests": "名様",
+    "bedroom": "寝室",
+    "bedrooms": "寝室",
+    "bathroom": "バスルーム",
+    "bathrooms": "バスルーム",
+    "petsAllowed": "ペット可",
+    "petsNotAllowed": "ペット不可",
+    "whatWeOffer": "設備・アメニティ",
+    "bedroomCard": "寝室",
+    "doubleBed": "ダブルベッド",
+    "doubleBeds": "ダブルベッド",
+    "singleBed": "シングルベッド",
+    "singleBeds": "シングルベッド",
+    "tatamiFuton": "畳布団",
+    "tatamiFutons": "畳布団",
+    "whereYouBe": "周辺エリア"
+  },
+  "BedroomCard": {
+    "bedroom": "寝室",
+    "doubleBed": "ダブルベッド",
+    "doubleBeds": "ダブルベッド",
+    "singleBed": "シングルベッド",
+    "singleBeds": "シングルベッド",
+    "tatamiFuton": "布団",
+    "tatamiFutons": "布団"
+  },
+  "Amenities": {
+    "wifi": "Wi-Fi",
+    "kitchen": "キッチン",
+    "washer": "無料洗濯機（館内）",
+    "projector": "プロジェクター",
+    "loghouse": "ログハウス",
+    "selfCheckIn": "セルフチェックイン",
+    "goodLocation": "便利な立地"
+  },
+  "BookingCard": {
+    "forNights": "{count}泊",
+    "addDatesForPrices": "日付を選択して料金表示",
+    "checkIn": "チェックイン",
+    "checkOut": "チェックアウト",
+    "addDate": "日付を追加",
+    "guests": "ゲスト",
+    "guestsLabel": "名様",
+    "guestLabel": "名様",
+    "adults": "大人",
+    "adultsAge": "13歳以上",
+    "children": "子供",
+    "childrenAge": "3歳～12歳",
+    "close": "閉じる",
+    "maxCapacityExceeded": "最大定員を超えました",
+    "reserve": "予約する",
+    "checkAvailability": "空室状況を確認"
+  },
+  
+  "DateRangePicker": {
+    "nights": "{count}泊",
+    "selectDates": "日付を選択",
+    "addDatesHint": "日付を選択して料金表示",
+    "checkIn": "チェックイン",
+    "checkOut": "チェックアウト",
+    "clearDates": "日付をクリア",
+    "close": "閉じる"
+  },
+    "MobileCalendar": {
+    "clearDates": "日付をクリア",
+    "save": "保存",
+    "adults": "大人",
+    "adultsAge": "13歳以上",
+    "children": "子供",
+    "childrenAge": "3〜12歳"
+  },
+    "MobileFooter": {
+    "addDatesForPrices": "料金表示のため日付を追加",
+    "selectDates": "日付を選択",
+    "editDates": "日付を編集",
+    "reserve": "予約する",
+    "checkAvailability": "空室状況を確認",
+    "maxCapacityExceeded": "定員を超えています",
+    "guestsSummary": "{count}名様"
+  }
+}

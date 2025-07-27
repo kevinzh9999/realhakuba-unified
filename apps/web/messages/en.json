@@ -1,0 +1,210 @@
+{
+  "Header": {
+    "siteName": "Real Hakuba",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "navStays": "STAYS",
+    "navFun": "FUN",
+    "navAbout": "ABOUT",
+    "share": "Share",
+    "contact": "Contact us",
+    "home": "Home"
+  },
+  "SectionHero": {
+    "title": "Real Hakuba",
+    "subtitle": "Discover authentic Hakuba experiences\nfrom snow-capped winters to lush alpine summers."
+  },
+  "SectionProperties": {
+    "title": "Our Stays",
+    "subtitle": "Hand-picked chalets, lodges and villas across Hakuba.",
+    "cta": "See all stays"
+  },
+  "SectionPropertiesCarousel": {
+    "ariaPrev": "Previous slide",
+    "ariaNext": "Next slide",
+    "swipeHint": "Swipe to explore stays",
+    "cta": "See details"
+  },
+  "SectionFun": {
+    "weatherTitle": "Weather",
+    "activitiesTitle": "Activities",
+    "loading": "Loading weather forecast…",
+    "error": "Unable to load weather data. Please try again later.",
+    "activities": {
+      "bike": {
+        "title": "Biking",
+        "desc": "Ride through emerald paddies and cedar forests while the Northern Alps stand beside you. Quiet lanes lead to riverside trails and alpine switchbacks; refill with spring water, sample Shinshu apple pie, and pedal through a living postcard."
+      },
+      "bbq": {
+        "title": "Barbecue",
+        "desc": "Golden valley light, grills crackling, Shinshu wagyū and sweet corn sizzling while fireflies drift between pines. On a chalet deck or by the river, wood-smoke and mountain air turn dinner into a memory."
+      },
+      "sup": {
+        "title": "SUP",
+        "desc": "Glide over mirror-still lakes that reflect snow peaks. Only the dip of your paddle and wild-flower scent break the silence. Beginners hug coves; pros strike yoga poses at sunrise under rose-gold ridges."
+      },
+      "plunge": {
+        "title": "Plunge",
+        "desc": "From cedar sauna to glacier-fed stream: ten icy seconds leave you tingling and reborn. The rush eases sore muscles after a powder day and sharpens focus—an alpine ritual framed by mossy rocks and birdsong."
+      }
+    }
+  },
+  "SectionFooter": {
+    "aboutTitle": "About us",
+    "contactsTitle": "Contacts",
+    "about": {
+      "company": "Real Hakuba GK",
+      "disclosure": "Commercial Disclosure",
+      "locals": "Established by locals"
+    },
+    "contacts": {
+      "email": "inquiry@realhakuba.com",
+      "phone": "+81-90-7905-5323",
+      "address": "2546 Hokujo, Hakuba, Kita-azumi District, Nagano 399-9301"
+    },
+    "copyright": "© {year} Real Hakuba GK",
+    "social": {
+      "facebook": "Facebook",
+      "x": "X (formerly Twitter)",
+      "instagram": "Instagram"
+    }
+  },
+  "ContactModal": {
+    "title": "Contact us",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message to us",
+    "cancel": "Cancel",
+    "send": "Send",
+    "errorFill": "Please fill all fields",
+    "successTitle": "Thanks for your message!",
+    "successSubtitle": "We’ll get back to you soon.",
+    "close": "Close"
+  },
+  "ReservationApp": {
+    "ReservationPage": {
+      "confirmAndPay": "Confirm and pay",
+      "nonRefundable": "This reservation is non-refundable.",
+      "checkInSoon": "Check-in date is less than 30 days away.",
+      "freeCancel": "Free cancellation",
+      "cancelBefore": "Cancellation before {date} won't be charged.",
+      "freeCancelBefore": "Free cancellation before {date}.",
+      "priceBreakdown": "Price breakdown",
+      "pricePerNightLabel": "{count, plural, =1 {night} other {nights}}",
+      "totalLabel": "Total",
+      "close": "Close",
+      "print": "Print",
+      "thankYou": "Thank you for your reservation!",
+      "yourReservationId": "Your reservation ID is",
+      "guestInfo": "Guest information",
+      "tripDetails": "Trip details",
+      "cancelPolicy": "Cancellation policy",
+      "priceDetails": "Price details",
+      "paymentDetails": "Payment details",
+      "paidAmount": "Paid amount {amount}",
+      "chargedOn": "You’ll be charged on {date}",
+      "back": "Back",
+      "adultLabel": "{count} {count, plural, =1 {adult} other {adults}}",
+      "childLabel": "{count} {count, plural, =1 {child} other {children}}",
+      "next": "Next",
+      "makePayment": "Make payment",
+      "pay": "Pay",
+      "notChargedUntil": "You won't be charged until:",
+      "messageToUs": "Message to us",
+      "optionalMessage": "Optional message",
+      "fullName": "Full name",
+      "email": "Email address",
+      "invalidEmail": "Invalid email address",
+      "paymentFailure": "Payment failure: {error}",
+      "orderFailure": "Order failure: {error}",
+      "beds24Error": "Beds24 error: {error}",
+      "storageError": "Storage error: {error}"
+    }
+  },
+  "StaysApp": {
+    "ClientPage": {
+      "headerGallery": "Gallery",
+      "headerHighlights": "Highlights",
+      "headerLocation": "Location",
+      "guest": "guest",
+      "guests": "guests",
+      "bedroom": "bedroom",
+      "bedrooms": "bedrooms",
+      "bathroom": "bathroom",
+      "bathrooms": "bathrooms",
+      "petsAllowed": "Pets allowed",
+      "petsNotAllowed": "Pets not allowed",
+      "whatWeOffer": "What we offer",
+      "bedroomCard": "Bedroom",
+      "doubleBed": "double bed",
+      "doubleBeds": "double beds",
+      "singleBed": "single bed",
+      "singleBeds": "single beds",
+      "tatamiFuton": "tatami futon",
+      "tatamiFutons": "tatami futons",
+      "whereYouBe": "Where you'll be"
+    },
+    "BedroomCard": {
+      "bedroom": "Bedroom",
+      "doubleBed": "double bed",
+      "doubleBeds": "double beds",
+      "singleBed": "single bed",
+      "singleBeds": "single beds",
+      "tatamiFuton": "tatami futon",
+      "tatamiFutons": "tatami futons"
+    },
+    "Amenities": {
+      "wifi": "WiFi",
+      "kitchen": "Kitchen",
+      "washer": "Free washer – In unit",
+      "projector": "Projector",
+      "loghouse": "Loghouse",
+      "selfCheckIn": "Self check-in",
+      "goodLocation": "Good location"
+    },
+    "BookingCard": {
+      "forNights": "for {count} night{count, plural, one {} other {s}}",
+      "addDatesForPrices": "Add dates for prices",
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "addDate": "Add date",
+      "guests": "Guests",
+      "guestsLabel": "guests",
+      "guestLabel": "guest",
+      "adults": "Adults",
+      "adultsAge": "Age 13+",
+      "children": "Children",
+      "childrenAge": "Ages 3-12",
+      "close": "Close",
+      "maxCapacityExceeded": "Max capacity exceeded",
+      "reserve": "Reserve",
+      "checkAvailability": "Check availability"
+    },
+    "DateRangePicker": {
+      "nights": "{count} night{count, plural, =1 {} other {s}}",
+      "selectDates": "Select dates",
+      "addDatesHint": "Add your travel dates for exact pricing",
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "clearDates": "Clear dates",
+      "close": "Close"
+    },
+    "MobileCalendar": {
+      "clearDates": "Clear dates",
+      "save": "Save",
+      "adults": "Adults",
+      "adultsAge": "Age 13+",
+      "children": "Children",
+      "childrenAge": "Ages 3-12"
+    },
+    "MobileFooter": {
+      "addDatesForPrices": "Add dates for prices",
+      "selectDates": "Select dates",
+      "editDates": "Edit dates",
+      "reserve": "Reserve",
+      "checkAvailability": "Check availability",
+      "maxCapacityExceeded": "Max capacity exceeded",
+      "guestsSummary": "{count} guest{count, plural, one {} other {s}}"
+    }
+  }
+}
