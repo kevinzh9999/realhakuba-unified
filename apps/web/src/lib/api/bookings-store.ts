@@ -12,7 +12,7 @@ export interface Booking {
   totalPrice: number;
   status: BookingStatus;
   createdAt: string;
-  chargeDate: string | null; // checkIn - 30 days
+  chargeDate: string | null; 
   stripeCustomerId: string;
   stripePaymentMethodId: string;
   paymentIntentId?: string;

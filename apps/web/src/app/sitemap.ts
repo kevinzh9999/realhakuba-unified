@@ -76,10 +76,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       return {
         url,
         lastModified,
-        changeFrequency: isHomePage ? "daily" : 
-                        isStaysListPage ? "weekly" :
-                        isPropertyPage ? "monthly" :
-                        route === "/reservation" ? "weekly" : "monthly",
+        changeFrequency: isHomePage ? "daily" as const : 
+                        isStaysListPage ? "weekly" as const :
+                        isPropertyPage ? "monthly" as const :
+                        route === "/reservation" ? "weekly" as const : "monthly" as const,
         priority: isHomePage ? 1.0 : 
                  isStaysListPage ? 0.9 :
                  isPropertyPage ? 0.8 :

@@ -117,7 +117,7 @@ export default function ReservationPage() {
   const stripeRef = useRef<any>(null);
 
   const isDelayed = checkIn ? dayjs(checkIn).diff(dayjs(), "day") >= 30 : false;
-  const chargeDate = cancelDate;
+  const chargeDate = isDelayed ? cancelDate : dayjs().format("YYYY-MM-DD");
 
   async function handleMakePayment() {
     // 1. Stripe
@@ -300,7 +300,7 @@ export default function ReservationPage() {
                     <div className="font-semibold text-sm mb-2">{t("cancelPolicy")}</div>
                     <div className="text-sm text-gray-500">
                       {isDelayed
-                        ? t("freeCancelBefore", { date: chargeDate })
+                        ? t("freeCancelBefore", { date: cancelDate })
                         : t("nonRefundable")}
                     </div>
                   </div>
