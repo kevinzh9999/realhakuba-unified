@@ -1,3 +1,4 @@
+// about/page.tsx
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({ 
@@ -6,26 +7,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }> 
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'about' });
+  const t = await getTranslations({ locale }); 
   return {
-    title: t('title'),
-    description: t('description'),
+    title: t('AboutPage.title'),        
+    description: t('AboutPage.description'), 
   };
-}
-
-export default async function AboutPage({ 
-  params 
-}: { 
-  params: Promise<{ locale: string }> 
-}) {
-  const { locale } = await params;
-  
-  return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold mb-8">About Real Hakuba</h1>
-      <div className="prose max-w-none">
-        <p>Premium vacation rentals in the heart of the Japanese Alps.</p>
-      </div>
-    </div>
-  );
 }

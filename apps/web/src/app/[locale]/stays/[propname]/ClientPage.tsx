@@ -232,7 +232,7 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
             'md:hidden p-2 rounded-full hover:bg-gray-100',
             stickyNav ? 'bg-gray-100/0' : 'bg-gray-100/50'
           )}
-          onClick={() => router.push('https://realhakuba.com')}
+          onClick={() => router.push('/')}
           aria-label="Back to home"
         >
           <ArrowLeft size={18} />

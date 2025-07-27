@@ -1,4 +1,8 @@
 {
+  "AboutPage": {
+    "title": "About Real Hakuba",
+    "description": "Learn about our premium vacation rentals in Hakuba Village"
+  },
   "Header": {
     "siteName": "Real Hakuba",
     "menuOpen": "Open menu",

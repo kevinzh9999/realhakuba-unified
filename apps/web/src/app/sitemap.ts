@@ -8,11 +8,13 @@ const siteUrl = "https://realhakuba.com";
 const locales = ["en", "ja"];
 const defaultLocale = "en";
 
-// 3. 所有静态路由（不含动态参数）
+// 3. 所有静态路由（包含所有应用的路由）
 const routes = [
   "",                 // 首页
   "/disclosure",      // 法务披露
-  // "/about",
+  "/stays",           // 房源列表页面
+  "/reservation",     // 预订页面
+  "/about",
   // "/contact",
   // 更多静态页面...
 ];
@@ -41,8 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       return {
         url,
         lastModified,
-        changeFrequency: route === "" ? "daily" : "monthly",
-        priority: route === "" ? 1.0 : 0.8,
+        changeFrequency: route === "" ? "daily" : 
+                        route === "/stays" ? "weekly" :
+                        route === "/reservation" ? "weekly" : "monthly",
+        priority: route === "" ? 1.0 : 
+                 route === "/stays" ? 0.9 :
+                 route === "/reservation" ? 0.8 : 0.7,
         // 使用 alternates.languages 而不是 alternateRefs
         alternates: {
           languages,

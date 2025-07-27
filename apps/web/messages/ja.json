@@ -1,4 +1,8 @@
 {
+  "AboutPage": {
+    "title": "Real Hakuba について",
+    "description": "白馬村のプレミアム バケーション レンタルについて"
+  },
   "Header": {
     "siteName": "Real Hakuba",
     "menuOpen": "メニューを開く",
