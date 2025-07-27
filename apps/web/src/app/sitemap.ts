@@ -8,28 +8,56 @@ const siteUrl = "https://realhakuba.com";
 const locales = ["en", "ja"];
 const defaultLocale = "en";
 
-// 3. 所有静态路由（包含所有应用的路由）
-const routes = [
+// 3. 静态路由
+const staticRoutes = [
   "",                 // 首页
   "/disclosure",      // 法务披露
   "/stays",           // 房源列表页面
   "/reservation",     // 预订页面
-  "/about",
-  // "/contact",
-  // 更多静态页面...
+  "/about",           // 关于我们
 ];
 
-// 4. Next.js 要求的导出 sitemap() 函数
-export default function sitemap(): MetadataRoute.Sitemap {
+// 4. 从配置文件获取物业列表
+async function getProperties(): Promise<string[]> {
+  try {
+    // 读取物业配置文件
+    const fs = await import('fs/promises');
+    const path = await import('path');
+    
+    const configPath = path.join(process.cwd(), 'src/config/props.config.json');
+    const configData = await fs.readFile(configPath, 'utf-8');
+    const config = JSON.parse(configData);
+    
+    // 配置文件是一个对象，键名就是物业的 slug
+    return Object.keys(config);
+  } catch (error) {
+    console.warn('Failed to load properties config:', error);
+    // 回退到空数组，避免构建失败
+    return [];
+  }
+}
+
+// 5. 获取动态物业页面路由
+async function getPropertyRoutes(): Promise<string[]> {
+  const properties = await getProperties();
+  return properties.map(propname => `/stays/${propname}`);
+}
+
+// 6. Next.js 要求的导出 sitemap() 函数
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
+  
+  // 合并静态路由和动态路由
+  const propertyRoutes = await getPropertyRoutes();
+  const allRoutes = [...staticRoutes, ...propertyRoutes];
 
   // 为每个路由的每个语言版本创建条目
   return locales.flatMap((locale) =>
-    routes.map((route) => {
+    allRoutes.map((route) => {
       // 拼接完整 URL
       const url = `${siteUrl}/${locale}${route}`;
 
-      // 构建 languages 对象（这是 Next.js 识别 hreflang 的正确方式）
+      // 构建 languages 对象
       const languages: Record<string, string> = {};
       
       // 为每个语言添加对应的 URL
@@ -37,19 +65,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages[lang] = `${siteUrl}/${lang}${route}`;
       });
       
-      // 添加 x-default（指向默认语言）
+      // 添加 x-default
       languages['x-default'] = `${siteUrl}/${defaultLocale}${route}`;
+
+      // 判断路由类型设置优先级和更新频率
+      const isHomePage = route === "";
+      const isPropertyPage = route.startsWith("/stays/") && route !== "/stays";
+      const isStaysListPage = route === "/stays";
 
       return {
         url,
         lastModified,
-        changeFrequency: route === "" ? "daily" : 
-                        route === "/stays" ? "weekly" :
+        changeFrequency: isHomePage ? "daily" : 
+                        isStaysListPage ? "weekly" :
+                        isPropertyPage ? "monthly" :
                         route === "/reservation" ? "weekly" : "monthly",
-        priority: route === "" ? 1.0 : 
-                 route === "/stays" ? 0.9 :
+        priority: isHomePage ? 1.0 : 
+                 isStaysListPage ? 0.9 :
+                 isPropertyPage ? 0.8 :
                  route === "/reservation" ? 0.8 : 0.7,
-        // 使用 alternates.languages 而不是 alternateRefs
         alternates: {
           languages,
         },
