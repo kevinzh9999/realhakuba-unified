@@ -15,6 +15,7 @@ const staticRoutes = [
   "/stays",           // 房源列表页面
   "/reservation",     // 预订页面
   "/about",           // 关于我们
+  "/about/faq",       // FAQ 页面
 ];
 
 // 4. 从配置文件获取物业列表
