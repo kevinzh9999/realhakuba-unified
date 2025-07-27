@@ -3,16 +3,40 @@
     "title": "About Real Hakuba",
     "description": "Learn about our premium vacation rentals in Hakuba Village"
   },
+  "StaysPage": {
+    "title": "Our Accommodations"
+  },
   "Header": {
+    "navStays": "Stays",
+    "navDiscover": "Discover Hakuba",
+    "navAbout": "About",
+    "activities": "Activities",
+    "explore": "Explore",
+    "summerActivities": "Summer Activities",
+    "summerActivitiesDesc": "Mountain biking, hiking & more",
+    "winterActivities": "Winter Activities",
+    "winterActivitiesDesc": "Skiing, snowboarding, snowshoeing",
+    "attractions": "Attractions & Sights",
+    "attractionsDesc": "Must-visit spots and hidden gems",
+    "dining": "Dining & Culture",
+    "diningDesc": "Local restaurants and experiences",
+    "travelGuide": "Travel Guide",
+    "travelGuideDesc": "Transportation, weather, and tips",
+    "ourStory": "Our Story",
+    "ourStoryDesc": "Why we love Hakuba",
+    "guestReviews": "Guest Reviews",
+    "guestReviewsDesc": "What our guests are saying",
+    "contactUs": "Contact Us",
+    "contactUsDesc": "Get in touch with our team",
+    "faq": "FAQ",
+    "faqDesc": "Booking and stay information",
     "siteName": "Real Hakuba",
     "menuOpen": "Open menu",
     "menuClose": "Close menu",
-    "navStays": "STAYS",
-    "navFun": "FUN",
-    "navAbout": "ABOUT",
-    "share": "Share",
-    "contact": "Contact us",
-    "home": "Home"
+    "home": "Home",
+    "viewAllProperties": "View All Properties →",
+    "viewAllPropertiesDesc": "Browse complete collection",
+    "propertyDesc": "{bedrooms}BR · Sleeps {guests}"
   },
   "SectionHero": {
     "title": "Real Hakuba",
@@ -209,6 +233,107 @@
       "checkAvailability": "Check availability",
       "maxCapacityExceeded": "Max capacity exceeded",
       "guestsSummary": "{count} guest{count, plural, one {} other {s}}"
+    }
+  },
+  "FAQPage": {
+    "title": "Frequently asked questions",
+    "subtitle": "Find answers to common questions about staying at our properties in Hakuba",
+    "searchPlaceholder": "Search questions...",
+    "noResults": "No results found for \"{query}\"",
+    "clearSearch": "Clear search",
+    "stillHaveQuestions": "Still have questions?",
+    "hereToHelp": "We're here to help. Get in touch and we'll get back to you as soon as possible.",
+    "contactUs": "Contact us",
+    "viewProperties": "View properties",
+    "categories": {
+      "booking": {
+        "title": "Booking & Reservations",
+        "items": {
+          "checkInOut": {
+            "question": "What are the check-in and check-out times?",
+            "answer": "Check-in is from 3:00 PM and check-out is by 10:00 AM. Early check-in or late check-out may be available upon request, subject to availability."
+          },
+          "cancellation": {
+            "question": "What is your cancellation policy?",
+            "answer": "Free cancellation up to 30 days before arrival. No refunds for cancellations within 30 days."
+          },
+          "deposit": {
+            "question": "Do I need to pay a deposit?",
+            "answer": "For bookings within 30 days of check-in, full payment is required at the time of booking. For bookings more than 30 days in advance, we will securely store your payment information and charge the full amount 30 days before your arrival date."
+          },
+          "reservation": {
+            "question": "How do I make a reservation?",
+            "answer": "You can book directly through our website. Or send us an email or call us to make a request of reservation. We'll confirm availability and send you booking details within 24 hours."
+          }
+        }
+      },
+      "property": {
+        "title": "Property & Amenities",
+        "items": {
+          "petFriendly": {
+            "question": "Are the properties pet-friendly?",
+            "answer": "Most of our properties welcome pets! Please check the specific property details or contact us to confirm pet policies for your chosen accommodation."
+          },
+          "wifi": {
+            "question": "Is Wi-Fi available?",
+            "answer": "Yes, all our properties offer free high-speed Wi-Fi suitable for remote work and streaming."
+          },
+          "linens": {
+            "question": "Are linens and towels provided?",
+            "answer": "Yes, all properties are fully equipped with fresh linens, towels, and basic toiletries for your convenience."
+          },
+          "hvac": {
+            "question": "Do the properties have heating and air conditioning?",
+            "answer": "All properties have heating systems for winter. Most properties also have air conditioning for summer comfort."
+          },
+          "washing": {
+            "question": "Is there a washing machine?",
+            "answer": "Yes, all our properties include washing machines with dryer functionality."
+          }
+        }
+      },
+      "transportation": {
+        "title": "Location & Transportation",
+        "items": {
+          "fromTokyo": {
+            "question": "How do I get to Hakuba from Tokyo?",
+            "answer": "The most convenient way is by Shinkansen to Nagano Station (1.5 hours from Tokyo), then bus or train to Hakuba (1 hour). We can provide detailed directions upon booking."
+          },
+          "needCar": {
+            "question": "Do I need a car in Hakuba?",
+            "answer": "While not essential, a car provides more flexibility. There are local buses and many restaurants/activities within walking distance of our properties."
+          },
+          "parking": {
+            "question": "Is parking available?",
+            "answer": "Yes, all our properties include free parking spaces for guests."
+          },
+          "trainStation": {
+            "question": "How far are you from the nearest train station?",
+            "answer": "Our properties are 10-20 minutes by car from Hakuba Station. We can arrange pickup for guests arriving by train."
+          }
+        }
+      },
+      "activities": {
+        "title": "Activities & Local Area",
+        "items": {
+          "summer": {
+            "question": "What activities are available in summer?",
+            "answer": "Summer offers hiking, mountain biking, rafting, SUP on Lake Aoki, gondola rides, and visiting local onsens. The mountains are beautiful for outdoor adventures!"
+          },
+          "skiResorts": {
+            "question": "How far are the ski resorts?",
+            "answer": "Our properties are conveniently located 5-15 minutes from major ski resorts including Happo-One, Goryu, and Hakuba 47."
+          },
+          "restaurants": {
+            "question": "Are there restaurants nearby?",
+            "answer": "Yes! Hakuba has excellent dining options from traditional Japanese to international cuisine, most within a short drive or walk from our properties."
+          },
+          "arrangeActivities": {
+            "question": "Can you help arrange activities?",
+            "answer": "Absolutely! We're happy to help book ski lessons, equipment rental, restaurant reservations, and other activities."
+          }
+        }
+      }
     }
   }
 }

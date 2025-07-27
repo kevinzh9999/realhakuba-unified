@@ -1,44 +1,40 @@
-import { PropertyCard } from '@/components/features/property-card';
+'use client';
 
-const properties = [
-  {
-    id: 'echo-villa',
-    name: 'Echo Villa',
-    description: 'Luxurious mountain retreat with stunning views',
-    image: '/stays/echo-villa/images/hero.jpg',
-    price: 50000,
-    guests: 10,
-    bedrooms: 4,
-  },
-  {
-    id: 'moyai-house',
-    name: 'Moyai House',
-    description: 'Traditional Japanese house with modern amenities',
-    image: '/stays/moyai-house/images/hero.jpg',
-    price: 35000,
-    guests: 6,
-    bedrooms: 3,
-  },
-  {
-    id: 'riverside-loghouse',
-    name: 'Riverside Log House',
-    description: 'Cozy log house by the river',
-    image: '/stays/riverside-loghouse/images/hero.jpg',
-    price: 40000,
-    guests: 8,
-    bedrooms: 3,
-  },
-];
+import { PropertyCard } from '@/components/features/property-card';
+import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
+import { useTranslations, useLocale } from 'next-intl';
+import propsConfig from '@/config/props.config.json';
 
 export default function StaysPage() {
+  const t = useTranslations('StaysPage');
+  const locale = useLocale() as 'en' | 'ja';
+
+  // 从 props.config.json 构建属性列表
+  const properties = Object.entries(propsConfig).map(([id, property]) => ({
+    id,
+    name: property.title[locale],
+    description: property.subtitle[locale],
+    image: property.gallery[0], // 使用第一张图片
+    price: property.price,
+    guests: property.summary.guests,
+    bedrooms: property.summary.bedrooms,
+  }));
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold mb-8">Our Properties</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {properties.map((property) => (
-          <PropertyCard key={property.id} {...property} />
-        ))}
+    <>
+      <Header />
+      <div className="min-h-screen pt-[var(--header-h)]">
+        <div className="container mx-auto px-4 py-16">
+          <h1 className="text-3xl font-bold mb-8">{t('title')}</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {properties.map((property) => (
+              <PropertyCard key={property.id} {...property} />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

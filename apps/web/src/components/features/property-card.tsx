@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+
 
 interface PropertyCardProps {
   id: string;
@@ -12,6 +14,8 @@ interface PropertyCardProps {
 }
 
 export function PropertyCard({ id, name, description, image, price, guests, bedrooms }: PropertyCardProps) {
+  const t = useTranslations('Header');
+
   return (
     <Link href={`/stays/${id}`}>
       <div className="group cursor-pointer">
@@ -24,12 +28,12 @@ export function PropertyCard({ id, name, description, image, price, guests, bedr
           />
         </div>
         <div className="mt-4">
-          <h3 className="text-xl font-semibold">{name}</h3>
+          <h3 className="text-lg font-semibold">{name}</h3>
           <p className="text-gray-600 mt-1 line-clamp-2">{description}</p>
-          <div className="flex items-center justify-between mt-3">
-            <span className="text-sm text-gray-500">{guests} guests · {bedrooms} bedrooms</span>
-            <span className="font-semibold">¥{price.toLocaleString()}/night</span>
-          </div>
+          <div className="flex items-center justify-between mt-1">
+            <span className="text-sm text-gray-500">
+              {t('propertyDesc', { bedrooms, guests })}
+            </span>          </div>
         </div>
       </div>
     </Link>

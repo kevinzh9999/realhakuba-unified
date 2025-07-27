@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import { Globe } from 'lucide-react'; // 添加地球图标
 
 const LANGS = [
-  { locale: 'en', flag: '/flags/en.svg', label: 'English' },
-  { locale: 'ja', flag: '/flags/ja.svg', label: '日本語' }
+  { locale: 'en', label: 'English' },
+  { locale: 'ja', label: '日本語' }
 ] as const;
 
 export default function LanguageSwitcher() {
@@ -37,7 +37,6 @@ export default function LanguageSwitcher() {
 
   const change = (locale: string) => {
     setOpen(false);
-    // Replace the locale in the pathname and navigate
     const segments = pathname.split('/');
     if (LANGS.some(l => l.locale === segments[1])) {
       segments[1] = locale;
@@ -52,29 +51,40 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={containerRef}>
       <button
         onClick={() => setOpen(v => !v)}
-        className="flex items-center gap-1 rounded-md p-1 hover:bg-gray-100"
+        className="flex items-center gap-2 h-9 px-3 rounded-full hover:bg-gray-100 transition-colors text-sm"
         aria-label="Change language"
       >
-        <Image src={current.flag} alt={current.label} width={24} height={24} />
+        <Globe size={16} className="text-gray-600" />
+        <span className="text-gray-700">{current.label}</span>
+        <svg 
+          className={clsx(
+            "w-3.5 h-3.5 text-gray-500 transition-transform duration-200",
+            open && "rotate-180"
+          )} 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
       </button>
 
       {open && (
         <ul
           className={clsx(
-            'absolute right-0 mt-2 w-28 rounded-md bg-white shadow-lg ring-1 ring-black/5',
-            'flex flex-col py-1'
+            'absolute right-0 mt-2 w-40 rounded-xl bg-white shadow-xl border border-gray-100',
+            'flex flex-col p-1'
           )}
         >
           {LANGS.map(l => (
-            <li key={l.locale}>
+            <li key={l.locale}  className="px-1">
               <button
                 onClick={() => change(l.locale)}
                 className={clsx(
-                  'flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-gray-100',
-                  l.locale === current.locale && 'font-semibold'
+                  'flex w-full items-center gap-2 px-3 py-2 text-sm rounded-lg hover:bg-gray-100 transition-colors',
+                  l.locale === current.locale && 'font-semibold bg-gray-50'
                 )}
               >
-                <Image src={l.flag} alt={l.label} width={20} height={20} />
                 {l.label}
               </button>
             </li>

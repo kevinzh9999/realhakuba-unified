@@ -3,16 +3,40 @@
     "title": "Real Hakuba について",
     "description": "白馬村のプレミアム バケーション レンタルについて"
   },
+  "StaysPage": {
+    "title": "宿泊施設"
+  },
   "Header": {
+    "navStays": "宿泊施設",
+    "navDiscover": "白馬を探索",
+    "navAbout": "私たちについて",
+    "activities": "アクティビティ",
+    "explore": "観光・グルメ",
+    "summerActivities": "夏のアクティビティ",
+    "summerActivitiesDesc": "マウンテンバイク、ハイキングなど",
+    "winterActivities": "冬のアクティビティ",
+    "winterActivitiesDesc": "スキー、スノーボード、スノーシュー",
+    "attractions": "観光スポット",
+    "attractionsDesc": "必見の名所と隠れた魅力",
+    "dining": "グルメ・文化",
+    "diningDesc": "地元のレストランと文化体験",
+    "travelGuide": "旅行ガイド",
+    "travelGuideDesc": "交通、天気、お役立ち情報",
+    "ourStory": "私たちのストーリー",
+    "ourStoryDesc": "なぜ白馬を愛するのか",
+    "guestReviews": "ゲストレビュー",
+    "guestReviewsDesc": "お客様の声",
+    "contactUs": "お問い合わせ",
+    "contactUsDesc": "お気軽にご連絡ください",
+    "faq": "よくある質問",
+    "faqDesc": "予約と滞在に関する情報",
     "siteName": "Real Hakuba",
     "menuOpen": "メニューを開く",
     "menuClose": "メニューを閉じる",
-    "navStays": "宿泊施設",
-    "navFun": "アクティビティ",
-    "navAbout": "会社情報",
-    "share": "シェア",
-    "contact": "お問い合わせ",
-    "home": "ホーム"
+    "home": "ホーム",
+    "viewAllProperties": "すべての物件を見る →",
+    "viewAllPropertiesDesc": "全物件リストを表示",
+    "propertyDesc": "{bedrooms}寝室 · {guests}名様"
   },
   "SectionHero": {
     "title": "Real Hakuba",
@@ -209,6 +233,107 @@
       "checkAvailability": "空室状況を確認",
       "maxCapacityExceeded": "定員を超えています",
       "guestsSummary": "{count}名様"
+    }
+  },
+  "FAQPage": {
+    "title": "よくある質問",
+    "subtitle": "白馬の宿泊施設に関するよくある質問をご覧ください",
+    "searchPlaceholder": "質問を検索...",
+    "noResults": "「{query}」の検索結果はありません",
+    "clearSearch": "検索をクリア",
+    "stillHaveQuestions": "まだご質問がありますか？",
+    "hereToHelp": "お気軽にお問い合わせください。できるだけ早くご返信いたします。",
+    "contactUs": "お問い合わせ",
+    "viewProperties": "宿泊施設を見る",
+    "categories": {
+      "booking": {
+        "title": "予約について",
+        "items": {
+          "checkInOut": {
+            "question": "チェックイン・チェックアウトの時間は？",
+            "answer": "チェックインは午後3時から、チェックアウトは午前10時までです。アーリーチェックインやレイトチェックアウトは、空室状況により対応可能な場合があります。"
+          },
+          "cancellation": {
+            "question": "キャンセルポリシーは？",
+            "answer": "ご到着の30日前まで無料でキャンセル可能です。30日以内のキャンセルは返金いたしかねます。"
+          },
+          "deposit": {
+            "question": "デポジットは必要ですか？",
+            "answer": "チェックイン日から30日以内のご予約は、予約時に全額お支払いいただきます。30日以上先のご予約の場合は、予約時にお支払い情報を登録いただき、チェックイン日の30日前に全額を決済させていただきます。"
+          },
+          "reservation": {
+            "question": "予約方法は？",
+            "answer": "ウェブサイトから直接ご予約いただけます。また、メールやお電話でのご予約リクエストも承っております。24時間以内に空室状況を確認し、予約詳細をお送りします。"
+          }
+        }
+      },
+      "property": {
+        "title": "施設・設備について",
+        "items": {
+          "petFriendly": {
+            "question": "ペット同伴は可能ですか？",
+            "answer": "ほとんどの施設でペット同伴可能です！各施設の詳細をご確認いただくか、お問い合わせください。"
+          },
+          "wifi": {
+            "question": "Wi-Fiはありますか？",
+            "answer": "はい、全施設で高速Wi-Fiを無料でご利用いただけます。リモートワークやストリーミングにも対応しています。"
+          },
+          "linens": {
+            "question": "リネンやタオルは用意されていますか？",
+            "answer": "はい、全施設に清潔なリネン、タオル、基本的なアメニティをご用意しています。"
+          },
+          "hvac": {
+            "question": "暖房・冷房設備はありますか？",
+            "answer": "全施設に冬用の暖房設備を完備しています。ほとんどの施設には夏用のエアコンも設置されています。"
+          },
+          "washing": {
+            "question": "洗濯機はありますか？",
+            "answer": "はい、全施設に乾燥機能付き洗濯機を設置しています。"
+          }
+        }
+      },
+      "transportation": {
+        "title": "アクセス・交通について",
+        "items": {
+          "fromTokyo": {
+            "question": "東京から白馬へのアクセス方法は？",
+            "answer": "最も便利な方法は、新幹線で長野駅まで（東京から約1.5時間）、その後バスまたは電車で白馬まで（約1時間）です。ご予約時に詳しいアクセス方法をご案内します。"
+          },
+          "needCar": {
+            "question": "白馬では車が必要ですか？",
+            "answer": "必須ではありませんが、車があるとより自由に移動できます。地元のバスもあり、多くのレストランやアクティビティは徒歩圏内にあります。"
+          },
+          "parking": {
+            "question": "駐車場はありますか？",
+            "answer": "はい、全施設に無料駐車スペースをご用意しています。"
+          },
+          "trainStation": {
+            "question": "最寄り駅からの距離は？",
+            "answer": "白馬駅から車で10～20分の場所にあります。電車でお越しの方には送迎の手配も可能です。"
+          }
+        }
+      },
+      "activities": {
+        "title": "アクティビティ・周辺情報",
+        "items": {
+          "summer": {
+            "question": "夏のアクティビティは？",
+            "answer": "夏はハイキング、マウンテンバイク、ラフティング、青木湖でのSUP、ゴンドラ乗車、温泉巡りなどが楽しめます。山でのアウトドアアドベンチャーに最適です！"
+          },
+          "skiResorts": {
+            "question": "スキー場までの距離は？",
+            "answer": "八方尾根、五竜、白馬47など主要スキー場まで車で5～15分の便利な立地です。"
+          },
+          "restaurants": {
+            "question": "近くにレストランはありますか？",
+            "answer": "はい！白馬には和食から国際料理まで素晴らしいレストランがたくさんあり、ほとんどが車または徒歩圏内にあります。"
+          },
+          "arrangeActivities": {
+            "question": "アクティビティの手配は可能ですか？",
+            "answer": "もちろんです！スキーレッスン、レンタル用品、レストラン予約など、喜んでお手伝いいたします。"
+          }
+        }
+      }
     }
   }
 }
