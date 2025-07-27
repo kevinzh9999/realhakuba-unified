@@ -2,12 +2,14 @@
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
-export const createServerSupabaseClient = () => {
+export const createServerSupabaseClient = async () => {
+  const cookieStore = await cookies();
+  
   return createServerClient(
     process.env.SUPABASE_URL!,
     process.env.SUPABASE_SECRET_KEY!,
     {
-      cookies: cookies(), // ✅ 必须调用 cookies()，返回 cookie 实例
+      cookies: cookieStore, // ✅ 使用 awaited cookie store
     }
   );
 };
