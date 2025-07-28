@@ -1,4 +1,3 @@
-// apps/reservation/src/app/api/beds24/createbooking/route.ts
 
 import { NextRequest, NextResponse } from "next/server";
 import { parseISO, subDays, format } from "date-fns";

@@ -1,4 +1,3 @@
-// apps/reservation/src/app/api/scheduled/charge/route.ts
 
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
