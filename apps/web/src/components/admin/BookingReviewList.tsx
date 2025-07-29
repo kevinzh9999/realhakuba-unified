@@ -17,7 +17,7 @@ export default function BookingReviewList({ bookings: initialBookings, locale }:
   // 过滤订单
   const filteredBookings = bookings.filter(booking => {
     if (filter === 'all') return true;
-    return booking.charge_method === filter;
+    return booking.chargeMethod === filter;
   });
 
   // 处理订单状态更新后的回调
@@ -55,7 +55,7 @@ export default function BookingReviewList({ bookings: initialBookings, locale }:
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
         >
-          Immediate ({bookings.filter(b => b.charge_method === 'immediate').length})
+          Immediate ({bookings.filter(b => b.chargeMethod === 'immediate').length})
         </button>
         <button
           onClick={() => setFilter('scheduled')}
@@ -65,7 +65,7 @@ export default function BookingReviewList({ bookings: initialBookings, locale }:
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
         >
-          Scheduled ({bookings.filter(b => b.charge_method === 'scheduled').length})
+          Scheduled ({bookings.filter(b => b.chargeMethod === 'scheduled').length})
         </button>
       </div>
 
