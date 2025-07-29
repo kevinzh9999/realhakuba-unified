@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
                     // 更新 Beds24 状态
                     if (booking.beds24BookId) {
                         try {
-                            await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/beds24/updatestatus`, {
+                            await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/beds24/updatestatus`, {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -132,7 +132,7 @@ export async function POST(request: NextRequest) {
                 // 更新 Beds24 状态为 confirmed
                 if (booking.beds24BookId) {
                     try {
-                        await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/beds24/updatestatus`, {
+                        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/beds24/updatestatus`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({
