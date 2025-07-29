@@ -5,23 +5,18 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
-interface AdminLoginFormProps {
-  locale: string;
-}
-
-export default function AdminLoginForm({ locale }: AdminLoginFormProps) {
+export default function AdminLoginForm() {  // 不需要 locale 参数
+  const t = useTranslations('Admin');
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  
-  const router = useRouter();
-  const t = useTranslations('Admin.login');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
     setIsLoading(true);
+    setError('');
 
     try {
       const response = await fetch('/api/admin/auth/login', {
@@ -32,73 +27,63 @@ export default function AdminLoginForm({ locale }: AdminLoginFormProps) {
 
       const data = await response.json();
 
-      if (response.ok) {
-        // 登录成功，跳转到订单页面
-        router.push(`/${locale}/bookings`);
-        router.refresh(); // 刷新路由缓存
-      } else {
-        setError(data.error || t('error.invalid'));
+      if (!response.ok) {
+        setError(data.error || t('loginFailed'));
+        return;
       }
+
+      router.push('/admin/bookings');
+      router.refresh();
     } catch (err) {
-      setError(t('error.network'));
+      setError(t('networkError'));
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8">
+    <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
       {error && (
-        <div className="mb-4 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded">
+        <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
           {error}
         </div>
       )}
       
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-          {t('email')}
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          {t('login.email')}
         </label>
         <input
           id="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder={t('emailPlaceholder')}
           required
-          disabled={isLoading}
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
       </div>
-      
+
       <div className="mb-6">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-          {t('password')}
+        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+          {t('login.password')}
         </label>
         <input
           id="password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder={t('passwordPlaceholder')}
           required
-          disabled={isLoading}
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
       </div>
-      
-      <div className="flex items-center justify-between">
-        <button
-          type="submit"
-          disabled={isLoading}
-          className={`w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-            isLoading 
-              ? 'bg-gray-400 text-gray-200 cursor-not-allowed' 
-              : 'bg-blue-500 hover:bg-blue-700 text-white'
-          }`}
-        >
-          {isLoading ? t('submitting') : t('submit')}
-        </button>
-      </div>
+
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
+      >
+        {isLoading ? t('login.submitting') : t('login.submit')}
+      </button>
     </form>
   );
 }
