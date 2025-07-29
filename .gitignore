@@ -109,3 +109,5 @@ Thumbs.db
 
 # Turbo
 .turbo/
+
+generate-password-hash.js
