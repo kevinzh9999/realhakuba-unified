@@ -13,6 +13,7 @@ import { createPortal } from "react-dom";
 import { IoAlertCircle } from "react-icons/io5";
 import Lottie from "lottie-react";
 import successAnim from "@/../public/lottie/Confetti.json";
+import loadingAnim from "@/../public/lottie/Loading.json"; // 需要添加这个文件
 
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
@@ -106,6 +107,7 @@ export default function ReservationPage() {
   const [message, setMessage] = useState("");
   const [paymentMessage, setPaymentMessage] = useState<string | null>(null);
   const [successData, setSuccessData] = useState<{ orderId: string } | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false); // 添加处理状态
 
   const isValidEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -120,89 +122,123 @@ export default function ReservationPage() {
   const chargeDate = isDelayed ? cancelDate : dayjs().format("YYYY-MM-DD");
 
   async function handleMakePayment() {
-    // 1. Stripe
-    const paymentResult = await stripeRef.current.confirmPayment({
-      isDelayed,
-      guestName: guestInfo.name,
-      guestEmail: guestInfo.email,
-      totalPrice: Number(total),
-    });
-
-    setStep(0);
-
-    if (!paymentResult.success) {
-      setPaymentMessage(t("paymentFailure", { error: paymentResult.error }));
-      return;
-    }
-
-    // 2. Beds24
-    const bookingData = {
-      propName,
-      guestName: guestInfo.name,
-      guestEmail: guestInfo.email,
-      checkIn,
-      checkOut,
-      adults,
-      children,
-      total,
-      message,
-    };
-
-    let bookId: string | null = null;
-
+    setIsProcessing(true); // 开始处理
+    
     try {
-      const res = await fetch("/api/beds24/createbooking", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(bookingData),
+      // 1. Stripe
+      const paymentResult = await stripeRef.current.confirmPayment({
+        isDelayed: false,
+        guestName: guestInfo.name,
+        guestEmail: guestInfo.email,
+        totalPrice: Number(total),
       });
 
-      const data = await res.json();
+      setStep(0);
 
-      if (!data.ok) {
-        setPaymentMessage(t("orderFailure", { error: data.error }));
+      if (!paymentResult.success) {
+        setPaymentMessage(t("paymentFailure", { error: paymentResult.error }));
+        setIsProcessing(false);
         return;
       }
 
-      bookId = data.data.bookId.toString();
-    } catch (e) {
-      setPaymentMessage(t("beds24Error", { error: e instanceof Error ? e.message : String(e) }));
-      return;
-    }
-
-    // 3. bookings.json
-    const storeRes = await fetch("/api/storebooking", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        propName: propName,
+      // 2. Beds24
+      const bookingData = {
+        propName,
         guestName: guestInfo.name,
         guestEmail: guestInfo.email,
         checkIn,
         checkOut,
-        totalPrice: Number(total),
-        status: isDelayed ? "pending" : "paid",
-        stripePaymentMethodId: paymentResult.stripePaymentMethodId,
-        stripeCustomerId: paymentResult.stripeCustomerId,
-        paymentIntentId: paymentResult.paymentIntent?.id,
-        beds24BookId: bookId,
-        chargeDate,
-      }),
-    });
+        adults,
+        children,
+        total,
+        message,
+      };
 
-    const storeData = await storeRes.json();
-    if (!storeRes.ok) {
-      setPaymentMessage(t("storageError", { error: storeData.error }));
-      return;
+      let bookId: string | null = null;
+
+      try {
+        const res = await fetch("/api/beds24/createbooking", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(bookingData),
+        });
+
+        const data = await res.json();
+
+        if (!data.ok) {
+          setPaymentMessage(t("orderFailure", { error: data.error }));
+          setIsProcessing(false);
+          return;
+        }
+
+        bookId = data.data.bookId.toString();
+      } catch (e) {
+        setPaymentMessage(t("beds24Error", { error: e instanceof Error ? e.message : String(e) }));
+        setIsProcessing(false);
+        return;
+      }
+
+      // 3. bookings.json
+      const storeRes = await fetch("/api/storebooking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          propName: propName,
+          guestName: guestInfo.name,
+          guestEmail: guestInfo.email,
+          checkIn,
+          checkOut,
+          totalPrice: Number(total),
+          status: "request",
+          stripePaymentMethodId: paymentResult.stripePaymentMethodId,
+          stripeCustomerId: paymentResult.stripeCustomerId,
+          paymentIntentId: null,
+          beds24BookId: bookId,
+          chargeDate,
+          approved_for_charge: false,
+          manual_review_status: "pending",
+          charge_method: isDelayed ? "scheduled" : "immediate",
+        }),
+      });
+
+      const storeData = await storeRes.json();
+      if (!storeRes.ok) {
+        setPaymentMessage(t("storageError", { error: storeData.error }));
+        setIsProcessing(false);
+        return;
+      }
+
+      // 4. show ID
+      setIsProcessing(false);
+      setPaymentMessage(null);
+      setSuccessData({ orderId: bookId! });
+    } catch (error) {
+      setIsProcessing(false);
+      setPaymentMessage(t("unexpectedError"));
     }
-
-    // 4. show ID
-    setPaymentMessage(null);
-    setSuccessData({ orderId: bookId! });
   }
 
   return (
     <Suspense>
+      {/* 处理中的加载动画 */}
+      {isProcessing && createPortal(
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/95 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl p-8 shadow-xl">
+            <Lottie 
+              animationData={loadingAnim} 
+              loop={true} 
+              style={{ height: 100, width: 100 }} 
+            />
+            <p className="text-center mt-4 text-gray-700 font-medium">
+              {t("processingRequest")}
+            </p>
+            <p className="text-center mt-2 text-sm text-gray-500">
+              {t("pleaseWait")}
+            </p>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {/* Price breakdown 弹窗 */}
       {showBreakdown &&
@@ -217,7 +253,7 @@ export default function ReservationPage() {
             >
               <h2 className="text-lg font-semibold mb-4">{t("priceBreakdown")}</h2>
               <div className="flex justify-between text-sm">
-                
+
                 <span>
                   ¥{pricePerNight.toLocaleString()} × {nights} {t("pricePerNightLabel", { count: nights })}
                 </span>
@@ -241,24 +277,60 @@ export default function ReservationPage() {
           document.body
         )}
 
-      {/* 成功下单后弹窗 */}
+      {/* 成功下单后弹窗 - 修改为桌面端居中 */}
       {successData &&
         createPortal(
-          <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40">
+          <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/40">
             <AnimatePresence>
               <motion.div
                 key="successDrawer"
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "100%" }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                style={{ maxHeight: "calc(100dvh - 40px)", marginTop: "30px" }}
-                className="bg-white rounded-t-2xl md:rounded-2xl shadow-lg w-full md:max-w-md overflow-y-auto scrollbar-hide hide-scrollbar p-6 pt-3"
+                initial={{ 
+                  y: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0 : "100%", 
+                  scale: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0.95 : 1,
+                  opacity: 0 
+                }}
+                animate={{ 
+                  y: 0, 
+                  scale: 1,
+                  opacity: 1
+                }}
+                exit={{ 
+                  y: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0 : "100%",
+                  scale: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0.95 : 1,
+                  opacity: 0 
+                }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 30,
+                  opacity: { duration: 0.2 }
+                }}
+                className={`
+                  bg-white shadow-lg w-full overflow-y-auto scrollbar-hide hide-scrollbar p-6 pt-3
+                  /* 移动端：底部抽屉样式 */
+                  rounded-t-2xl max-w-full
+                  /* 桌面端：居中卡片样式 */
+                  md:rounded-2xl md:max-w-md md:max-h-[90vh]
+                `}
+                style={{ 
+                  maxHeight: typeof window !== 'undefined' && window.innerWidth < 768 ? "calc(100dvh - 40px)" : undefined,
+                  marginTop: typeof window !== 'undefined' && window.innerWidth < 768 ? "30px" : undefined
+                }}
               >
                 <Lottie animationData={successAnim} loop={true} style={{ height: 120 }} />
-                <h2 className="text-center text-2xl font-bold">{t("thankYou")}</h2>
+
+                {/* 修改标题 */}
+                <h2 className="text-center text-2xl font-bold">{t("bookingRequestSubmitted")}</h2>
+
+                {/* 添加审核说明 */}
+                <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+                  <p className="text-center text-sm text-blue-800 whitespace-pre-line">
+                    {t("bookingRequestPending")}
+                  </p>
+                </div>
+
                 <p className="text-center text-base text-gray-500 mt-4">
-                  {t("yourReservationId")}:{" "}
+                  {t("yourRequestId")}:{" "}
                   <span className="text-gray-800 font-medium">{successData.orderId}</span>
                 </p>
 
@@ -285,7 +357,7 @@ export default function ReservationPage() {
                   </div>
                   <div className="border-b border-gray-200 my-4" />
 
-                  {/* Trip details */}
+                  {/* 3. Trip details */}
                   <div className="mb-4">
                     <div className="font-semibold text-sm mb-2">{t("tripDetails")}</div>
                     <div className="text-sm text-gray-500 flex flex-col gap-1">
@@ -306,7 +378,7 @@ export default function ReservationPage() {
                   </div>
                   <div className="border-b border-gray-200 my-4" />
 
-                  {/* Price details */}
+                  {/* 5. Price details */}
                   <div className="mb-4">
                     <div className="font-semibold text-sm mb-2">{t("priceDetails")}</div>
                     <div className="flex justify-between text-sm text-gray-500">
@@ -318,19 +390,44 @@ export default function ReservationPage() {
                   </div>
                   <div className="border-b border-gray-200 my-4" />
 
-                  {/* 6. Payment details */}
+                  {/* 6. Payment details - 修改支付信息部分 */}
                   <div className="mb-2">
-                    <div className="font-semibold text-sm mb-2">{t("paymentDetails")}</div>
-                    <div className="text-sm text-gray-500">
-                      {t("paidAmount", { amount: `¥${Number(total).toLocaleString()}` })}
-                    </div>
-                    {isDelayed && (
-                      <div className="text-sm text-gray-500 mt-1">
-                        {t("chargedOn", { date: chargeDate })}
+                    <div className="font-semibold text-sm mb-2">{t("paymentInfo")}</div>
+
+                    {/* 添加审核后的支付流程说明 */}
+                    <div className="text-sm text-gray-600 space-y-2">
+                      <div className="flex items-start gap-2">
+                        <span className="text-green-600">✓</span>
+                        <span>{t("paymentMethodSaved")}</span>
                       </div>
-                    )}
+
+                      {isDelayed ? (
+                        <div className="mt-2 p-3 bg-amber-50 rounded-lg">
+                          <p className="text-xs text-amber-800">
+                            {t("delayedPaymentNotice", {
+                              amount: `¥${Number(total).toLocaleString()}`,
+                              date: chargeDate
+                            })}
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="mt-2 p-3 bg-green-50 rounded-lg">
+                          <p className="text-xs text-green-800">
+                            {t("immediatePaymentNotice", {
+                              amount: `¥${Number(total).toLocaleString()}`
+                            })}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
+                  {/* 添加重要提示 */}
+                  <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs text-gray-600">
+                      <span className="font-semibold">{t("importantNote")}:</span> {t("bookingConfirmationNote")}
+                    </p>
+                  </div>
                 </div>
                 {/* ==== /完整 Summary Card ==== */}
 
@@ -348,7 +445,7 @@ export default function ReservationPage() {
                     onClick={() => window.print()}
                     className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800"
                   >
-                    {t("print")}
+                    {t("printRequest")}
                   </button>
                 </div>
               </motion.div>
@@ -512,7 +609,7 @@ export default function ReservationPage() {
                 </StepCard>
 
                 <StepCard
-                  title={`3. ${t("makePayment")}`}
+                  title={`3. ${t("submitRequest")}`}
                   active={step === 3}
                   onClick={() => canStep3 && setStep(3)}
                   completed={false}
@@ -526,22 +623,22 @@ export default function ReservationPage() {
                     isDelayed={isDelayed}
                   />
                   <div className="flex items-center justify-between mt-4">
-                    <p className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-500">
                       {isDelayed ? (
-                        <span>
+                        <div>
                           <div>{t("notChargedUntil")}</div>
                           <div className="font-medium">{chargeDate}</div>
-                        </span>
+                        </div>
                       ) : (
-                        <span>&nbsp;</span>
+                        <div>&nbsp;</div>
                       )}
-                    </p>
+                    </div>
                     <button
                       className="bg-black text-white rounded-lg py-3 px-8 font-semibold disabled:opacity-60"
                       disabled={!canStep3}
                       onClick={handleMakePayment}
                     >
-                      {t("pay")}
+                      {t("requestToBook")}
                     </button>
                   </div>
                 </StepCard>

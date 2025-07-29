@@ -146,7 +146,22 @@
       "paymentFailure": "決済エラー: {error}",
       "orderFailure": "注文エラー: {error}",
       "beds24Error": "Beds24エラー: {error}",
-      "storageError": "保存エラー: {error}"
+      "storageError": "保存エラー: {error}",
+      "requestToBook": "リクエストを送信",
+      "bookingRequestSubmitted": "予約リクエスト送信完了",
+      "bookingRequestPending": "ご宿泊のご希望をいただき、ありがとうございます。\nまもなくリクエストを確認させていただきます。",
+      "yourRequestId": "リクエスト番号",
+      "paymentInfo": "お支払い情報",
+      "paymentMethodSaved": "お支払い方法を安全に保存しました", 
+      "delayedPaymentNotice": "承認後、ご予約が確定されます。{date}に{amount}のお支払いを処理いたします。お支払いに失敗した場合、予約はキャンセルされます。",      
+      "immediatePaymentNotice": "承認後、{amount}のお支払いを即座に処理し、ご予約を確定いたします。",      
+      "importantNote": "重要なお知らせ",
+      "bookingConfirmationNote": "承認メールを受信するまで、ご予約は確定されません。通常24時間以内に審査を完了いたします。",      
+      "printRequest": "リクエストを印刷",
+      "submitRequest": "予約リクエスト",
+      "processingRequest": "リクエストを処理中...",
+      "pleaseWait": "しばらくお待ちください",
+      "unexpectedError": "予期しないエラーが発生しました。もう一度お試しください。"
     }
   },
   "StaysApp": {
@@ -334,6 +349,114 @@
           }
         }
       }
+    }
+  },
+  "Admin": {
+    "login": {
+      "title": "管理者ログイン",
+      "subtitle": "管理パネルにアクセスするにはログインしてください",
+      "email": "メールアドレス",
+      "emailPlaceholder": "admin@example.com",
+      "password": "パスワード",
+      "passwordPlaceholder": "パスワードを入力",
+      "submit": "ログイン",
+      "submitting": "ログイン中...",
+      "error": {
+        "invalid": "メールアドレスまたはパスワードが正しくありません",
+        "network": "ネットワークエラーが発生しました。もう一度お試しください。"
+      }
+    },
+    "nav": {
+      "bookings": "予約リクエスト",
+      "charge": "手動決済",
+      "settings": "設定",
+      "logout": "ログアウト"
+    },
+    "header": {
+      "dashboard": "ダッシュボード",
+      "admin": "管理者"
+    },
+    "bookings": {
+      "title": "保留中の予約リクエスト",
+      "subtitle": "お客様からの予約リクエストを確認・承認",
+      "noBookings": "確認待ちの予約はありません",
+      "filters": {
+        "all": "すべて",
+        "immediate": "即時決済",
+        "scheduled": "予定決済"
+      },
+      "card": {
+        "guest": "ゲスト",
+        "property": "物件",
+        "dates": "日程",
+        "amount": "金額",
+        "nights": "{count}泊",
+        "bookingId": "予約ID",
+        "submittedOn": "申込日",
+        "immediateCharge": "即時決済",
+        "chargeOn": "{date}に決済"
+      },
+      "actions": {
+        "approve": "承認",
+        "reject": "拒否",
+        "processing": "処理中...",
+        "confirmApprove": "{name}様の予約を承認しますか？",
+        "confirmReject": "{name}様の予約を拒否してもよろしいですか？",
+        "rejectReason": "拒否理由（任意）",
+        "rejectReasonPlaceholder": "理由を入力...",
+        "confirmRejectButton": "拒否を確定",
+        "cancel": "キャンセル"
+      },
+      "success": {
+        "approved": "予約を承認しました！",
+        "rejected": "予約を拒否しました"
+      },
+      "error": {
+        "approve": "予約の承認に失敗しました",
+        "reject": "予約の拒否に失敗しました"
+      }
+    },
+    "charge": {
+      "title": "手動決済管理",
+      "subtitle": "即時決済が必要な承認済み予約の支払い処理",
+      "noBookings": "決済待ちの予約はありません",
+      "summary": {
+        "pendingCharges": "保留中の決済",
+        "totalAmount": "合計金額",
+        "bookings": "{count}件の予約"
+      },
+      "card": {
+        "guest": "ゲスト",
+        "property": "物件",
+        "checkIn": "チェックイン日",
+        "amount": "決済金額",
+        "bookingId": "ID",
+        "approvedOn": "承認日",
+        "paymentMethod": "決済方法",
+        "customerId": "顧客ID",
+        "immediateChargeRequired": "即時決済が必要です"
+      },
+      "actions": {
+        "charge": "決済",
+        "processing": "処理中...",
+        "charged": "決済済み",
+        "confirmCharge": "{name}様に¥{amount}を請求しますか？"
+      },
+      "success": {
+        "charged": "決済が完了しました！金額: ¥{amount}",
+        "verification": "認証後、決済が完了しました！"
+      },
+      "error": {
+        "alreadyPaid": "この予約は既に支払い済みです",
+        "notApproved": "この予約は決済承認されていません",
+        "paymentFailed": "決済に失敗しました",
+        "networkError": "ネットワークエラー。もう一度お試しください。",
+        "requiresVerification": "この決済には追加認証が必要です。お客様にご連絡ください。"
+      }
+    },
+    "settings": {
+      "title": "設定",
+      "underConstruction": "設定ページは準備中です。"
     }
   }
 }

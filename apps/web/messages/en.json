@@ -146,7 +146,22 @@
       "paymentFailure": "Payment failure: {error}",
       "orderFailure": "Order failure: {error}",
       "beds24Error": "Beds24 error: {error}",
-      "storageError": "Storage error: {error}"
+      "storageError": "Storage error: {error}",
+      "requestToBook": "Send request",
+      "bookingRequestSubmitted": "Booking Request Submitted",
+      "bookingRequestPending": "Thank you for your interest in staying with us.\nWe'll confirm your request soon.",
+      "yourRequestId": "Your Request ID",
+      "paymentInfo": "Payment Information",
+      "paymentMethodSaved": "Payment method saved securely",      
+      "delayedPaymentNotice": "After approval, your booking will be confirmed. Payment of {amount} will be processed on {date}. If payment fails, the booking will be cancelled.",
+      "immediatePaymentNotice": "After approval, payment of {amount} will be processed immediately and your booking will be confirmed.",      
+      "importantNote": "Important",
+      "bookingConfirmationNote": "Your booking is not confirmed until you receive an confirmation email from us. We typically review requests within 24 hours.",
+      "printRequest": "Print Request",
+      "submitRequest": "Request to book",
+      "processingRequest": "Processing your request...",
+      "pleaseWait": "Please wait a moment",
+      "unexpectedError": "An unexpected error occurred. Please try again."
     }
   },
   "StaysApp": {
@@ -334,6 +349,114 @@
           }
         }
       }
+    }
+  },
+  "Admin": {
+    "login": {
+      "title": "Admin Login",
+      "subtitle": "Sign in to access the admin panel",
+      "email": "Email",
+      "emailPlaceholder": "admin@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign In",
+      "submitting": "Signing in...",
+      "error": {
+        "invalid": "Invalid email or password",
+        "network": "Network error. Please try again."
+      }
+    },
+    "nav": {
+      "bookings": "Booking Requests",
+      "charge": "Manual Charges",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "header": {
+      "dashboard": "Dashboard",
+      "admin": "Administrator"
+    },
+    "bookings": {
+      "title": "Pending Booking Requests",
+      "subtitle": "Review and approve booking requests from customers",
+      "noBookings": "No pending bookings to review",
+      "filters": {
+        "all": "All",
+        "immediate": "Immediate",
+        "scheduled": "Scheduled"
+      },
+      "card": {
+        "guest": "Guest",
+        "property": "Property",
+        "dates": "Dates",
+        "amount": "Amount",
+        "nights": "{count} {count, plural, =1 {night} other {nights}}",
+        "bookingId": "Booking ID",
+        "submittedOn": "Submitted on",
+        "immediateCharge": "Immediate charge",
+        "chargeOn": "Charge on {date}"
+      },
+      "actions": {
+        "approve": "Approve",
+        "reject": "Reject",
+        "processing": "Processing...",
+        "confirmApprove": "Approve booking for {name}?",
+        "confirmReject": "Are you sure you want to reject the booking for {name}?",
+        "rejectReason": "Reason for rejection (optional)",
+        "rejectReasonPlaceholder": "Enter reason...",
+        "confirmRejectButton": "Confirm Reject",
+        "cancel": "Cancel"
+      },
+      "success": {
+        "approved": "Booking approved successfully!",
+        "rejected": "Booking rejected"
+      },
+      "error": {
+        "approve": "Failed to approve booking",
+        "reject": "Failed to reject booking"
+      }
+    },
+    "charge": {
+      "title": "Manual Charge Management",
+      "subtitle": "Process payments for approved bookings that require immediate charging",
+      "noBookings": "No bookings pending charge",
+      "summary": {
+        "pendingCharges": "Pending Charges",
+        "totalAmount": "Total Amount",
+        "bookings": "{count} {count, plural, =1 {booking} other {bookings}}"
+      },
+      "card": {
+        "guest": "Guest",
+        "property": "Property",
+        "checkIn": "Check-in Date",
+        "amount": "Amount to Charge",
+        "bookingId": "ID",
+        "approvedOn": "Approved on",
+        "paymentMethod": "Payment Method",
+        "customerId": "Customer ID",
+        "immediateChargeRequired": "Immediate charge required"
+      },
+      "actions": {
+        "charge": "Charge",
+        "processing": "Processing...",
+        "charged": "Charged",
+        "confirmCharge": "Charge ¥{amount} for {name}?"
+      },
+      "success": {
+        "charged": "Payment successful! Amount: ¥{amount}",
+        "verification": "Payment successful after verification!"
+      },
+      "error": {
+        "alreadyPaid": "Booking already paid",
+        "notApproved": "Booking not approved for charge",
+        "paymentFailed": "Payment failed",
+        "networkError": "Network error. Please try again.",
+        "requiresVerification": "This payment requires additional verification. Please contact the customer."
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "underConstruction": "Settings page is under construction."
     }
   }
 }

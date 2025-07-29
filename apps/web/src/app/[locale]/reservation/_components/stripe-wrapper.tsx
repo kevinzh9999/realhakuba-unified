@@ -1,3 +1,4 @@
+//stripe-wrapper.tsx
 "use client";
 
 import {
@@ -50,7 +51,9 @@ const StripeWrapper = forwardRef<any, StripeWrapperProps>(
         // Step 2: Create SetupIntent or PaymentIntent
         const endpoint = isDelayed
           ? "/api/stripe/setupintent"
-          : "/api/stripe/createpaymentintent";
+          : "/api/stripe/setupintent";
+          
+        //  : "/api/stripe/createpaymentintent"; - every order needs approval
 
         const intentRes = await fetch(endpoint, {
           method: "POST",

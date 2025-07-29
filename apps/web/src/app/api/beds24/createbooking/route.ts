@@ -1,3 +1,12 @@
+//createbooking/route.ts
+
+// 根据 Beds24 API 文档，status 值定义：
+// 0 = Cancelled
+// 1 = Confirmed
+// 2 = New (same as confirmed but unread)
+// 3 = Request
+// 4 = Black
+// 5 = Inquiry
 
 import { NextRequest, NextResponse } from "next/server";
 import { parseISO, subDays, format } from "date-fns";
@@ -50,7 +59,7 @@ export async function POST(req: NextRequest) {
         },
 
         roomId,
-        status: "1",
+        status: "3",
         firstNight: checkIn,
         lastNight: format(subDays(parseISO(checkOut), 1), "yyyy-MM-dd"),
         numAdult: Number(adults) || 1,

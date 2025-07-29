@@ -1,3 +1,5 @@
+//storebooking/route.ts
+
 import { NextRequest } from "next/server";
 import { addBooking, Booking } from "@/lib/api/bookings-store";
 import { v4 as uuidv4 } from "uuid";
@@ -12,12 +14,15 @@ export async function POST(req: NextRequest) {
       checkIn,
       checkOut,
       totalPrice,
-      status,                     // "paid" or "pending" - 前端决定传入
+      status,                     // "request"
       stripeCustomerId,
       stripePaymentMethodId,
       stripePaymentIntentId,
       beds24BookId,
       chargeDate,             // 必传。若 status === "pending"，应为入住前30天；否则为下单当日
+      approved_for_charge = false,
+      manual_review_status = "pending",
+      charge_method,
     } = await req.json();
 
     if (
@@ -30,12 +35,52 @@ export async function POST(req: NextRequest) {
       !status ||
       !stripeCustomerId ||
       !stripePaymentMethodId ||
-      !chargeDate
+      !chargeDate ||
+      !charge_method
     ) {
-      return new Response(JSON.stringify({ error: "Missing required fields" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({
+          error: "Missing required fields",
+          details: {
+            propName: !propName,
+            guestName: !guestName,
+            guestEmail: !guestEmail,
+            checkIn: !checkIn,
+            checkOut: !checkOut,
+            totalPrice: !totalPrice,
+            status: !status,
+            stripeCustomerId: !stripeCustomerId,
+            stripePaymentMethodId: !stripePaymentMethodId,
+            chargeDate: !chargeDate,
+            charge_method: !charge_method
+          }
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+    // 验证 charge_method 的值
+    if (!['immediate', 'scheduled'].includes(charge_method)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid charge_method. Must be 'immediate' or 'scheduled'" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
+    // 验证 status 的值
+    if (!['request', 'pending', 'paid', 'cancelled', 'failed'].includes(status)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid status" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
     }
 
     const booking: Booking = {
@@ -46,25 +91,50 @@ export async function POST(req: NextRequest) {
       checkIn,
       checkOut,
       totalPrice,
-      status, // "pending" or "paid"
+      status,
       stripeCustomerId,
       stripePaymentMethodId,
-      paymentIntentId: stripePaymentIntentId || null,
-      beds24BookId: beds24BookId || null,
-      createdAt: dayjs().format("YYYY-MM-DD"),
+      createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"), // 添加时间
       chargeDate,
+      approved_for_charge,
+      manual_review_status,
+      charge_method,
+      // 使用条件扩展，避免 undefined 字段
+      ...(stripePaymentIntentId && { paymentIntentId: stripePaymentIntentId }),
+      ...(beds24BookId && { beds24BookId: beds24BookId }),
     };
 
     await addBooking(booking);
 
-    return new Response(JSON.stringify({ ok: true, bookingId: booking.id }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    console.log(`📝 New booking created: ${booking.id} for ${guestName}`);
+
+    return new Response(
+      JSON.stringify({
+        ok: true,
+        bookingId: booking.id,
+        message: "Booking request submitted successfully"
+      }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   } catch (err: any) {
-    return new Response(JSON.stringify({ error: err.message }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    console.error('❌ Error storing booking:', err);
+
+    return new Response(
+      JSON.stringify({
+        error: "Failed to create booking",
+        details: err.message
+      }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 }
+
+
+
+

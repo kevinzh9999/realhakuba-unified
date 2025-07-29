@@ -1,3 +1,4 @@
+//stripe-payment-form.tsx
 import {
   useStripe,
   useElements,
@@ -34,10 +35,7 @@ const StripePaymentForm = forwardRef<any, StripePaymentFormProps>(
           return { success: false, error: "Stripe not loaded" };
         }
 
-        const { isDelayed, stripeCustomerId } = options;
-
-        if (isDelayed) {
-          // ✳️ 先提交表单：确保 Stripe Elements 验证通过（新增要求）
+        const { stripeCustomerId } = options;
           await elements.submit();
           const result = await stripe.confirmSetup({
             elements,
@@ -60,40 +58,8 @@ const StripePaymentForm = forwardRef<any, StripePaymentFormProps>(
                 : result.setupIntent.payment_method?.id ?? undefined,
             paymentIntent: undefined,
           };
-        } else {
-          if (!clientSecret) {
-            return { success: false, error: "Missing clientSecret" };
-          }
-
-          await elements.submit();
-
-          const result = await stripe.confirmPayment({
-            elements,
-            confirmParams: {
-            },
-            clientSecret,
-            redirect: "if_required",
-          });
-
-          if (result.error) {
-            return { success: false, error: result.error.message };
-          }
-
-          const paymentIntent = result.paymentIntent as PaymentIntent;
-
-          return {
-            success: true,
-            stripeCustomerId,
-            stripePaymentMethodId:
-              typeof paymentIntent.payment_method === "string"
-                ? paymentIntent.payment_method
-                : paymentIntent.payment_method?.id ?? undefined,
-            paymentIntent,
-          };
-        }
       },
     }));
-
     return <PaymentElement />;
   }
 );
