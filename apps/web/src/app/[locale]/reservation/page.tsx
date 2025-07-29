@@ -11,9 +11,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useEffect, useState, Suspense } from "react";
 import { createPortal } from "react-dom";
 import { IoAlertCircle } from "react-icons/io5";
-import Lottie from "lottie-react";
-import successAnim from "@/../public/lottie/Confetti.json";
-import loadingAnim from "@/../public/lottie/Loading.json"; // 需要添加这个文件
+
+// 使用新的动画组件
+import { LoadingOverlay } from './_components/loading-overlay';
+import { CelebrateAnimation } from './_components/celebrate-animation';
 
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
@@ -107,7 +108,7 @@ export default function ReservationPage() {
   const [message, setMessage] = useState("");
   const [paymentMessage, setPaymentMessage] = useState<string | null>(null);
   const [successData, setSuccessData] = useState<{ orderId: string } | null>(null);
-  const [isProcessing, setIsProcessing] = useState(false); // 添加处理状态
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const isValidEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -122,7 +123,7 @@ export default function ReservationPage() {
   const chargeDate = isDelayed ? cancelDate : dayjs().format("YYYY-MM-DD");
 
   async function handleMakePayment() {
-    setIsProcessing(true); // 开始处理
+    setIsProcessing(true);
     
     try {
       // 1. Stripe
@@ -220,25 +221,8 @@ export default function ReservationPage() {
 
   return (
     <Suspense>
-      {/* 处理中的加载动画 */}
-      {isProcessing && createPortal(
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/95 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl p-8 shadow-xl">
-            <Lottie 
-              animationData={loadingAnim} 
-              loop={true} 
-              style={{ height: 100, width: 100 }} 
-            />
-            <p className="text-center mt-4 text-gray-700 font-medium">
-              {t("processingRequest")}
-            </p>
-            <p className="text-center mt-2 text-sm text-gray-500">
-              {t("pleaseWait")}
-            </p>
-          </div>
-        </div>,
-        document.body
-      )}
+      {/* 使用新的加载动画组件 */}
+      <LoadingOverlay isOpen={isProcessing} />
 
       {/* Price breakdown 弹窗 */}
       {showBreakdown &&
@@ -253,7 +237,6 @@ export default function ReservationPage() {
             >
               <h2 className="text-lg font-semibold mb-4">{t("priceBreakdown")}</h2>
               <div className="flex justify-between text-sm">
-
                 <span>
                   ¥{pricePerNight.toLocaleString()} × {nights} {t("pricePerNightLabel", { count: nights })}
                 </span>
@@ -277,7 +260,7 @@ export default function ReservationPage() {
           document.body
         )}
 
-      {/* 成功下单后弹窗 - 修改为桌面端居中 */}
+      {/* 成功下单后弹窗 - 使用新的成功动画组件 */}
       {successData &&
         createPortal(
           <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/40">
@@ -307,9 +290,7 @@ export default function ReservationPage() {
                 }}
                 className={`
                   bg-white shadow-lg w-full overflow-y-auto scrollbar-hide hide-scrollbar p-6 pt-3
-                  /* 移动端：底部抽屉样式 */
                   rounded-t-2xl max-w-full
-                  /* 桌面端：居中卡片样式 */
                   md:rounded-2xl md:max-w-md md:max-h-[90vh]
                 `}
                 style={{ 
@@ -317,12 +298,11 @@ export default function ReservationPage() {
                   marginTop: typeof window !== 'undefined' && window.innerWidth < 768 ? "30px" : undefined
                 }}
               >
-                <Lottie animationData={successAnim} loop={true} style={{ height: 120 }} />
+                {/* 使用新的成功动画组件 */}
+                <CelebrateAnimation />
 
-                {/* 修改标题 */}
-                <h2 className="text-center text-2xl font-bold">{t("bookingRequestSubmitted")}</h2>
+                <h2 className="text-center text-2xl font-bold mt-4">{t("bookingRequestSubmitted")}</h2>
 
-                {/* 添加审核说明 */}
                 <div className="mt-4 p-4 bg-blue-50 rounded-lg">
                   <p className="text-center text-sm text-blue-800 whitespace-pre-line">
                     {t("bookingRequestPending")}
@@ -334,7 +314,7 @@ export default function ReservationPage() {
                   <span className="text-gray-800 font-medium">{successData.orderId}</span>
                 </p>
 
-                {/* ==== 完整的 Summary Card ==== */}
+                {/* Summary Card */}
                 <div className="mt-6 rounded-2xl border border-gray-200 p-6 bg-white">
                   {/* 1. 小图 + 标题 */}
                   <div className="mb-3 flex gap-4 items-center">
@@ -390,11 +370,10 @@ export default function ReservationPage() {
                   </div>
                   <div className="border-b border-gray-200 my-4" />
 
-                  {/* 6. Payment details - 修改支付信息部分 */}
+                  {/* 6. Payment details */}
                   <div className="mb-2">
                     <div className="font-semibold text-sm mb-2">{t("paymentInfo")}</div>
 
-                    {/* 添加审核后的支付流程说明 */}
                     <div className="text-sm text-gray-600 space-y-2">
                       <div className="flex items-start gap-2">
                         <span className="text-green-600">✓</span>
@@ -422,14 +401,12 @@ export default function ReservationPage() {
                     </div>
                   </div>
 
-                  {/* 添加重要提示 */}
                   <div className="mt-4 p-3 bg-gray-50 rounded-lg">
                     <p className="text-xs text-gray-600">
                       <span className="font-semibold">{t("importantNote")}:</span> {t("bookingConfirmationNote")}
                     </p>
                   </div>
                 </div>
-                {/* ==== /完整 Summary Card ==== */}
 
                 <div className="mt-6 flex justify-end gap-4">
                   <button
@@ -471,6 +448,7 @@ export default function ReservationPage() {
           document.body
         )}
 
+      {/* 页面主体内容保持不变 */}
       <div className="bg-white min-h-screen pt-0 pb-12">
         <div className="max-w-[900px] mx-auto px-4 md:px-8 mt-2">
           <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
@@ -488,7 +466,7 @@ export default function ReservationPage() {
                 <h1 className="text-2xl font-semibold ml-6 md:hidden">{t("confirmAndPay")}</h1>
               </div>
               <div className="rounded-xl border border-gray-200 p-6 bg-white w-full">
-                {/* 1. 图+标题 */}
+                {/* 内容保持不变 */}
                 <div className="mb-3">
                   <div className="flex gap-4 items-center">
                     <div className="w-20 h-20 relative rounded-lg overflow-hidden border border-gray-100">
@@ -505,7 +483,6 @@ export default function ReservationPage() {
                 </div>
                 <div className="border-b border-gray-200 my-4" />
 
-                {/* 2. Trip details */}
                 <div className="mb-4">
                   <div className="font-semibold text-sm mb-2">{t("tripDetails")}</div>
                   <div className="text-sm text-gray-500 flex flex-col gap-1">
@@ -515,7 +492,6 @@ export default function ReservationPage() {
                 </div>
                 <div className="border-b border-gray-200 my-4" />
 
-                {/* 3. Price details */}
                 <div className="mb-4">
                   <div className="font-semibold text-sm mb-2">{t("priceDetails")}</div>
                   <div className="flex justify-between text-sm text-gray-500">
@@ -527,7 +503,6 @@ export default function ReservationPage() {
                 </div>
                 <div className="border-b border-gray-200 my-4" />
 
-                {/* 4. Total & breakdown */}
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-semibold text-base">{t("totalLabel")}</span>
                   <span className="font-semibold text-base">¥{Number(total).toLocaleString()}</span>

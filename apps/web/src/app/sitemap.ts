@@ -1,11 +1,11 @@
-// apps/homepage/src/app/sitemap.ts
+// apps/web/src/app/sitemap.ts
 import { MetadataRoute } from "next";
 
 // 1. 站点根路径
 const siteUrl = "https://realhakuba.com";
 
-// 2. 所有支持的语言
-const locales = ["en", "ja"];
+// 2. 所有支持的语言 - 添加中文
+const locales = ["en", "ja", "zh"];
 const defaultLocale = "en";
 
 // 3. 静态路由
@@ -33,8 +33,8 @@ async function getProperties(): Promise<string[]> {
     return Object.keys(config);
   } catch (error) {
     console.warn('Failed to load properties config:', error);
-    // 回退到空数组，避免构建失败
-    return [];
+    // 回退到硬编码的列表，避免构建失败
+    return ['riverside-loghouse', 'moyai-house', 'echo-villa'];
   }
 }
 
@@ -53,7 +53,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allRoutes = [...staticRoutes, ...propertyRoutes];
 
   // 为每个路由的每个语言版本创建条目
-  return locales.flatMap((locale) =>
+  const entries = locales.flatMap((locale) =>
     allRoutes.map((route) => {
       // 拼接完整 URL
       const url = `${siteUrl}/${locale}${route}`;
@@ -66,29 +66,54 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         languages[lang] = `${siteUrl}/${lang}${route}`;
       });
       
-      // 添加 x-default
+      // 添加 x-default (使用英文作为默认)
       languages['x-default'] = `${siteUrl}/${defaultLocale}${route}`;
 
       // 判断路由类型设置优先级和更新频率
       const isHomePage = route === "";
       const isPropertyPage = route.startsWith("/stays/") && route !== "/stays";
       const isStaysListPage = route === "/stays";
+      const isReservationPage = route === "/reservation";
+      const isAboutPage = route.startsWith("/about");
 
       return {
         url,
         lastModified,
-        changeFrequency: isHomePage ? "daily" as const : 
-                        isStaysListPage ? "weekly" as const :
-                        isPropertyPage ? "monthly" as const :
-                        route === "/reservation" ? "weekly" as const : "monthly" as const,
-        priority: isHomePage ? 1.0 : 
-                 isStaysListPage ? 0.9 :
-                 isPropertyPage ? 0.8 :
-                 route === "/reservation" ? 0.8 : 0.7,
+        changeFrequency: 
+          isHomePage ? "daily" as const : 
+          isStaysListPage ? "weekly" as const :
+          isPropertyPage ? "weekly" as const :  // 房源页面可能会更新价格等信息
+          isReservationPage ? "monthly" as const : 
+          "monthly" as const,
+        priority: 
+          isHomePage ? 1.0 : 
+          isStaysListPage ? 0.9 :
+          isPropertyPage ? 0.8 :
+          isReservationPage ? 0.8 : 
+          isAboutPage ? 0.6 : 
+          0.5,
         alternates: {
           languages,
         },
       };
     })
   );
+
+  // 添加根域名重定向到默认语言
+  entries.push({
+    url: siteUrl,
+    lastModified,
+    changeFrequency: "daily",
+    priority: 1.0,
+    alternates: {
+      languages: {
+        'en': `${siteUrl}/en`,
+        'ja': `${siteUrl}/ja`,
+        'zh': `${siteUrl}/zh`,
+        'x-default': `${siteUrl}/en`,
+      },
+    },
+  });
+
+  return entries;
 }

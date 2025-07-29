@@ -2,11 +2,13 @@
   "riverside-loghouse": {
     "title": {
       "en": "Riverside Loghouse",
-      "ja": "Riverside Loghouse"
+      "ja": "Riverside Loghouse",
+      "zh": "Riverside Loghouse"
     },
     "subtitle": {
       "en": "Cozy chalet by the Hira River",
-      "ja": "平川沿いの心地よい山小屋"
+      "ja": "平川沿いの心地よい山小屋",
+      "zh": "平川河畔的溫馨小木屋"
     },
     "price": 28000,
     "hero": "/stays/riverside-loghouse/images/hero.jpg",
@@ -23,7 +25,8 @@
     ],
     "details": {
       "en": "Riverside Loghouse is a cosy wooden chalet located along the picturesque Hira river in Hakuba. Enjoy spacious living areas, an open-air bath, and easy access to the slopes.",
-      "ja": "リバーサイド・ログハウスは、美しい平川沿いに佇む木造の快適なシャレーです。広々としたリビング、露天風呂、スキー場へのアクセスも抜群。家族やグループでゆったりとお過ごしいただけます。"
+      "ja": "リバーサイド・ログハウスは、美しい平川沿いに佇む木造の快適なシャレーです。広々としたリビング、露天風呂、スキー場へのアクセスも抜群。家族やグループでゆったりとお過ごしいただけます。",
+      "zh": "Riverside Loghouse是一棟位於白馬村風景如畫的平川河畔的舒適木造小屋。享受寬敞的起居空間、露天浴池，輕鬆前往滑雪場。"
     },
     "summary": {
       "sqm": 160,
@@ -70,42 +73,50 @@
       "mapEmbed": "https://www.google.com/maps/embed/v1/place?key=GOOGLEMAPSAPIKEY&q=place_id:ChIJEWEEam7R918R40NhIAzLGrc&zoom=16",
       "area": {
         "en": "Meitetsu Villa Area, Hakuba, Nagano, Japan",
-        "ja": "長野県白馬村 名鉄別荘地"
+        "ja": "長野県白馬村 名鉄別荘地",
+        "zh": "日本長野縣白馬村名鐵別墅區"
       },
       "description": {
         "en": "Nestled at the foot of the Northern Japanese Alps, the Meitetsu Villa Area offers a serene blend of alpine charm and modern convenience. Surrounded by towering peaks and lush forests, this enclave features cozy wooden chalets with sweeping mountain views. Just minutes from world-class ski slopes, hiking trails, and local eateries, it's the perfect base for year-round adventures. Enjoy peaceful river walks, soak in nearby hot springs, and return each evening to the warmth and hospitality of Hakuba.",
-        "ja": "北アルプスの麓、名鉄別荘地は自然の静けさと快適さを兼ね備えた特別なエリアです。四季折々の山並みと緑に囲まれた木造シャレーが点在し、世界有数のスキー場やトレッキングコース、地元のレストランまで車で数分。川沿いの散歩、温泉でのんびり、白馬の温かいおもてなしを存分にご堪能ください。"
+        "ja": "北アルプスの麓、名鉄別荘地は自然の静けさと快適さを兼ね備えた特別なエリアです。四季折々の山並みと緑に囲まれた木造シャレーが点在し、世界有数のスキー場やトレッキングコース、地元のレストランまで車で数分。川沿いの散歩、温泉でのんびり、白馬の温かいおもてなしを存分にご堪能ください。",
+        "zh": "坐落在北阿爾卑斯山腳下的名鐵別墅區，融合了高山魅力與現代便利。被高聳的山峰和茂密的森林環繞，這個區域擁有舒適的木造小屋，可欣賞壯麗的山景。距離世界級滑雪場、健行步道和當地餐廳僅數分鐘車程，是全年冒險的完美基地。享受寧靜的河畔漫步，在附近的溫泉中放鬆，每晚回到白馬的溫暖款待中。"
       }
     },
     "highlights": [
       {
         "heading": {
           "en": "Exceptional check-in experience",
-          "ja": "スムーズなチェックイン体験"
+          "ja": "スムーズなチェックイン体験",
+          "zh": "卓越的入住體驗"
         },
         "content": {
           "en": "Recent guests gave the check-in process a 5-star rating.",
-          "ja": "最近ご宿泊のお客様からチェックインの流れが最高評価（5つ星）を受けています。"
+          "ja": "最近ご宿泊のお客様からチェックインの流れが最高評価（5つ星）を受けています。",
+          "zh": "近期住客給予入住流程五星評價。"
         }
       },
       {
         "heading": {
           "en": "Extra spacious",
-          "ja": "広々とした空間"
+          "ja": "広々とした空間",
+          "zh": "超寬敞空間"
         },
         "content": {
           "en": "Guests love this home's spaciousness for a comfortable stay.",
-          "ja": "この家のゆったりとした広さは、多くのお客様に快適とご好評いただいています。"
+          "ja": "この家のゆったりとした広さは、多くのお客様に快適とご好評いただいています。",
+          "zh": "客人喜愛這個家的寬敞空間，享受舒適的住宿體驗。"
         }
       },
       {
         "heading": {
           "en": "Calm and convenient location",
-          "ja": "静かで便利なロケーション"
+          "ja": "静かで便利なロケーション",
+          "zh": "寧靜便利的位置"
         },
         "content": {
           "en": "Guests say this area is peaceful and it's easy to get around.",
-          "ja": "周辺はとても静かで、移動や観光にも便利とお客様から評価されています。"
+          "ja": "周辺はとても静かで、移動や観光にも便利とお客様から評価されています。",
+          "zh": "客人表示這個區域非常寧靜，交通便利。"
         }
       }
     ]
@@ -113,11 +124,13 @@
   "moyai-house": {
     "title": {
       "en": "Moyai House",
-      "ja": "Moyai House"
+      "ja": "Moyai House",
+      "zh": "Moyai House"
     },
     "subtitle": {
       "en": "Retreat in foresty Misorano",
-      "ja": "森に包まれたミソラノの隠れ家"
+      "ja": "森に包まれたミソラノの隠れ家",
+      "zh": "森林環抱的美空野隱居處"
     },
     "price": 28000,
     "hero": "/stays/moyai-house/images/hero.jpg",
@@ -134,7 +147,8 @@
     ],
     "details": {
       "en": "Moyai House is a tranquil retreat nestled in the forested area of Misorano, Hakuba. Experience the harmony of nature with modern comforts.",
-      "ja": "もやいハウスは、白馬・ミソラノの森に囲まれた静かな隠れ家です。自然の癒しと現代的な快適さを両立した、ゆったりとした滞在をお楽しみいただけます。"
+      "ja": "もやいハウスは、白馬・ミソラノの森に囲まれた静かな隠れ家です。自然の癒しと現代的な快適さを両立した、ゆったりとした滞在をお楽しみいただけます。",
+      "zh": "Moyai House是一處坐落在白馬美空野森林地區的寧靜度假屋。體驗自然和諧與現代舒適的完美結合。"
     },
     "summary": {
       "sqm": 80,
@@ -165,42 +179,50 @@
       "mapEmbed": "https://www.google.com/maps/embed/v1/place?key=GOOGLEMAPSAPIKEY&q=place_id:ChIJTWbU5qbR918R75GW6Gl7phQ&zoom=16",
       "area": {
         "en": "Misorano Villa Area, Hakuba, Nagano, Japan",
-        "ja": "長野県白馬村 ミソラノ別荘地"
+        "ja": "長野県白馬村 ミソラノ別荘地",
+        "zh": "日本長野縣白馬村美空野別墅區"
       },
       "description": {
         "en": "Discover Hakuba Misorano, a serene alpine haven where mist-clad peaks cradle verdant valleys. Wander past whispering pines to hidden waterfalls, then warm in a rustic onsen as stars shimmer overhead. Days begin with sun-dappled trails ideal for mountain biking or gentle hikes, and end savouring locally foraged mushrooms over crackling fires. With the majestic Northern Alps as your backdrop and village charm at every turn, Misorano promises an immersive escape—where nature's grandeur and peaceful simplicity unite to refresh body and soul.",
-        "ja": "白馬ミソラノは、霧に包まれる峰々と緑豊かな渓谷が広がる、静寂の山岳リゾート。松林の小道を歩けば隠れた滝、夜は星空と共に温泉で癒しのひととき。朝は光差すトレイルでハイキングやサイクリング、夕食は地元産きのこを囲炉裏で味わう贅沢。北アルプスの絶景と白馬らしい素朴な村の魅力を、五感で体験してください。"
+        "ja": "白馬ミソラノは、霧に包まれる峰々と緑豊かな渓谷が広がる、静寂の山岳リゾート。松林の小道を歩けば隠れた滝、夜は星空と共に温泉で癒しのひととき。朝は光差すトレイルでハイキングやサイクリング、夕食は地元産きのこを囲炉裏で味わう贅沢。北アルプスの絶景と白馬らしい素朴な村の魅力を、五感で体験してください。",
+        "zh": "探索白馬美空野，這是一個寧靜的高山天堂，薄霧繚繞的山峰懷抱著翠綠的山谷。漫步穿過松林小徑尋找隱藏的瀑布，然後在繁星閃爍的夜空下享受質樸的溫泉。白天從陽光斑駁的小徑開始，適合山地自行車或輕鬆健行，夜晚在噼啪作響的火堆旁品嚐當地採摘的蘑菇。以雄偉的北阿爾卑斯山為背景，處處充滿村莊魅力，美空野承諾一場沉浸式的逃離——大自然的壯麗與寧靜的簡約在此結合，讓身心煥然一新。"
       }
     },
     "highlights": [
       {
         "heading": {
           "en": "Exceptional check-in experience",
-          "ja": "スムーズなチェックイン体験"
+          "ja": "スムーズなチェックイン体験",
+          "zh": "卓越的入住體驗"
         },
         "content": {
           "en": "Recent guests gave the check-in process a 5-star rating.",
-          "ja": "最近ご宿泊のお客様からチェックインの流れが最高評価（5つ星）を受けています。"
+          "ja": "最近ご宿泊のお客様からチェックインの流れが最高評価（5つ星）を受けています。",
+          "zh": "近期住客給予入住流程五星評價。"
         }
       },
       {
         "heading": {
           "en": "Extra spacious",
-          "ja": "広々とした空間"
+          "ja": "広々とした空間",
+          "zh": "超寬敞空間"
         },
         "content": {
           "en": "Guests love this home's spaciousness for a comfortable stay.",
-          "ja": "この家のゆったりとした広さは、多くのお客様に快適とご好評いただいています。"
+          "ja": "この家のゆったりとした広さは、多くのお客様に快適とご好評いただいています。",
+          "zh": "客人喜愛這個家的寬敞空間，享受舒適的住宿體驗。"
         }
       },
       {
         "heading": {
           "en": "Calm and convenient location",
-          "ja": "静かで便利なロケーション"
+          "ja": "静かで便利なロケーション",
+          "zh": "寧靜便利的位置"
         },
         "content": {
           "en": "Guests say this area is peaceful and it's easy to get around.",
-          "ja": "周辺はとても静かで、移動や観光にも便利とお客様から評価されています。"
+          "ja": "周辺はとても静かで、移動や観光にも便利とお客様から評価されています。",
+          "zh": "客人表示這個區域非常寧靜，交通便利。"
         }
       }
     ]
@@ -208,11 +230,13 @@
   "echo-villa": {
     "title": {
       "en": "Echo Villa",
-      "ja": "Echo Villa"
+      "ja": "Echo Villa",
+      "zh": "Echo Villa"
     },
     "subtitle": {
       "en": "Spacious house hosting 12 guests",
-      "ja": "最大12名様がゆったりと過ごせる、広々とした一軒家"
+      "ja": "最大12名様がゆったりと過ごせる、広々とした一軒家",
+      "zh": "可容納12位客人的寬敞獨棟別墅"
     },
     "price": 28000,
     "hero": "/stays/echo-villa/images/hero.jpg",
@@ -229,7 +253,8 @@
     ],
     "details": {
       "en": "Echo Villa is a spacious house designed to host up to 12 guests. With modern amenities and a cozy atmosphere, it's perfect for family gatherings or group retreats.",
-      "ja": "エコービラは、最大12名まで宿泊できる広々とした一軒家です。モダンな設備と温もりある雰囲気で、ご家族やグループの集まりに最適です。"
+      "ja": "エコービラは、最大12名まで宿泊できる広々とした一軒家です。モダンな設備と温もりある雰囲気で、ご家族やグループの集まりに最適です。",
+      "zh": "Echo Villa是一棟可容納多達12位客人的寬敞房屋。配備現代化設施和溫馨氛圍，非常適合家庭聚會或團體度假。"
     },
     "summary": {
       "sqm": 200,
@@ -300,42 +325,50 @@
       "mapEmbed": "https://www.google.com/maps/embed/v1/place?key=GOOGLEMAPSAPIKEY&q=place_id:ChIJYR8o_h7O918RI0u7PI4riNE&zoom=16",
       "area": {
         "en": "Misorano Villa Area, Hakuba, Nagano, Japan",
-        "ja": "長野県白馬村 ミソラノ別荘地"
+        "ja": "長野県白馬村 ミソラノ別荘地",
+        "zh": "日本長野縣白馬村美空野別墅區"
       },
       "description": {
         "en": "Discover Hakuba Misorano, a serene alpine haven where mist-clad peaks cradle verdant valleys. Wander past whispering pines to hidden waterfalls, then warm in a rustic onsen as stars shimmer overhead. Days begin with sun-dappled trails ideal for mountain biking or gentle hikes, and end savouring locally foraged mushrooms over crackling fires. With the majestic Northern Alps as your backdrop and village charm at every turn, Misorano promises an immersive escape—where nature's grandeur and peaceful simplicity unite to refresh body and soul.",
-        "ja": "長野県白馬村 みそら野別荘地。白馬みそら野は、霧に包まれた峰々と緑豊かな渓谷が広がる静かな山岳リゾート。松林の小道を歩けば、隠れた滝や星空が広がり、温泉で癒しのひとときをお楽しみいただけます。朝はトレイルでハイキングやサイクリングを楽しみ、夕食は地元食材を使った料理を温かい雰囲気の中で堪能。北アルプスの絶景と、白馬ならではの素朴な村の魅力を五感で感じてください。"
+        "ja": "長野県白馬村 みそら野別荘地。白馬みそら野は、霧に包まれた峰々と緑豊かな渓谷が広がる静かな山岳リゾート。松林の小道を歩けば、隠れた滝や星空が広がり、温泉で癒しのひとときをお楽しみいただけます。朝はトレイルでハイキングやサイクリングを楽しみ、夕食は地元食材を使った料理を温かい雰囲気の中で堪能。北アルプスの絶景と、白馬ならではの素朴な村の魅力を五感で感じてください。",
+        "zh": "探索白馬美空野，這是一個寧靜的高山天堂，薄霧繚繞的山峰懷抱著翠綠的山谷。漫步穿過松林小徑尋找隱藏的瀑布，然後在繁星閃爍的夜空下享受質樸的溫泉。白天從陽光斑駁的小徑開始，適合山地自行車或輕鬆健行，夜晚在噼啪作響的火堆旁品嚐當地採摘的蘑菇。以雄偉的北阿爾卑斯山為背景，處處充滿村莊魅力，美空野承諾一場沉浸式的逃離——大自然的壯麗與寧靜的簡約在此結合，讓身心煥然一新。"
       }
     },
     "highlights": [
       {
         "heading": {
           "en": "Exceptional check-in experience",
-          "ja": "スムーズなチェックイン体験"
+          "ja": "スムーズなチェックイン体験",
+          "zh": "卓越的入住體驗"
         },
         "content": {
           "en": "Recent guests gave the check-in process a 5-star rating.",
-          "ja": "最近ご宿泊のお客様からチェックインの流れが最高評価（5つ星）を受けています。"
+          "ja": "最近ご宿泊のお客様からチェックインの流れが最高評価（5つ星）を受けています。",
+          "zh": "近期住客給予入住流程五星評價。"
         }
       },
       {
         "heading": {
           "en": "Extra spacious",
-          "ja": "広々とした空間"
+          "ja": "広々とした空間",
+          "zh": "超寬敞空間"
         },
         "content": {
           "en": "Guests love this home's spaciousness for a comfortable stay.",
-          "ja": "この家のゆったりとした広さは、多くのお客様に快適とご好評いただいています。"
+          "ja": "この家のゆったりとした広さは、多くのお客様に快適とご好評いただいています。",
+          "zh": "客人喜愛這個家的寬敞空間，享受舒適的住宿體驗。"
         }
       },
       {
         "heading": {
           "en": "Calm and convenient location",
-          "ja": "静かで便利なロケーション"
+          "ja": "静かで便利なロケーション",
+          "zh": "寧靜便利的位置"
         },
         "content": {
           "en": "Guests say this area is peaceful and it's easy to get around.",
-          "ja": "周辺はとても静かで、移動や観光にも便利とお客様から評価されています。"
+          "ja": "周辺はとても静かで、移動や観光にも便利とお客様から評価されています。",
+          "zh": "客人表示這個區域非常寧靜，交通便利。"
         }
       }
     ]

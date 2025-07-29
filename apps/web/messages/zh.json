@@ -1,0 +1,462 @@
+{
+  "AboutPage": {
+    "title": "關於 Real Hakuba",
+    "description": "了解我們在白馬村的優質度假租賃服務"
+  },
+  "StaysPage": {
+    "title": "Real Hakuba 白馬住宿"
+  },
+  "Header": {
+    "navStays": "白馬住宿",
+    "navDiscover": "探索白馬",
+    "navAbout": "關於我們",
+    "activities": "活動",
+    "explore": "探索",
+    "summerActivities": "夏季活動",
+    "summerActivitiesDesc": "山地自行車、健行等",
+    "winterActivities": "冬季活動",
+    "winterActivitiesDesc": "滑雪、單板滑雪、雪鞋健行",
+    "attractions": "景點與名勝",
+    "attractionsDesc": "必訪景點和隱藏寶地",
+    "dining": "餐飲與文化",
+    "diningDesc": "當地餐廳和體驗",
+    "travelGuide": "旅遊指南",
+    "travelGuideDesc": "交通、天氣和小貼士",
+    "ourStory": "我們的故事",
+    "ourStoryDesc": "為什麼我們愛白馬",
+    "guestReviews": "客人評價",
+    "guestReviewsDesc": "客人的真實感受",
+    "contactUs": "聯絡我們",
+    "contactUsDesc": "與我們的團隊聯繫",
+    "faq": "常見問題",
+    "faqDesc": "預訂和住宿資訊",
+    "siteName": "Real Hakuba",
+    "menuOpen": "打開選單",
+    "menuClose": "關閉選單",
+    "home": "首頁",
+    "viewAllProperties": "查看所有房源 →",
+    "viewAllPropertiesDesc": "瀏覽完整房源集合",
+    "propertyDesc": "{bedrooms}房 · 可住{guests}人"
+  },
+  "SectionHero": {
+    "title": "Real Hakuba",
+    "subtitle": "探索真實的白馬體驗\n從雪山皚皚的冬季到綠意盎然的高山夏日"
+  },
+  "SectionProperties": {
+    "title": "Real Hakuba 白馬住宿",
+    "subtitle": "精心挑選的白馬小木屋、旅館和別墅",
+    "cta": "查看所有住宿"
+  },
+  "SectionPropertiesCarousel": {
+    "ariaPrev": "上一張",
+    "ariaNext": "下一張",
+    "swipeHint": "滑動探索白馬住宿",
+    "cta": "查看詳情"
+  },
+  "SectionFun": {
+    "weatherTitle": "天氣",
+    "activitiesTitle": "活動",
+    "loading": "正在載入天氣預報…",
+    "error": "無法載入天氣資料。請稍後再試。",
+    "activities": {
+      "bike": {
+        "title": "自行車",
+        "desc": "穿梭於翠綠稻田和杉木林間，北阿爾卑斯山就在身旁。寧靜小徑通往河畔步道和高山彎道；補充山泉水，品嚐信州蘋果派，在如畫美景中踏單車前行。"
+      },
+      "bbq": {
+        "title": "燒烤",
+        "desc": "金色山谷光芒，烤架劈啪作響，信州和牛與甜玉米滋滋作聲，螢火蟲在松樹間飛舞。在小木屋露台或河邊，木煙與山風讓晚餐成為難忘回憶。"
+      },
+      "sup": {
+        "title": "立槳衝浪",
+        "desc": "在倒映雪峰的明鏡湖面上滑行。只有槳聲和野花香氣打破寧靜。初學者可在海灣練習；專業者在玫瑰金山脊下的日出時分做瑜伽姿勢。"
+      },
+      "plunge": {
+        "title": "冷水浴",
+        "desc": "從杉木桑拿到冰川融水溪流：十秒鐘的冰冷讓您煥然一新。這種刺激能舒緩粉雪日後的肌肉酸痛，提升專注力——這是被苔蘚岩石和鳥鳴環繞的高山儀式。"
+      }
+    }
+  },
+  "SectionFooter": {
+    "aboutTitle": "關於我們",
+    "contactsTitle": "聯絡方式",
+    "about": {
+      "company": "Real Hakuba 合同會社",
+      "disclosure": "商業資訊披露",
+      "locals": "由當地人創立"
+    },
+    "contacts": {
+      "email": "inquiry@realhakuba.com",
+      "phone": "+81-90-7905-5323",
+      "address": "〒399-9301 長野縣北安曇郡白馬村北城2546"
+    },
+    "copyright": "© {year} Real Hakuba 合同會社",
+    "social": {
+      "facebook": "Facebook",
+      "x": "X (原 Twitter)",
+      "instagram": "Instagram"
+    }
+  },
+  "ContactModal": {
+    "title": "聯絡我們",
+    "namePlaceholder": "您的姓名",
+    "emailPlaceholder": "您的電子郵件",
+    "messagePlaceholder": "您想對我們說的話",
+    "cancel": "取消",
+    "send": "發送",
+    "errorFill": "請填寫所有欄位",
+    "successTitle": "感謝您的留言！",
+    "successSubtitle": "我們會盡快回覆您。",
+    "close": "關閉"
+  },
+  "ReservationApp": {
+    "ReservationPage": {
+      "confirmAndPay": "確認並支付",
+      "nonRefundable": "此預訂不可退款。",
+      "checkInSoon": "入住日期在30天內。",
+      "freeCancel": "免費取消",
+      "cancelBefore": "{date}前取消不收費。",
+      "freeCancelBefore": "{date}前免費取消。",
+      "priceBreakdown": "價格明細",
+      "pricePerNightLabel": "{count, plural, =1 {晚} other {晚}}",
+      "totalLabel": "總計",
+      "close": "關閉",
+      "print": "列印",
+      "thankYou": "感謝您的預訂！",
+      "yourReservationId": "您的預訂編號是",
+      "guestInfo": "客人資訊",
+      "tripDetails": "行程詳情",
+      "cancelPolicy": "取消政策",
+      "priceDetails": "價格詳情",
+      "paymentDetails": "付款詳情",
+      "paidAmount": "已支付金額 {amount}",
+      "chargedOn": "將於{date}收費",
+      "back": "返回",
+      "adultLabel": "{count}位{count, plural, =1 {成人} other {成人}}",
+      "childLabel": "{count}位{count, plural, =1 {兒童} other {兒童}}",
+      "next": "下一步",
+      "makePayment": "進行付款",
+      "pay": "支付",
+      "notChargedUntil": "收費日期：",
+      "messageToUs": "給我們的留言",
+      "optionalMessage": "選填留言",
+      "fullName": "全名",
+      "email": "電子郵件地址",
+      "invalidEmail": "無效的電子郵件地址",
+      "paymentFailure": "支付失敗：{error}",
+      "orderFailure": "訂單失敗：{error}",
+      "beds24Error": "Beds24錯誤：{error}",
+      "storageError": "儲存錯誤：{error}",
+      "requestToBook": "發送預訂申請",
+      "bookingRequestSubmitted": "預訂申請已提交",
+      "bookingRequestPending": "感謝您對我們住宿的興趣。\n我們會盡快確認您的申請。",
+      "yourRequestId": "您的申請編號",
+      "paymentInfo": "付款資訊",
+      "paymentMethodSaved": "付款方式已安全儲存",
+      "delayedPaymentNotice": "審核通過後，您的預訂將被確認。{amount}的款項將於{date}收取。如果付款失敗，預訂將被取消。",
+      "immediatePaymentNotice": "審核通過後，{amount}的款項將立即收取，您的預訂將被確認。",
+      "importantNote": "重要提示",
+      "bookingConfirmationNote": "在您收到我們的確認郵件之前，預訂尚未確認。我們通常在24小時內審核申請。",
+      "printRequest": "列印申請",
+      "submitRequest": "申請預訂",
+      "processingRequest": "正在處理您的申請...",
+      "pleaseWait": "請稍候",
+      "unexpectedError": "發生意外錯誤。請重試。"
+    }
+  },
+  "StaysApp": {
+    "ClientPage": {
+      "headerGallery": "相簿",
+      "headerHighlights": "亮點",
+      "headerLocation": "位置",
+      "guest": "位客人",
+      "guests": "位客人",
+      "bedroom": "間臥室",
+      "bedrooms": "間臥室",
+      "bathroom": "間浴室",
+      "bathrooms": "間浴室",
+      "petsAllowed": "允許攜帶寵物",
+      "petsNotAllowed": "不允許攜帶寵物",
+      "whatWeOffer": "我們提供的設施",
+      "bedroomCard": "臥室",
+      "doubleBed": "張雙人床",
+      "doubleBeds": "張雙人床",
+      "singleBed": "張單人床",
+      "singleBeds": "張單人床",
+      "tatamiFuton": "張榻榻米床墊",
+      "tatamiFutons": "張榻榻米床墊",
+      "whereYouBe": "您將入住的地點"
+    },
+    "BedroomCard": {
+      "bedroom": "臥室",
+      "doubleBed": "張雙人床",
+      "doubleBeds": "張雙人床",
+      "singleBed": "張單人床",
+      "singleBeds": "張單人床",
+      "tatamiFuton": "張榻榻米床墊",
+      "tatamiFutons": "張榻榻米床墊"
+    },
+    "Amenities": {
+      "wifi": "WiFi",
+      "kitchen": "廚房",
+      "washer": "免費洗衣機 - 室內",
+      "projector": "投影機",
+      "loghouse": "木屋",
+      "selfCheckIn": "自助入住",
+      "goodLocation": "絕佳位置"
+    },
+    "BookingCard": {
+      "forNights": "{count}晚",
+      "addDatesForPrices": "添加日期查看價格",
+      "checkIn": "入住",
+      "checkOut": "退房",
+      "addDate": "添加日期",
+      "guests": "客人",
+      "guestsLabel": "位客人",
+      "guestLabel": "位客人",
+      "adults": "成人",
+      "adultsAge": "13歲以上",
+      "children": "兒童",
+      "childrenAge": "3-12歲",
+      "close": "關閉",
+      "maxCapacityExceeded": "超過最大容納人數",
+      "reserve": "預訂",
+      "checkAvailability": "查看空房"
+    },
+    "DateRangePicker": {
+      "nights": "{count}晚",
+      "selectDates": "選擇日期",
+      "addDatesHint": "添加您的旅行日期以獲得準確價格",
+      "checkIn": "入住",
+      "checkOut": "退房",
+      "clearDates": "清除日期",
+      "close": "關閉"
+    },
+    "MobileCalendar": {
+      "clearDates": "清除日期",
+      "save": "儲存",
+      "adults": "成人",
+      "adultsAge": "13歲以上",
+      "children": "兒童",
+      "childrenAge": "3-12歲"
+    },
+    "MobileFooter": {
+      "addDatesForPrices": "添加日期查看價格",
+      "selectDates": "選擇日期",
+      "editDates": "編輯日期",
+      "reserve": "預訂",
+      "checkAvailability": "查看空房",
+      "maxCapacityExceeded": "超過最大容納人數",
+      "guestsSummary": "{count}位客人"
+    }
+  },
+  "FAQPage": {
+    "title": "常見問題",
+    "subtitle": "查找關於入住我們白馬房源的常見問題解答",
+    "searchPlaceholder": "搜尋問題...",
+    "noResults": "找不到與「{query}」相關的結果",
+    "clearSearch": "清除搜尋",
+    "stillHaveQuestions": "還有其他問題嗎？",
+    "hereToHelp": "我們隨時為您服務。請與我們聯繫，我們會盡快回覆。",
+    "contactUs": "聯絡我們",
+    "viewProperties": "查看房源",
+    "categories": {
+      "booking": {
+        "title": "預訂與訂房",
+        "items": {
+          "checkInOut": {
+            "question": "入住和退房時間是什麼時候？",
+            "answer": "入住時間為下午3:00起，退房時間為上午10:00前。提早入住或延遲退房可能需視空房狀況而定。"
+          },
+          "cancellation": {
+            "question": "取消政策是什麼？",
+            "answer": "入住前30天可免費取消。30天內取消不予退款。"
+          },
+          "deposit": {
+            "question": "需要支付訂金嗎？",
+            "answer": "入住日期在30天內的預訂，需在預訂時支付全額。超過30天的預訂，我們會安全儲存您的付款資訊，並在入住前30天收取全額費用。"
+          },
+          "reservation": {
+            "question": "如何預訂？",
+            "answer": "您可以直接透過我們的網站預訂。或發送電子郵件或致電我們申請預訂。我們會在24小時內確認空房情況並發送預訂詳情。"
+          }
+        }
+      },
+      "property": {
+        "title": "房源與設施",
+        "items": {
+          "petFriendly": {
+            "question": "可以攜帶寵物嗎？",
+            "answer": "我們大部分房源都歡迎寵物！請查看特定房源詳情或聯絡我們確認您選擇住宿的寵物政策。"
+          },
+          "wifi": {
+            "question": "有WiFi嗎？",
+            "answer": "是的，所有房源都提供免費高速WiFi，適合遠端工作和串流媒體。"
+          },
+          "linens": {
+            "question": "提供床單和毛巾嗎？",
+            "answer": "是的，所有房源都配備乾淨的床單、毛巾和基本盥洗用品，為您提供便利。"
+          },
+          "hvac": {
+            "question": "房源有暖氣和空調嗎？",
+            "answer": "所有房源都配備冬季暖氣系統。大部分房源也配備夏季空調。"
+          },
+          "washing": {
+            "question": "有洗衣機嗎？",
+            "answer": "是的，我們所有房源都配備帶烘乾功能的洗衣機。"
+          }
+        }
+      },
+      "transportation": {
+        "title": "位置與交通",
+        "items": {
+          "fromTokyo": {
+            "question": "如何從東京到白馬？",
+            "answer": "最方便的方式是搭乘新幹線到長野站（從東京出發1.5小時），然後轉乘巴士或火車到白馬（1小時）。預訂後我們可提供詳細路線。"
+          },
+          "needCar": {
+            "question": "在白馬需要開車嗎？",
+            "answer": "雖然不是必需，但開車會更方便。有當地巴士，我們的房源步行距離內也有許多餐廳和活動場所。"
+          },
+          "parking": {
+            "question": "有停車位嗎？",
+            "answer": "是的，我們所有房源都為客人提供免費停車位。"
+          },
+          "trainStation": {
+            "question": "離最近的火車站有多遠？",
+            "answer": "我們的房源距離白馬站開車10-20分鐘。我們可為搭乘火車抵達的客人安排接送。"
+          }
+        }
+      },
+      "activities": {
+        "title": "活動與周邊地區",
+        "items": {
+          "summer": {
+            "question": "夏天有什麼活動？",
+            "answer": "夏季活動包括健行、山地自行車、泛舟、青木湖立槳衝浪、纜車觀光和泡溫泉。山區非常適合戶外探險！"
+          },
+          "skiResorts": {
+            "question": "離滑雪場有多遠？",
+            "answer": "我們的房源距離主要滑雪場僅5-15分鐘車程，包括八方尾根、五龍和白馬47。"
+          },
+          "restaurants": {
+            "question": "附近有餐廳嗎？",
+            "answer": "有的！白馬有豐富的餐飲選擇，從傳統日式料理到國際美食，大部分距離我們的房源都很近。"
+          },
+          "arrangeActivities": {
+            "question": "可以幫忙安排活動嗎？",
+            "answer": "當然可以！我們很樂意協助預訂滑雪課程、器材租賃、餐廳訂位和其他活動。"
+          }
+        }
+      }
+    }
+  },
+  "Admin": {
+    "login": {
+      "title": "管理員登入",
+      "subtitle": "登入以訪問管理面板",
+      "email": "電子郵件",
+      "emailPlaceholder": "admin@example.com",
+      "password": "密碼",
+      "passwordPlaceholder": "輸入您的密碼",
+      "submit": "登入",
+      "submitting": "登入中...",
+      "error": {
+        "invalid": "電子郵件或密碼無效",
+        "network": "網路錯誤。請重試。"
+      }
+    },
+    "nav": {
+      "bookings": "預訂申請",
+      "charge": "手動收費",
+      "settings": "設定",
+      "logout": "登出"
+    },
+    "header": {
+      "dashboard": "控制台",
+      "admin": "管理員"
+    },
+    "bookings": {
+      "title": "待審核預訂申請",
+      "subtitle": "審核並批准客戶的預訂申請",
+      "noBookings": "沒有待審核的預訂",
+      "filters": {
+        "all": "全部",
+        "immediate": "立即付款",
+        "scheduled": "預定付款"
+      },
+      "card": {
+        "guest": "客人",
+        "property": "房源",
+        "dates": "日期",
+        "amount": "金額",
+        "nights": "{count}晚",
+        "bookingId": "預訂編號",
+        "submittedOn": "提交時間",
+        "immediateCharge": "立即收費",
+        "chargeOn": "{date}收費"
+      },
+      "actions": {
+        "approve": "批准",
+        "reject": "拒絕",
+        "processing": "處理中...",
+        "confirmApprove": "批准{name}的預訂？",
+        "confirmReject": "確定要拒絕{name}的預訂嗎？",
+        "rejectReason": "拒絕原因（選填）",
+        "rejectReasonPlaceholder": "輸入原因...",
+        "confirmRejectButton": "確認拒絕",
+        "cancel": "取消"
+      },
+      "success": {
+        "approved": "預訂批准成功！",
+        "rejected": "預訂已拒絕"
+      },
+      "error": {
+        "approve": "批准預訂失敗",
+        "reject": "拒絕預訂失敗"
+      }
+    },
+    "charge": {
+      "title": "手動收費管理",
+      "subtitle": "處理需要立即收費的已批准預訂付款",
+      "noBookings": "沒有待收費的預訂",
+      "summary": {
+        "pendingCharges": "待收費",
+        "totalAmount": "總金額",
+        "bookings": "{count}筆預訂"
+      },
+      "card": {
+        "guest": "客人",
+        "property": "房源",
+        "checkIn": "入住日期",
+        "amount": "收費金額",
+        "bookingId": "編號",
+        "approvedOn": "批准時間",
+        "paymentMethod": "付款方式",
+        "customerId": "客戶編號",
+        "immediateChargeRequired": "需要立即收費"
+      },
+      "actions": {
+        "charge": "收費",
+        "processing": "處理中...",
+        "charged": "已收費",
+        "confirmCharge": "收取{name} ¥{amount}？"
+      },
+      "success": {
+        "charged": "付款成功！金額：¥{amount}",
+        "verification": "驗證後付款成功！"
+      },
+      "error": {
+        "alreadyPaid": "預訂已付款",
+        "notApproved": "預訂未批准收費",
+        "paymentFailed": "付款失敗",
+        "networkError": "網路錯誤。請重試。",
+        "requiresVerification": "此付款需要額外驗證。請聯絡客戶。"
+      }
+    },
+    "settings": {
+      "title": "設定",
+      "underConstruction": "設定頁面正在建設中。"
+    }
+  }
+}

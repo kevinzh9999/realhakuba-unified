@@ -1,5 +1,8 @@
 // apps/web/next.config.js
 const createNextIntlPlugin = require('next-intl/plugin');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
@@ -22,6 +25,23 @@ const nextConfig = {
     ],
     formats: ['image/avif', 'image/webp'],
   },
+  
+  // 优化包大小的配置
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react',
+      'framer-motion',
+      'date-fns',
+      '@headlessui/react',
+      'react-icons',
+    ],
+  },
+  
+  // 生产构建优化
+  compress: true,
+  reactStrictMode: true,
+  productionBrowserSourceMaps: false,
+  poweredByHeader: false, // 移除 X-Powered-By header
   
   async redirects() {
     return [
@@ -53,10 +73,42 @@ const nextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload'
           },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin'
+          },
+        ],
+      },
+      // 为静态资源设置缓存
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
         ],
       },
     ];
   },
 };
 
-module.exports = withNextIntl(nextConfig);
+// 正确的组合方式
+module.exports = withBundleAnalyzer(withNextIntl(nextConfig));

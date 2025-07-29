@@ -24,15 +24,15 @@ export default function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/en/bookings', request.url));
     }
     
-    // 1.2 检查是否已经有 locale
-    const hasLocale = pathname.startsWith('/en') || pathname.startsWith('/ja');
+    // 1.2 检查是否已经有 locale - 更新以支持 zh
+    const hasLocale = pathname.startsWith('/en') || pathname.startsWith('/ja') || pathname.startsWith('/zh');
     
     if (hasLocale) {
-      // 提取 locale 和路径
-      const locale = pathname.substring(1, 3); // 'en' 或 'ja'
-      const pathWithoutLocale = pathname.substring(3); // 去掉 '/en' 或 '/ja'
+      // 提取 locale 和路径 - 更新以支持 zh
+      const locale = pathname.substring(1, 3); // 'en', 'ja' 或 'zh'
+      const pathWithoutLocale = pathname.substring(3); // 去掉 locale 前缀
       
-      // 1.3 重写路径：将 /en/xxx 映射到 /en/admin/xxx
+      // 1.3 重写路径：将 /locale/xxx 映射到 /locale/admin/xxx
       if (!pathWithoutLocale.startsWith('/admin')) {
         const adminPath = `/${locale}/admin${pathWithoutLocale}`;
         
@@ -93,8 +93,8 @@ export const config = {
   matcher: [
     // 包含根路径
     '/',
-    // 包含所有国际化路径，但排除静态资源
-    '/(ja|en)/:path*',
+    // 包含所有国际化路径，但排除静态资源 - 更新以支持 zh
+    '/(ja|en|zh)/:path*',
     // 排除 API 路由、静态文件等
     '/((?!api|_next|_vercel|.*\\..*).*)'
   ]

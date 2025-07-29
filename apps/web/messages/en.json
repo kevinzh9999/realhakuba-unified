@@ -7,7 +7,7 @@
     "title": "Hakuba Accommodations by Real Hakuba"
   },
   "Header": {
-    "navStays": "Stays",
+    "navStays": "Hakuba Accommodations",
     "navDiscover": "Discover Hakuba",
     "navAbout": "About",
     "activities": "Activities",
@@ -43,14 +43,14 @@
     "subtitle": "Discover authentic Hakuba experiences\nfrom snow-capped winters to lush alpine summers."
   },
   "SectionProperties": {
-    "title": "Our Stays",
+    "title": "Hakuba Accommodations by Real Hakuba",
     "subtitle": "Hand-picked chalets, lodges and villas across Hakuba.",
     "cta": "See all stays"
   },
   "SectionPropertiesCarousel": {
     "ariaPrev": "Previous slide",
     "ariaNext": "Next slide",
-    "swipeHint": "Swipe to explore stays",
+    "swipeHint": "Swipe to explore Hakuba accommodations",
     "cta": "See details"
   },
   "SectionFun": {

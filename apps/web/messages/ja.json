@@ -7,7 +7,7 @@
     "title": "白馬の宿泊施設 by Real Hakuba"
   },
   "Header": {
-    "navStays": "宿泊施設",
+    "navStays": "白馬の宿泊",
     "navDiscover": "白馬を探索",
     "navAbout": "私たちについて",
     "activities": "アクティビティ",
@@ -43,7 +43,7 @@
     "subtitle": "雪に包まれた冬から、緑豊かな山々に囲まれた夏まで\n白馬の魅力を存分に楽しもう"
   },
   "SectionProperties": {
-    "title": "宿泊施設",
+    "title": "白馬宿泊施設",
     "subtitle": "白馬全域から厳選した一棟貸し・ロッジ・ヴィラをご紹介します。",
     "cta": "すべての宿を見る"
   },

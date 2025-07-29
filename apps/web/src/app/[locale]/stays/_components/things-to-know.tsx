@@ -38,13 +38,31 @@ const LOCALE_TEXT = {
     lessThan30: "ご到着日まで30日未満です。",
     freeCancelUntil: (date: string) => `${date}まで無料キャンセル（全額返金）可能です。`,
     cancelAfter: (date: string) => `${date}以降（チェックイン30日前以降）のキャンセルは返金不可となります。`
-  }
+  },
+  zh: {
+    sectionTitle: "注意事項",
+    houseRules: "住宿規定",
+    checkIn: "下午3:00後入住",
+    checkOut: "上午10:00前退房",
+    maxGuests: "位客人上限",
+    noSmoking: "禁止吸菸",
+    safety: "安全與設施",
+    firstAid: "房內備有急救箱",
+    smokeAlarm: "煙霧警報器",
+    stairs: "需要爬樓梯",
+    cancellation: "取消政策",
+    addDates: "添加您的旅行日期以查看取消詳情。",
+    nonRefundable: "此預訂不可退款。",
+    lessThan30: "您的入住日期在30天內。",
+    freeCancelUntil: (date: string) => `${date}前可免費取消（全額退款）。`,
+    cancelAfter: (date: string) => `在${date}當天或之後取消（入住前30天內）將沒收全部預訂金額。`
+   }
 } as const;
 
 interface ThingsToKnowProps {
   summary: PropertySummary;
   checkIn: string;
-  locale: "en" | "ja";
+  locale: "en" | "ja" | "zh";
 }
 
 export function ThingsToKnow({ summary, checkIn, locale }: ThingsToKnowProps) {

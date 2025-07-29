@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
 @layer utilities {
   /* 让 html, body 占满 100% 高度，scroll snap 才精准 */
   html,
@@ -229,4 +250,87 @@
   margin: 0.75rem auto 0.5rem auto !important;
   display: block !important;
   visibility: visible !important;
+}
+
+
+/* 加载动画 */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 成功动画 - 圆圈绘制 */
+@keyframes draw-circle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 成功动画 - 勾号绘制 */
+@keyframes draw-check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 成功动画 - 缩放进入 */
+@keyframes scale-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 彩纸动画 */
+@keyframes confetti {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--r)) translate(var(--tx), var(--ty));
+    opacity: 0;
+  }
+}
+
+/* 应用动画的类 */
+.animate-draw-circle {
+  animation: draw-circle 0.8s ease-out 0.2s forwards;
+}
+
+.animate-draw-check {
+  animation: draw-check 0.4s ease-out 1s forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+.animate-confetti {
+  animation: confetti 1.5s ease-out var(--delay) forwards;
+  transform-origin: center;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+    transform: translateX(0);
+  }
+  50% {
+    width: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(100%);
+  }
+}
+
+.animate-progress {
+  animation: progress 2s ease-in-out infinite;
 }

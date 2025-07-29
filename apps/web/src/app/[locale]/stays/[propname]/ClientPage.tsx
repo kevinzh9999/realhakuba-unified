@@ -13,24 +13,20 @@ import { useTranslations } from 'next-intl';
 import dayjs from 'dayjs';
 
 import Lenis from '@studio-freight/lenis';
+
 import {
-  Key, House, MapPin, UtensilsCrossed, Wifi, WashingMachine, Projector,
-  BedDouble, Bed,
+  Key, House, MapPin,
   ChevronLeft, ChevronRight, ArrowLeft,
 } from 'lucide-react';
 
 import { FaWhatsapp } from "react-icons/fa";
 
 import { BookingCard, MobileFooter, MobileCalendar } from '../_components';
+
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
   DrawerTitle,
-  DrawerTrigger,
 } from "@/components/ui/drawer";
 
 import Gallery from "../_components/gallery";
@@ -457,7 +453,7 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
         <ThingsToKnow
           summary={config.summary}
           checkIn={checkIn}
-          locale={locale === "en" || locale === "ja" ? locale : "en"}
+          locale={locale === "en" || locale === "ja" || locale === "zh"? locale : "en"}
         />
 
         <div ref={footerSentinelRef} className="h-1" />

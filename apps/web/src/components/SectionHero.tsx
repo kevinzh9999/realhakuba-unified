@@ -1,29 +1,39 @@
+// components/SectionHero.tsx
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import { getImageWithBlur } from '@/lib/utils/image-utils';
 
-export default function SectionHero() {
-  const t = useTranslations('SectionHero');
+export default async function SectionHero() {
+  const t = await getTranslations('SectionHero');
+  
+  // 尝试生成模糊占位符
+  let blurDataURL: string | undefined;
+  try {
+    const imageData = await getImageWithBlur('/images/hero.jpg');
+    blurDataURL = imageData.blurDataURL || undefined;
+  } catch (error) {
+    // 静默失败，继续使用原图
+  }
 
   return (
     <section
-      /* ① isolate = 自成层叠上下文 */
       className="relative isolate h-screen-dock w-full snap-start overflow-hidden flex items-center justify-center px-4 text-center"
     >
-      {/* ② 背景图：给 **wrapper** 本身就置负 z */}
       <Image
         src="/images/hero.jpg"
         alt="Hakuba panorama"
         fill
         priority
         sizes="100vw"
-        style={{ zIndex: -30 }}                 /* ← 关键！直接写到 wrapper */
+        quality={90}
+        placeholder={blurDataURL ? "blur" : "empty"}
+        blurDataURL={blurDataURL}
+        style={{ zIndex: -30 }}
         className="object-cover object-center select-none pointer-events-none"
       />
 
-      {/* ③ 半透明遮罩：正 z10 */}
       <div className="absolute inset-0 z-10 bg-black/40 pointer-events-none" />
 
-      {/* ④ 文案：正 z20 */}
       <div className="relative z-20 text-white drop-shadow-md">
         <h1 className="text-4xl md:text-6xl font-semibold tracking-wide">
           {t('title')}
