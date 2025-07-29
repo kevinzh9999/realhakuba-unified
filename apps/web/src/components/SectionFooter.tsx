@@ -78,14 +78,14 @@ export default function SectionFooter() {
 
       <div className="mt-auto mx-auto max-w-7xl w-full px-4 py-6 flex items-center text-sm text-gray-500 border-t border-gray-200">
         {/* 左侧：版权和链接 */}
-        <div className="flex-1 flex items-center gap-2">
-          <span>© {new Date().getFullYear()} Real Hakuba</span>
+        <div className="flex-1 flex items-center md:gap-2 gap-[5px]">
+          <span>© {new Date().getFullYear()} Real Hakuba 合同会社</span>
           <span className="text-gray-400">·</span>
-          <Link href="/legal/terms" className="hover:underline">
+          <Link href="legal/terms" className="hover:underline">
             {t('terms')}
           </Link>
           <span className="text-gray-400">·</span>
-          <Link href="/legal/privacy" className="hover:underline">
+          <Link href="legal/privacy" className="hover:underline">
             {t('privacy')}
           </Link>
  
