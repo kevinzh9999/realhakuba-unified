@@ -3,6 +3,129 @@
     "title": "About Real Hakuba",
     "description": "Learn about our premium vacation rentals in Hakuba Village"
   },
+
+  "Legal": {
+    "PrivacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last Updated",
+      "sections": {
+        "collection": {
+          "title": "1. Information We Collect",
+          "description": "We collect the following information to provide our services:",
+          "items": {
+            "personal": "Name, email address, phone number",
+            "booking": "Booking information (check-in date, check-out date, number of guests)",
+            "payment": "Payment information (securely processed through Stripe)",
+            "communication": "Inquiries and message history"
+          }
+        },
+        "usage": {
+          "title": "2. How We Use Your Information",
+          "description": "We use collected information for:",
+          "items": {
+            "reservation": "Confirming, managing, and processing reservations",
+            "communication": "Communicating with guests",
+            "improvement": "Improving and developing our services",
+            "legal": "Complying with legal obligations"
+          }
+        },
+        "sharing": {
+          "title": "3. Information Sharing",
+          "description": "We do not share your personal information with third parties except:",
+          "items": {
+            "payment": "Payment processing (Stripe)",
+            "property": "Property management (minimal necessary information)",
+            "legal": "When required by law"
+          }
+        },
+        "security": {
+          "title": "4. Data Security",
+          "description": "We implement industry-standard security measures to protect your personal information. All communications are protected by SSL encryption."
+        },
+        "cookies": {
+          "title": "5. Cookie Usage",
+          "description": "We use cookies to provide better service:",
+          "items": {
+            "essential": "Essential cookies: Required for basic site functionality",
+            "analytics": "Analytics cookies: To understand site usage",
+            "preferences": "Preference cookies: To save language settings, etc."
+          }
+        },
+        "rights": {
+          "title": "6. Your Rights",
+          "description": "You have the following rights:",
+          "items": {
+            "access": "Right to access your personal information",
+            "correction": "Right to request correction of information",
+            "deletion": "Right to request deletion of information",
+            "portability": "Right to data portability"
+          }
+        },
+        "contact": {
+          "title": "7. Contact Us",
+          "description": "For privacy-related questions, please contact us at:",
+          "address": "Hakuba Village, Kitaazumi District, Nagano Prefecture"
+        }
+      }
+    },
+
+    "TermsOfService": {
+      "title": "Terms of Service",
+      "effectiveDate": "Effective Date",
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptance of Terms",
+          "description": "By using our service, you agree to these terms. If you do not agree, please do not use our service."
+        },
+        "service": {
+          "title": "2. Service Description",
+          "description": "Real Hakuba provides an accommodation booking platform in Hakuba Village."
+        },
+        "booking": {
+          "title": "3. Booking and Cancellation",
+          "reservation": {
+            "title": "About Reservations",
+            "description": "Reservations are confirmed after payment information is verified."
+          },
+          "cancellation": {
+            "title": "Cancellation Policy",
+            "before30days": "30+ days before check-in: Full refund",
+            "within30days": "Within 30 days of check-in: Non-refundable"
+          }
+        },
+        "rules": {
+          "title": "4. House Rules",
+          "description": "All guests must comply with the following rules:",
+          "items": {
+            "smoking": "No smoking in all areas",
+            "pets": "No pets allowed",
+            "parties": "No parties or events",
+            "checkin": "Check-in time: After 3:00 PM",
+            "checkout": "Check-out time: By 11:00 AM",
+            "quiet": "Quiet hours after 10:00 PM"
+          }
+        },
+        "payment": {
+          "title": "5. Payment Terms",
+          "description": "Payment conditions:",
+          "items": {
+            "methods": "Credit cards (Visa, Mastercard, Amex)",
+            "timing": "Full payment at booking (for bookings 30+ days ahead, charged 30 days before stay)",
+            "security": "All payments are securely processed by Stripe"
+          }
+        },
+        "liability": {
+          "title": "6. Limitation of Liability",
+          "description": "We are not responsible for loss or damage to personal belongings when reasonable care has been taken. Please manage your valuables yourself."
+        },
+        "disputes": {
+          "title": "7. Dispute Resolution",
+          "description": "These terms are governed by Japanese law. Any disputes shall be resolved in the Nagano District Court."
+        }
+      }
+    }
+  },
+
   "StaysPage": {
     "title": "Hakuba Accommodations by Real Hakuba"
   },
@@ -91,6 +214,8 @@
       "address": "2546 Hokujo, Hakuba, Kita-azumi District, Nagano 399-9301"
     },
     "copyright": "© {year} Real Hakuba GK",
+    "terms": "Terms",
+    "privacy": "Privacy", 
     "social": {
       "facebook": "Facebook",
       "x": "X (formerly Twitter)",
@@ -152,9 +277,9 @@
       "bookingRequestPending": "Thank you for your interest in staying with us.\nWe'll confirm your request soon.",
       "yourRequestId": "Your Request ID",
       "paymentInfo": "Payment Information",
-      "paymentMethodSaved": "Payment method saved securely",      
+      "paymentMethodSaved": "Payment method saved securely",
       "delayedPaymentNotice": "After approval, your booking will be confirmed. Payment of {amount} will be processed on {date}. If payment fails, the booking will be cancelled.",
-      "immediatePaymentNotice": "After approval, payment of {amount} will be processed immediately and your booking will be confirmed.",      
+      "immediatePaymentNotice": "After approval, payment of {amount} will be processed immediately and your booking will be confirmed.",
       "importantNote": "Important",
       "bookingConfirmationNote": "Your booking is not confirmed until you receive an confirmation email from us. We typically review requests within 24 hours.",
       "printRequest": "Print Request",

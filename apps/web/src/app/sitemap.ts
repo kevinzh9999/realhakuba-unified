@@ -11,7 +11,10 @@ const defaultLocale = "en";
 // 3. 静态路由
 const staticRoutes = [
   "",                 // 首页
-  "/disclosure",      // 法务披露
+  "/legal",
+  "/legal/disclosure",      // 法务披露
+  "/legal/privacy",
+  "/legal/terms",
   "/stays",           // 房源列表页面
   "/reservation",     // 预订页面
   "/about",           // 关于我们

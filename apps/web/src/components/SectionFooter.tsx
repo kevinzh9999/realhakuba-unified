@@ -12,7 +12,7 @@ export default function SectionFooter() {
   const t = useTranslations('SectionFooter');
   const GOOGLEMAPSAPIKEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   const [contactOpen, setContactOpen] = useState(false);
-  const locale = useLocale(); 
+  const locale = useLocale();
 
   return (
     <section className="h-screen-dock pt-[calc(var(--header-h)+5px)] w-full snap-start bg-white flex flex-col">
@@ -29,7 +29,7 @@ export default function SectionFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/disclosure" className="hover:underline">
+              <Link href="legal/disclosure" className="hover:underline">
                 {t('about.disclosure')}
               </Link>
             </li>
@@ -77,10 +77,21 @@ export default function SectionFooter() {
       </div>
 
       <div className="mt-auto mx-auto max-w-7xl w-full px-4 py-6 flex items-center text-sm text-gray-500 border-t border-gray-200">
-        <div className="flex-1">
-          {t('copyright', { year: new Date().getFullYear() })}
+        {/* 左侧：版权和链接 */}
+        <div className="flex-1 flex items-center gap-2">
+          <span>© {new Date().getFullYear()} Real Hakuba</span>
+          <span className="text-gray-400">·</span>
+          <Link href="/legal/terms" className="hover:underline">
+            {t('terms')}
+          </Link>
+          <span className="text-gray-400">·</span>
+          <Link href="/legal/privacy" className="hover:underline">
+            {t('privacy')}
+          </Link>
+ 
         </div>
 
+        {/* 右侧保持不变 */}
         <div className="flex items-center space-x-6 justify-end">
           <Link href="#" aria-label={t('social.facebook')} className="hover:text-gray-700">
             <FaFacebook size={20} />

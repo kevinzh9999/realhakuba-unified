@@ -3,6 +3,129 @@
     "title": "Real Hakuba について",
     "description": "白馬村のプレミアム バケーション レンタルについて"
   },
+
+  "Legal": {
+    "PrivacyPolicy": {
+      "title": "プライバシーポリシー",
+      "lastUpdated": "最終更新日",
+      "sections": {
+        "collection": {
+          "title": "1. 個人情報の収集",
+          "description": "当社は、サービスを提供するために以下の情報を収集します：",
+          "items": {
+            "personal": "お名前、メールアドレス、電話番号",
+            "booking": "予約情報（チェックイン日、チェックアウト日、ゲスト人数）",
+            "payment": "お支払い情報（Stripeを通じて安全に処理されます）",
+            "communication": "お問い合わせ内容、メッセージ履歴"
+          }
+        },
+        "usage": {
+          "title": "2. 情報の利用目的",
+          "description": "収集した情報は以下の目的で使用します：",
+          "items": {
+            "reservation": "予約の確認、管理、処理",
+            "communication": "お客様とのコミュニケーション",
+            "improvement": "サービスの改善と開発",
+            "legal": "法的義務の遵守"
+          }
+        },
+        "sharing": {
+          "title": "3. 第三者への情報提供",
+          "description": "以下の場合を除き、お客様の個人情報を第三者に提供することはありません：",
+          "items": {
+            "payment": "決済処理（Stripe）",
+            "property": "宿泊施設の管理（必要最小限の情報のみ）",
+            "legal": "法的要求がある場合"
+          }
+        },
+        "security": {
+          "title": "4. データセキュリティ",
+          "description": "お客様の個人情報を保護するため、業界標準のセキュリティ対策を実施しています。すべての通信はSSL暗号化により保護されています。"
+        },
+        "cookies": {
+          "title": "5. Cookieの使用",
+          "description": "当サイトでは、より良いサービスを提供するためにCookieを使用しています：",
+          "items": {
+            "essential": "必須Cookie：サイトの基本機能に必要",
+            "analytics": "分析Cookie：サイトの利用状況を把握",
+            "preferences": "設定Cookie：言語設定などを保存"
+          }
+        },
+        "rights": {
+          "title": "6. お客様の権利",
+          "description": "お客様は以下の権利を有します：",
+          "items": {
+            "access": "個人情報へのアクセス権",
+            "correction": "情報の修正を要求する権利",
+            "deletion": "情報の削除を要求する権利",
+            "portability": "データポータビリティの権利"
+          }
+        },
+        "contact": {
+          "title": "7. お問い合わせ",
+          "description": "プライバシーに関するご質問は、以下までお問い合わせください：",
+          "address": "長野県北安曇郡白馬村"
+        }
+      }
+    },
+
+    "TermsOfService": {
+      "title": "利用規約",
+      "effectiveDate": "発効日",
+      "sections": {
+        "acceptance": {
+          "title": "1. 規約への同意",
+          "description": "本サービスをご利用いただくことで、本規約に同意したものとみなされます。同意いただけない場合は、サービスのご利用をお控えください。"
+        },
+        "service": {
+          "title": "2. サービスの内容",
+          "description": "Real Hakubaは、白馬村での宿泊施設の予約プラットフォームを提供しています。"
+        },
+        "booking": {
+          "title": "3. 予約とキャンセル",
+          "reservation": {
+            "title": "予約について",
+            "description": "予約は、お支払い情報の確認後に確定となります。"
+          },
+          "cancellation": {
+            "title": "キャンセルポリシー",
+            "before30days": "チェックイン30日前まで：全額返金",
+            "within30days": "チェックイン30日以内：返金不可"
+          }
+        },
+        "rules": {
+          "title": "4. 宿泊規則",
+          "description": "すべてのゲストは以下の規則を遵守する必要があります：",
+          "items": {
+            "smoking": "全館禁煙",
+            "pets": "ペット同伴不可",
+            "parties": "パーティー・イベント禁止",
+            "checkin": "チェックイン時間：15:00以降",
+            "checkout": "チェックアウト時間：11:00まで",
+            "quiet": "22:00以降は静粛時間"
+          }
+        },
+        "payment": {
+          "title": "5. お支払い",
+          "description": "お支払いに関する条件：",
+          "items": {
+            "methods": "クレジットカード（Visa、Mastercard、Amex）",
+            "timing": "予約確定時に全額請求（30日以上前の予約は宿泊日の30日前に請求）",
+            "security": "すべての支払いはStripeにより安全に処理されます"
+          }
+        },
+        "liability": {
+          "title": "6. 責任の制限",
+          "description": "当社は、通常の注意義務を尽くした場合、お客様の所持品の紛失や破損について責任を負いません。貴重品は各自で管理してください。"
+        },
+        "disputes": {
+          "title": "7. 紛争解決",
+          "description": "本規約は日本法に準拠し、紛争が生じた場合は長野地方裁判所を第一審の専属的合意管轄裁判所とします。"
+        }
+      }
+    }
+  },
+
   "StaysPage": {
     "title": "白馬の宿泊施設 by Real Hakuba"
   },
@@ -91,6 +214,8 @@
       "address": "〒399-9301 長野県北安曇郡白馬村北城2546"
     },
     "copyright": "© {year} Real Hakuba 合同会社",
+    "terms": "規約",
+    "privacy": "プライバシー",
     "social": {
       "facebook": "Facebook",
       "x": "X（旧Twitter）",
@@ -152,11 +277,11 @@
       "bookingRequestPending": "ご宿泊のご希望をいただき、ありがとうございます。\nまもなくリクエストを確認させていただきます。",
       "yourRequestId": "リクエスト番号",
       "paymentInfo": "お支払い情報",
-      "paymentMethodSaved": "お支払い方法を安全に保存しました", 
-      "delayedPaymentNotice": "承認後、ご予約が確定されます。{date}に{amount}のお支払いを処理いたします。お支払いに失敗した場合、予約はキャンセルされます。",      
-      "immediatePaymentNotice": "承認後、{amount}のお支払いを即座に処理し、ご予約を確定いたします。",      
+      "paymentMethodSaved": "お支払い方法を安全に保存しました",
+      "delayedPaymentNotice": "承認後、ご予約が確定されます。{date}に{amount}のお支払いを処理いたします。お支払いに失敗した場合、予約はキャンセルされます。",
+      "immediatePaymentNotice": "承認後、{amount}のお支払いを即座に処理し、ご予約を確定いたします。",
       "importantNote": "重要なお知らせ",
-      "bookingConfirmationNote": "承認メールを受信するまで、ご予約は確定されません。通常24時間以内に審査を完了いたします。",      
+      "bookingConfirmationNote": "承認メールを受信するまで、ご予約は確定されません。通常24時間以内に審査を完了いたします。",
       "printRequest": "リクエストを印刷",
       "submitRequest": "予約リクエスト",
       "processingRequest": "リクエストを処理中...",

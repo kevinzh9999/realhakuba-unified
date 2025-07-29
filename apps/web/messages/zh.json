@@ -3,6 +3,129 @@
     "title": "關於 Real Hakuba",
     "description": "了解我們在白馬村的優質度假租賃服務"
   },
+
+  "Legal": {
+    "PrivacyPolicy": {
+      "title": "隱私政策",
+      "lastUpdated": "最後更新",
+      "sections": {
+        "collection": {
+          "title": "1. 我們收集的資訊",
+          "description": "我們收集以下資訊以提供服務：",
+          "items": {
+            "personal": "姓名、電子郵件地址、電話號碼",
+            "booking": "預訂資訊（入住日期、退房日期、客人數量）",
+            "payment": "支付資訊（透過Stripe安全處理）",
+            "communication": "諮詢內容和訊息記錄"
+          }
+        },
+        "usage": {
+          "title": "2. 資訊使用目的",
+          "description": "我們將收集的資訊用於：",
+          "items": {
+            "reservation": "確認、管理和處理預訂",
+            "communication": "與客人溝通",
+            "improvement": "改進和開發我們的服務",
+            "legal": "遵守法律義務"
+          }
+        },
+        "sharing": {
+          "title": "3. 資訊共享",
+          "description": "除以下情況外，我們不會與第三方共享您的個人資訊：",
+          "items": {
+            "payment": "支付處理（Stripe）",
+            "property": "物業管理（僅必要的最少資訊）",
+            "legal": "法律要求時"
+          }
+        },
+        "security": {
+          "title": "4. 資料安全",
+          "description": "我們採用業界標準的安全措施來保護您的個人資訊。所有通訊都透過SSL加密保護。"
+        },
+        "cookies": {
+          "title": "5. Cookie使用",
+          "description": "我們使用Cookie以提供更好的服務：",
+          "items": {
+            "essential": "必要Cookie：網站基本功能所需",
+            "analytics": "分析Cookie：瞭解網站使用情況",
+            "preferences": "偏好Cookie：保存語言設定等"
+          }
+        },
+        "rights": {
+          "title": "6. 您的權利",
+          "description": "您擁有以下權利：",
+          "items": {
+            "access": "存取個人資訊的權利",
+            "correction": "要求更正資訊的權利",
+            "deletion": "要求刪除資訊的權利",
+            "portability": "資料可攜帶權"
+          }
+        },
+        "contact": {
+          "title": "7. 聯絡我們",
+          "description": "如有隱私相關問題，請聯絡我們：",
+          "address": "日本長野縣北安曇郡白馬村"
+        }
+      }
+    },
+
+    "TermsOfService": {
+      "title": "服務條款",
+      "effectiveDate": "生效日期",
+      "sections": {
+        "acceptance": {
+          "title": "1. 接受條款",
+          "description": "使用我們的服務即表示您同意這些條款。如果您不同意，請不要使用我們的服務。"
+        },
+        "service": {
+          "title": "2. 服務說明",
+          "description": "Real Hakuba提供白馬村的住宿預訂平台。"
+        },
+        "booking": {
+          "title": "3. 預訂和取消",
+          "reservation": {
+            "title": "關於預訂",
+            "description": "預訂在支付資訊驗證後確認。"
+          },
+          "cancellation": {
+            "title": "取消政策",
+            "before30days": "入住前30天以上：全額退款",
+            "within30days": "入住前30天內：不可退款"
+          }
+        },
+        "rules": {
+          "title": "4. 住宿規則",
+          "description": "所有客人必須遵守以下規則：",
+          "items": {
+            "smoking": "全館禁煙",
+            "pets": "不允許攜帶寵物",
+            "parties": "禁止聚會或活動",
+            "checkin": "入住時間：下午3:00後",
+            "checkout": "退房時間：上午11:00前",
+            "quiet": "晚上10:00後為安靜時間"
+          }
+        },
+        "payment": {
+          "title": "5. 支付條款",
+          "description": "支付條件：",
+          "items": {
+            "methods": "信用卡（Visa、Mastercard、Amex）",
+            "timing": "預訂時全額支付（提前30天以上的預訂，在入住前30天收費）",
+            "security": "所有支付均透過Stripe安全處理"
+          }
+        },
+        "liability": {
+          "title": "6. 責任限制",
+          "description": "在盡到合理注意義務的情況下，我們不對個人物品的遺失或損壞負責。請自行管理貴重物品。"
+        },
+        "disputes": {
+          "title": "7. 爭議解決",
+          "description": "本條款受日本法律管轄。任何爭議應在長野地方法院解決。"
+        }
+      }
+    }
+  },
+
   "StaysPage": {
     "title": "Real Hakuba 白馬住宿"
   },
@@ -91,6 +214,8 @@
       "address": "〒399-9301 長野縣北安曇郡白馬村北城2546"
     },
     "copyright": "© {year} Real Hakuba 合同會社",
+    "terms": "條款",
+    "privacy": "隱私",
     "social": {
       "facebook": "Facebook",
       "x": "X (原 Twitter)",
