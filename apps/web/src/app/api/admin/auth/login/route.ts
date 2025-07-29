@@ -50,8 +50,14 @@ export async function POST(request: NextRequest) {
     // 生成 token
     const token = generateToken(email);
 
-    // 设置 cookie
-    cookies().set('admin-auth', token, {
+    // 创建响应
+    const response = NextResponse.json({
+      success: true,
+      user: { email }
+    });
+
+    // 设置 cookie - 这是修复的关键部分
+    response.cookies.set('admin-auth', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
@@ -62,10 +68,7 @@ export async function POST(request: NextRequest) {
     // 记录登录日志（可选）
     console.log(`[ADMIN LOGIN] Success: ${email} at ${new Date().toISOString()}`);
 
-    return NextResponse.json({
-      success: true,
-      user: { email }
-    });
+    return response;
 
   } catch (error) {
     console.error('[ADMIN LOGIN] Error:', error);
