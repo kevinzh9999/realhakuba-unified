@@ -13,11 +13,11 @@ export default function Footer() {
         <div className="flex-1 flex items-center md:gap-2 gap-[5px]">
           <span>© {new Date().getFullYear()} Real Hakuba</span>
           <span className="text-gray-400">·</span>
-          <Link href="legal/terms" className="hover:underline">
+          <Link href="/legal/terms" className="hover:underline">
             {t('terms')}
           </Link>
           <span className="text-gray-400">·</span>
-          <Link href="legal/privacy" className="hover:underline">
+          <Link href="/legal/privacy" className="hover:underline">
             {t('privacy')}
           </Link>
  
@@ -32,7 +32,7 @@ export default function Footer() {
             <SiX size={20} />
           </Link>
           <Link href="#" aria-label={t('social.instagram')} className="hover:text-gray-700">
-            <FaInstagram size={20} />
+            <FaInstagram size={20} /> 
           </Link>
         </div>
     </footer>

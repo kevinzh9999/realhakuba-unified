@@ -81,11 +81,11 @@ export default function SectionFooter() {
         <div className="flex-1 flex items-center md:gap-2 gap-[5px]">
           <span>© {new Date().getFullYear()} Real Hakuba</span>
           <span className="text-gray-400">·</span>
-          <Link href="legal/terms" className="hover:underline">
+          <Link href="/legal/terms" className="hover:underline">
             {t('terms')}
           </Link>
           <span className="text-gray-400">·</span>
-          <Link href="legal/privacy" className="hover:underline">
+          <Link href="/legal/privacy" className="hover:underline">
             {t('privacy')}
           </Link>
  
