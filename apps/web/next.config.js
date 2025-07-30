@@ -23,7 +23,12 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/avif', 'image/webp'], // ✅ 已经有了
+    
+    // 添加这些优化配置
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 31536000, // 1年缓存
   },
   
   // 优化包大小的配置
@@ -41,7 +46,7 @@ const nextConfig = {
   compress: true,
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
-  poweredByHeader: false, // 移除 X-Powered-By header
+  poweredByHeader: false,
   
   async redirects() {
     return [
@@ -99,6 +104,16 @@ const nextConfig = {
       },
       {
         source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // 添加：优化后的图片缓存
+      {
+        source: '/_next/image/:path*',
         headers: [
           {
             key: 'Cache-Control',

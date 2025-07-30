@@ -58,13 +58,16 @@ export default function BedroomCard({ br, index, desktop = false }: BedroomCardP
       <div
         className={`${
           desktop ? "mb-4" : "mb-3"
-        } w-full aspect-[4/3] rounded-2xl overflow-hidden relative flex items-center justify-center`}
+        } w-full aspect-[4/3] rounded-2xl overflow-hidden relative flex items-center justify-center bg-gray-100`}
       >
         {hasImg ? (
           <Image
             src={br.image as string}
             alt={`${t("bedroom")} ${index + 1}`}
             fill
+            sizes={desktop ? "340px" : "80vw"}
+            quality={75}
+            loading="lazy"
             className="object-cover"
             onError={() => setBroken(true)}
           />

@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import type { Property } from '@/components/SectionProperties';
 
-// 直接导入 CSS
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -36,15 +36,23 @@ export default function SectionPropertiesCarousel({ data, locale }: { data: Prop
             : false
         }
         className="h-full"
+        // 移除 lazy 配置，只依赖 Next.js Image 的 lazy loading
       >
-        {data.map((p) => (
+        {data.map((p, index) => (
           <SwiperSlide key={p.id}>
             <div className="block w-full h-full relative">
-              <img
+              <Image
                 src={p.heroImage}
                 alt={p.name}
-                className="h-full w-full object-cover"
+                fill
+                sizes="100vw"
+                quality={75}
+                // Next.js Image 自带的懒加载
+                loading={index === 0 ? "eager" : "lazy"}
+                priority={index === 0}
+                className="object-cover"
               />
+              
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
                 <h3 className="text-2xl font-medium">
                   <Link

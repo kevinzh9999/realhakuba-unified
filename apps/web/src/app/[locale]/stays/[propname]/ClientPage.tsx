@@ -267,9 +267,17 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
       </header>
 
       <section className="sticky top-0 h-screen w-full z-0">
-        <Image src={config.hero} alt="Hero" fill priority className="object-cover" />
+        <Image
+          src={config.hero}
+          alt={config.title} // 更具体的 alt 文本
+          fill
+          priority
+          quality={75} // 添加质量设置
+          sizes="100vw" // 添加响应式尺寸
+          className="object-cover"
+        />
       </section>
-
+      
       <div ref={sentinelRef} className="h-1 w-full" />
 
       <main ref={mainRef} style={{ backgroundColor: WARM_SAND, paddingBottom: FOOTER_HEIGHT }} className="relative z-10 rounded-t-3xl">
@@ -453,7 +461,7 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
         <ThingsToKnow
           summary={config.summary}
           checkIn={checkIn}
-          locale={locale === "en" || locale === "ja" || locale === "zh"? locale : "en"}
+          locale={locale === "en" || locale === "ja" || locale === "zh" ? locale : "en"}
         />
 
         <div ref={footerSentinelRef} className="h-1" />

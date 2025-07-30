@@ -150,7 +150,7 @@ export default function SectionFun() {
           p-4 md:p-8
         "
             >
-                {ACTIVITIES.map(({ id, img }) => (
+                {ACTIVITIES.map(({ id, img }, index) => (
                     <FlipCard
                         key={id}
                         title={t(`activities.${id}.title`)}
@@ -158,6 +158,7 @@ export default function SectionFun() {
                         img={img}
                         flipped={activeId === id}
                         onFlip={() => setActiveId(activeId === id ? null : id)}
+                        priority={index < 2} // 前两个活动优先加载
                     />
                 ))}
             </div>
@@ -171,34 +172,46 @@ function FlipCard({
     img,
     desc,
     flipped,
-    onFlip
+    onFlip,
+    priority = false
 }: {
     title: string;
     img: string;
     desc: string;
     flipped: boolean;
     onFlip: () => void;
+    priority?: boolean;
 }) {
     return (
         <div
-            className="relative h-full w-full aspect-[3/4] perspective"
+            className="relative h-full w-full aspect-[3/4] perspective cursor-pointer"
             onClick={onFlip}
         >
             <div
-                className={`absolute inset-0 transition-transform duration-500 transform-style-preserve-3d ${flipped ? 'rotate-y-180' : ''
-                    }`}
+                className={`absolute inset-0 transition-transform duration-500 transform-style-preserve-3d ${
+                    flipped ? 'rotate-y-180' : ''
+                }`}
             >
                 {/* front */}
-                <div className="absolute inset-0 backface-hidden rounded-lg overflow-hidden">
-                    <Image src={img} alt={title} fill className="object-cover" />
+                <div className="absolute inset-0 backface-hidden rounded-lg overflow-hidden bg-gray-100">
+                    <Image 
+                        src={img} 
+                        alt={title} 
+                        fill 
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        quality={75}
+                        loading={priority ? "eager" : "lazy"}
+                        priority={priority}
+                        className="object-cover" 
+                    />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                        <h3 className="text-white text-xl font-semibold">{title}</h3>
+                        <h3 className="text-white text-xl font-semibold px-2 text-center">{title}</h3>
                     </div>
                 </div>
 
                 {/* back */}
-                <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-lg bg-white p-4 flex items-center justify-center">
-                    <p className="text-sm text-center text-gray-700 leading-snug">
+                <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-lg bg-white p-4 flex items-center justify-center border border-gray-200">
+                    <p className="text-sm text-center text-gray-700 leading-relaxed">
                         {desc}
                     </p>
                 </div>

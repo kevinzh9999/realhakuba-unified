@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 type GalleryProps = {
     images: string[];
@@ -99,11 +100,14 @@ export default function Gallery({ images }: GalleryProps) {
                                     setShowAllPhotos(false);
                                 }}
                             >
-                                <img
+                                <Image
                                     src={src}
                                     alt={`gallery ${i + 1}`}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    quality={75}
                                     loading="lazy"
+                                    className="object-cover hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
                         ))}
@@ -168,7 +172,8 @@ export default function Gallery({ images }: GalleryProps) {
 
                 {/* Main image with click to close on background */}
                 <div 
-                    style={{ width: '100%', height: '100%', padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    style={{ width: '100%', height: '100%', padding: '2rem' }}
+                    className="relative flex items-center justify-center"
                     onClick={(e) => {
                         // Close if clicking on background, not on image
                         if (e.target === e.currentTarget) {
@@ -176,12 +181,17 @@ export default function Gallery({ images }: GalleryProps) {
                         }
                     }}
                 >
-                    <img
-                        src={images[fullscreenImage]}
-                        alt={`gallery ${fullscreenImage + 1}`}
-                        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
-                        onClick={(e) => e.stopPropagation()}
-                    />
+                    <div className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
+                        <Image
+                            src={images[fullscreenImage]}
+                            alt={`gallery ${fullscreenImage + 1}`}
+                            fill
+                            sizes="100vw"
+                            quality={90} // 全屏查看时使用更高质量
+                            className="object-contain"
+                            priority // 全屏图片优先加载
+                        />
+                    </div>
                 </div>
             </div>
         </div>,
@@ -199,10 +209,15 @@ export default function Gallery({ images }: GalleryProps) {
                             className="relative shrink-0 w-4/5 aspect-[4/3] snap-center rounded-2xl overflow-hidden cursor-pointer"
                             onClick={() => setFullscreenImage(i)}
                         >
-                            <img
+                            <Image
                                 src={src}
                                 alt={`gallery ${i + 1}`}
-                                className="w-full h-full object-cover"
+                                fill
+                                sizes="80vw"
+                                quality={75}
+                                loading={i === 0 ? "eager" : "lazy"}
+                                priority={i === 0}
+                                className="object-cover"
                             />
                             {/* Photo counter badge */}
                             <div className="absolute bottom-3 right-3 bg-black/60 text-white px-2 py-1 rounded text-sm">
@@ -233,10 +248,14 @@ export default function Gallery({ images }: GalleryProps) {
                             className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl cursor-pointer"
                             onClick={() => setFullscreenImage(0)}
                         >
-                            <img
+                            <Image
                                 src={previewImages[0]}
                                 alt="gallery 1"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                fill
+                                sizes="50vw"
+                                quality={75}
+                                priority
+                                className="object-cover hover:scale-105 transition-transform duration-300"
                             />
                         </div>
                     )}
@@ -248,10 +267,15 @@ export default function Gallery({ images }: GalleryProps) {
                             className="relative overflow-hidden rounded-2xl cursor-pointer"
                             onClick={() => setFullscreenImage(i + 1)}
                         >
-                            <img
+                            <Image
                                 src={src}
                                 alt={`gallery ${i + 2}`}
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                fill
+                                sizes="25vw"
+                                quality={75}
+                                loading={i < 2 ? "eager" : "lazy"}
+                                priority={i < 2}
+                                className="object-cover hover:scale-105 transition-transform duration-300"
                             />
                         </div>
                     ))}
