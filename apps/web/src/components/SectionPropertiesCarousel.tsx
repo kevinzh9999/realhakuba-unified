@@ -32,7 +32,7 @@ export default function SectionPropertiesCarousel({ data, locale }: { data: Prop
         navigation={!isMobile}
         pagination={
           isMobile
-            ? { clickable: true, dynamicBullets: true }
+            ? { clickable: true, dynamicBullets: true, dynamicMainBullets: 2 }
             : false
         }
         className="h-full"
