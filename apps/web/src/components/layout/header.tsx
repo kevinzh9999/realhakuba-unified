@@ -175,13 +175,17 @@ export default function Header() {
           <div className="flex h-full items-center justify-between">
             {/* 左组 */}
             <div className="flex items-center">
-              {/* 汉堡（移动端） */}
+              {/* 汉堡（移动端） - 调整padding与语言选择器一致 */}
               <button
                 onClick={() => setOpen(v => !v)}
-                className="md:hidden -ml-1 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+                className="md:hidden -ml-1 p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors font-light"
                 aria-label={open ? t('menuClose') : t('menuOpen')}
               >
-                {open ? <IoMdClose size={18} /> : <Menu size={18} />}
+                {open ? (
+                  <IoMdClose size={22} style={{ strokeWidth: '1' }} />
+                ) : (
+                  <Menu size={22} strokeWidth={1.5} />
+                )}
               </button>
 
               {/* 桌面 Logo + 站点名 */}
@@ -267,63 +271,6 @@ export default function Header() {
                   </AnimatePresence>
                 </div>
 
-                {/* 
-                
-                Discover Hakuba 下拉菜单 
-                
-                <div
-                  ref={discoverRef}
-                  className="relative"
-                >
-                  <button
-                    onClick={() => handleDropdownClick('discover')}
-                    className={clsx(
-                      "flex items-center gap-1 px-3 h-9 rounded-full transition-all duration-200",
-                      activeDropdown === 'discover'
-                        ? 'bg-gray-200 text-gray-900'
-                        : 'text-gray-700 hover:bg-gray-100'
-                    )}
-                  >
-                    {navigationData.discover.label}
-                    <ChevronDown size={14} className={clsx(
-                      "transition-transform duration-200",
-                      activeDropdown === 'discover' && "rotate-180"
-                    )} />
-                  </button>
-
-                  <AnimatePresence>
-                    {activeDropdown === 'discover' && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute top-full right-0 mt-2 w-[420px] bg-white rounded-xl shadow-xl border border-gray-100"
-                      >
-                        <div className="grid grid-cols-2 gap-4 p-4">
-                          {navigationData.discover.sections.map((section, sectionIndex) => (
-                            <div key={sectionIndex}>
-                              <h3 className="text-xs font-semibold text-gray-900 mb-2 px-3">{section.title}</h3>
-                              {section.items.map((item, index) => (
-                                <Link
-                                  key={index}
-                                  href={item.href}
-                                  className="block px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
-                                  onClick={() => setActiveDropdown(null)}
-                                >
-                                  <div className="text-xs font-semibold text-gray-900">{item.name}</div>
-                                  <div className="text-xs text-gray-500">{item.desc}</div>
-                                </Link>
-                              ))}
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-                */}
-
                 {/* About 下拉菜单 */}
                 <div
                   ref={aboutRef}
@@ -390,8 +337,8 @@ export default function Header() {
               {/* 分隔线 */}
               <div className="hidden md:block h-6 w-px bg-gray-200 mr-3" />
 
-              {/* 语言切换器包装 */}
-              <div className="language-switcher-wrapper">
+              {/* 语言切换器包装 - 移动端加大尺寸，文字变细 */}
+              <div className="language-switcher-wrapper md:scale-100 scale-110 md:font-normal font-light">
                 <LanguageSwitcher />
               </div>
             </div>
@@ -421,17 +368,6 @@ export default function Header() {
                       <span className="text-sm">{navigationData.stays.label}</span>
                       <ChevronDown className="rotate-[-90deg] text-gray-400" size={14} />
                     </button>
-
-                    {/* 注释掉 Discover 按钮
-
-                    <button
-                      onClick={() => handleMobileMenuClick('discover')}
-                      className="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-50 border-b border-gray-100"
-                    >
-                      <span className="text-sm">{navigationData.discover.label}</span>
-                      <ChevronDown className="rotate-[-90deg] text-gray-400" size={14} />
-                    </button>
-*/}
 
                     <button
                       onClick={() => handleMobileMenuClick('about')}
@@ -470,45 +406,6 @@ export default function Header() {
                         <div className="text-xs font-semibold text-gray-900">{item.name}</div>
                         <div className="text-xs text-gray-500">{item.desc}</div>
                       </Link>
-                    ))}
-                  </motion.div>
-                )}
-
-                {/* Discover Hakuba 二级菜单 */}
-                {mobileActiveMenu === 'discover' && (
-                  <motion.div
-                    key="discover-menu"
-                    initial={{ x: 100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: 100, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <button
-                      onClick={handleMobileBack}
-                      className="w-full flex items-center gap-2 px-4 py-2.5 bg-gray-50 border-b border-gray-100"
-                    >
-                      <ChevronDown className="rotate-90" size={14} />
-                      <span className="text-sm font-medium">{navigationData.discover.label}</span>
-                    </button>
-
-                    {navigationData.discover.sections.map((section, sectionIndex) => (
-                      <div key={sectionIndex}>
-                        <div className="px-4 py-2 bg-gray-50 text-xs font-medium text-gray-700 border-b border-gray-100">
-                          {section.title}
-                        </div>
-                        {section.items.map((item, index) => (
-                          <Link
-                            key={index}
-                            href={item.href}
-                            className="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100"
-                            onClick={closeMobileMenu}
-                          >
-                            <div className="text-xs font-semibold text-gray-900">{item.name}</div>
-                            <div className="text-xs text-gray-500">{item.desc}</div>
-
-                          </Link>
-                        ))}
-                      </div>
                     ))}
                   </motion.div>
                 )}
@@ -562,8 +459,6 @@ export default function Header() {
           )}
         </div>
       </header>
-
-
 
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </>

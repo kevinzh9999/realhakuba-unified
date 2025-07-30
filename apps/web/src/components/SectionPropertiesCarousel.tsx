@@ -4,21 +4,22 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import type { Property } from '@/components/SectionProperties';
+
+// 直接导入 CSS
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import type { Property } from '@/components/SectionProperties';
-
-const STAYS_URL = process.env.NEXT_PUBLIC_PROP_URL!;
 
 export default function SectionPropertiesCarousel({ data, locale }: { data: Property[], locale: string }) {
-  // 控制是在移动端还是桌面端
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 768px)');
     const onChange = (e: MediaQueryListEvent) => setIsMobile(!e.matches);
     setIsMobile(!mq.matches);
     mq.addEventListener('change', onChange);
+    
     return () => mq.removeEventListener('change', onChange);
   }, []);
 
@@ -28,10 +29,10 @@ export default function SectionPropertiesCarousel({ data, locale }: { data: Prop
         modules={[Navigation, Pagination]}
         slidesPerView={1}
         loop={false}
-        navigation={!isMobile}           // 桌面端启用箭头
+        navigation={!isMobile}
         pagination={
           isMobile
-            ? { clickable: true, dynamicBullets: true }  // 移动端启用动态分页
+            ? { clickable: true, dynamicBullets: true }
             : false
         }
         className="h-full"

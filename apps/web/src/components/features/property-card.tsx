@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { OptimizedImage } from '@/components/ui/optimized-image';
+import { useTranslations } from 'next-intl';
 
 interface PropertyCardProps {
   id: string;
@@ -16,20 +17,22 @@ interface PropertyCardProps {
   height?: number;
 }
 
-export function PropertyCard({ 
-  id, 
-  name, 
-  description, 
-  image, 
-  price, 
-  guests, 
+export function PropertyCard({
+  id,
+  name,
+  description,
+  image,
+  price,
+  guests,
   bedrooms,
   blurDataURL,
   width = 1200,
   height = 800
 }: PropertyCardProps) {
   const locale = useLocale();
-  
+  const t = useTranslations('Header');
+
+
   return (
     <Link href={`/${locale}/stays/${id}`} className="group block">
       <article className="cursor-pointer">
@@ -48,14 +51,12 @@ export function PropertyCard({
         <div className="mt-4">
           <h3 className="font-semibold text-lg line-clamp-1">{name}</h3>
           <p className="text-gray-600 text-sm mt-1 line-clamp-2">{description}</p>
-          <div className="flex items-center gap-2 mt-2 text-sm text-gray-500">
-            <span>{bedrooms} 房</span>
-            <span>·</span>
-            <span>可住 {guests} 人</span>
+
+          <div className="flex items-center justify-between mt-1">
+            <span className="text-sm text-gray-500">
+              {t('propertyDesc', { bedrooms, guests })}
+            </span>
           </div>
-          <p className="mt-2 font-semibold">
-            ¥{price.toLocaleString()} <span className="font-normal text-gray-600">/ 晚</span>
-          </p>
         </div>
       </article>
     </Link>

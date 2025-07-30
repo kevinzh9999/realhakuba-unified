@@ -10,7 +10,7 @@
       "lastUpdated": "最後更新",
       "sections": {
         "collection": {
-          "title": "1. 我們收集的資訊",
+          "title": "我們收集的資訊",
           "description": "我們收集以下資訊以提供服務：",
           "items": {
             "personal": "姓名、電子郵件地址、電話號碼",
@@ -20,7 +20,7 @@
           }
         },
         "usage": {
-          "title": "2. 資訊使用目的",
+          "title": "資訊使用目的",
           "description": "我們將收集的資訊用於：",
           "items": {
             "reservation": "確認、管理和處理預訂",
@@ -30,7 +30,7 @@
           }
         },
         "sharing": {
-          "title": "3. 資訊共享",
+          "title": "資訊共享",
           "description": "除以下情況外，我們不會與第三方共享您的個人資訊：",
           "items": {
             "payment": "支付處理（Stripe）",
@@ -39,11 +39,11 @@
           }
         },
         "security": {
-          "title": "4. 資料安全",
+          "title": "資料安全",
           "description": "我們採用業界標準的安全措施來保護您的個人資訊。所有通訊都透過SSL加密保護。"
         },
         "cookies": {
-          "title": "5. Cookie使用",
+          "title": "Cookie使用",
           "description": "我們使用Cookie以提供更好的服務：",
           "items": {
             "essential": "必要Cookie：網站基本功能所需",
@@ -52,7 +52,7 @@
           }
         },
         "rights": {
-          "title": "6. 您的權利",
+          "title": "您的權利",
           "description": "您擁有以下權利：",
           "items": {
             "access": "存取個人資訊的權利",
@@ -62,65 +62,136 @@
           }
         },
         "contact": {
-          "title": "7. 聯絡我們",
+          "title": "聯絡我們",
           "description": "如有隱私相關問題，請聯絡我們：",
-          "address": "日本長野縣北安曇郡白馬村"
+          "address": "日本長野縣北安曇郡白馬村大字北城2546"
         }
       }
     },
 
     "TermsOfService": {
       "title": "服務條款",
+      "subtitle": "在使用我們的平台和預訂住宿之前，請仔細閱讀這些條款。",
       "effectiveDate": "生效日期",
       "sections": {
         "acceptance": {
-          "title": "1. 接受條款",
-          "description": "使用我們的服務即表示您同意這些條款。如果您不同意，請不要使用我們的服務。"
+          "title": "條款接受",
+          "description": "通過訪問或使用Real Hakuba平台，您同意受這些服務條款的約束。如果您不同意這些條款，請不要使用我們的服務。",
+          "agreement": "您繼續使用我們的平台即表示接受對這些條款的任何更新或修改。"
         },
         "service": {
-          "title": "2. 服務說明",
-          "description": "Real Hakuba提供白馬村的住宿預訂平台。"
+          "title": "服務描述",
+          "description": "Real Hakuba運營一個在線平台，連接客人與白馬村及周邊地區的住宿提供者。",
+          "items": {
+            "platform": "度假租賃和住宿的在線預訂平台",
+            "properties": "白馬地區精選住宿設施",
+            "support": "客戶支援和預訂協助服務"
+          }
         },
         "booking": {
-          "title": "3. 預訂和取消",
-          "reservation": {
-            "title": "關於預訂",
-            "description": "預訂在支付資訊驗證後確認。"
+          "title": "預訂與取消",
+          "process": {
+            "title": "預訂流程",
+            "description": "所有預訂都遵循標準化流程以確保清晰性和安全性：",
+            "steps": {
+              "search": "瀏覽並選擇您想要的住宿和日期",
+              "request": "提交包含客人信息和付款詳情的預訂請求",
+              "confirmation": "驗證和批准後收到預訂確認"
+            }
           },
           "cancellation": {
             "title": "取消政策",
-            "before30days": "入住前30天以上：全額退款",
-            "within30days": "入住前30天內：不可退款"
+            "description": "取消政策因住宿和預訂日期而異。請查看您預訂的具體政策：",
+            "flexible": {
+              "title": "靈活政策",
+              "description": "入住前30天以上取消：全額退款"
+            },
+            "strict": {
+              "title": "嚴格政策",
+              "description": "入住前30天內：不可退款"
+            }
           }
         },
         "rules": {
-          "title": "4. 住宿規則",
-          "description": "所有客人必須遵守以下規則：",
-          "items": {
-            "smoking": "全館禁煙",
-            "pets": "不允許攜帶寵物",
-            "parties": "禁止聚會或活動",
-            "checkin": "入住時間：下午3:00後",
-            "checkout": "退房時間：上午11:00前",
-            "quiet": "晚上10:00後為安靜時間"
+          "title": "住宿規則",
+          "description": "所有客人必須遵守住宿特定規則和一般準則，以確保每個人都有愉快的住宿體驗。",
+          "basic": {
+            "title": "基本規則",
+            "smoking": "所有室內區域禁止吸煙",
+            "pets": "除非特別註明，否則不允許攜帶寵物",
+            "parties": "禁止舉辦派對、活動或嘈雜聚會"
+          },
+          "checkin": {
+            "title": "入住與退房",
+            "time": "標準入住時間：下午3點之後",
+            "checkout": "標準退房時間：上午11點之前",
+            "quiet": "安靜時間：晚上10點至早上8點"
           }
         },
         "payment": {
-          "title": "5. 支付條款",
-          "description": "支付條件：",
-          "items": {
-            "methods": "信用卡（Visa、Mastercard、Amex）",
-            "timing": "預訂時全額支付（提前30天以上的預訂，在入住前30天收費）",
-            "security": "所有支付均透過Stripe安全處理"
+          "title": "付款條款",
+          "description": "安全的付款處理通過我們值得信賴的付款合作夥伴處理，以保護您的財務信息。",
+          "methods": {
+            "title": "接受的付款方式",
+            "cards": "主要信用卡（Visa、Mastercard、American Express）",
+            "security": "所有交易均由Stripe以SSL加密保護"
+          },
+          "fees": {
+            "title": "費用結構",
+            "accommodation": "住宿費",
+            "accommodationFee": "按住宿列出",
+            "cleaning": "清潔費",
+            "cleaningFee": "因住宿而異",
+            "service": "服務費",
+            "serviceFee": "預訂總額的3-5%"
+          }
+        },
+        "responsibilities": {
+          "title": "用戶和房東責任",
+          "guest": {
+            "title": "客人責任",
+            "property": "以關愛和尊重的態度對待住宿",
+            "rules": "遵守所有住宿規則和當地法規",
+            "damages": "立即報告任何損壞或問題"
+          },
+          "host": {
+            "title": "房東責任",
+            "accuracy": "提供準確的住宿描述和照片",
+            "cleanliness": "確保住宿清潔並為客人做好準備",
+            "availability": "履行已確認的預訂並維持可用性"
           }
         },
         "liability": {
-          "title": "6. 責任限制",
-          "description": "在盡到合理注意義務的情況下，我們不對個人物品的遺失或損壞負責。請自行管理貴重物品。"
+          "title": "責任限制",
+          "description": "Real Hakuba作為連接客人和房東的平台。我們的責任限制如下：",
+          "limitations": {
+            "platform": "我們不對住宿的條件、安全性或合法性負責",
+            "thirdparty": "我們不控制客人、房東或第三方的行為",
+            "force": "我們不對不可抗力事件造成的損害負責"
+          }
         },
         "disputes": {
-          "title": "7. 爭議解決",
-          "description": "本條款受日本法律管轄。任何爭議應在長野地方法院解決。"
+          "title": "爭議解決",
+          "description": "我們鼓勵通過直接溝通解決。對於正式爭議，適用以下流程：",
+          "process": {
+            "contact": {
+              "title": "直接聯繫",
+              "description": "在任何問題發生後24小時內聯繫我們的支援團隊"
+            },
+            "mediation": {
+              "title": "調解",
+              "description": "在採取法律行動之前嘗試通過調解解決"
+            },
+            "jurisdiction": {
+              "title": "法律管轄權",
+              "description": "受日本法律管轄，爭議在長野地方法院解決"
+            }
+          }
+        },
+        "contact": {
+          "title": "關於這些條款的問題",
+          "description": "如果您對這些服務條款有任何疑問，請使用以下信息聯繫我們：",
+          "address": "日本長野縣北安曇郡白馬村"
         }
       }
     }

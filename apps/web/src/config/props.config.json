@@ -227,6 +227,132 @@
       }
     ]
   },
+
+  "kaflihaus": {
+    "title": {
+      "en": "KAFLIHAUS",
+      "ja": "KAFLIHAUS",
+      "zh": "KAFLIHAUS"
+    },
+    "subtitle": {
+      "en": "Secluded villa near Goryu lifts",
+      "ja": "五竜リフト近くの静かなヴィラ",
+      "zh": "靠近五龍纜車的幽靜別墅"
+    },
+    "price": 50000,
+    "hero": "/stays/kaflihaus/images/hero.jpg",
+    "gallery": [
+      "/stays/kaflihaus/images/g1.jpg",
+      "/stays/kaflihaus/images/g2.jpg",
+      "/stays/kaflihaus/images/g3.jpg",
+      "/stays/kaflihaus/images/g4.jpg",
+      "/stays/kaflihaus/images/g5.jpg",
+      "/stays/kaflihaus/images/g6.jpg",
+      "/stays/kaflihaus/images/g7.jpg",
+      "/stays/kaflihaus/images/g8.jpg",
+      "/stays/kaflihaus/images/g9.jpg",
+      "/stays/kaflihaus/images/g10.jpg",
+      "/stays/kaflihaus/images/g11.jpg",
+      "/stays/kaflihaus/images/g12.jpg",
+      "/stays/kaflihaus/images/g13.jpg",
+      "/stays/kaflihaus/images/g14.jpg",
+      "/stays/kaflihaus/images/g15.jpg",
+      "/stays/kaflihaus/images/g16.jpg",
+      "/stays/kaflihaus/images/g17.jpg"
+    ],
+    "details": {
+      "en": "Kaflihaus is a secluded alpine villa nestled in a quiet forest near Goryu ski resort in Hakuba. Experience peaceful surroundings, modern comforts, and quick access to the lifts.Kaflihaus is a secluded alpine villa nestled in a quiet forest near Goryu ski resort in Hakuba. Experience peaceful surroundings, modern comforts, and quick access to the lifts.",
+      "ja": "Kaflihausは、白馬五竜スキー場近くの静かな森に佇む一棟貸しのアルペンヴィラです。静寂な環境と快適な設備、ゲレンデへのスムーズなアクセスをお楽しみください。",
+      "zh": "Kaflihaus 是一棟隱身於白馬五龍滑雪場附近靜謐森林中的獨棟別墅。體驗寧靜環境、現代舒適設施，並輕鬆前往滑雪場。"
+    },
+    "summary": {
+      "sqm": 100,
+      "guests": 6,
+      "bedrooms": 3,
+      "bathrooms": 1.5,
+      "petsAllowed": false
+    },
+    "bedrooms": [
+      {
+        "image": "/stays/kaflihaus/images/bedroom1.jpg",
+        "beds": {
+          "double": 0,
+          "single": 2,
+          "tatami": 0
+        }
+      },
+      {
+        "image": "/stays/kaflihaus/images/bedroom2.jpg",
+        "beds": {
+          "double": 0,
+          "single": 2,
+          "tatami": 0
+        }
+      },
+      {
+        "image": "/stays/kaflihaus/images/bedroom3.jpg",
+        "beds": {
+          "double": 0,
+          "single": 2,
+          "tatami": 0
+        }
+      }
+    ],
+    "location": {
+      "mapEmbed": "https://www.google.com/maps/embed/v1/place?key=GOOGLEMAPSAPIKEY&q=36.65963018969217,137.8438847675444&zoom=16",
+      "area": {
+        "en": "Goryu Area, Hakuba, Nagano, Japan",
+        "ja": "長野県白馬村五竜エリア",
+        "zh": "日本長野縣白馬村五龍地區"
+      },
+      "description": {
+          "en": "Tucked between the slopes of Goryu and the forests of Hakuba, the Goryu Area is a tranquil alpine retreat cherished by skiers, hikers, and nature lovers alike. Charming chalets and cozy lodges dot the landscape, offering stunning views of snow-covered peaks in winter and vibrant greenery in summer. Just steps from the Goryu and Hakuba 47 ski lifts, and a short drive to restaurants, onsens, and local shops, it’s an ideal setting for both adventure and relaxation throughout the year.",
+          "ja": "五竜と白馬の森の間に広がる五竜エリアは、スキーやハイキング、自然を愛する人々に人気の静かな山間の隠れ家です。美しい山の景色を望むシャレーやロッジが点在し、冬は雪景色、夏は新緑に包まれた四季折々の魅力を楽しめます。五竜・Hakuba47のリフトから徒歩圏内、レストランや温泉、ショップも車ですぐ。アクティブにも、のんびりにも最適なロケーションです。",
+          "zh": "五龍地區坐落於白馬的森林與山坡之間，是滑雪、健行與親近自然的理想避世之地。可愛的木屋與舒適的小旅館散布其間，冬日可遠眺白雪皚皚的山巒，夏季則被翠綠山林包圍。步行即可抵達五龍與Hakuba47滑雪纜車，開車幾分鐘內便能享受當地美食、溫泉與商店，是全年皆宜的冒險與療癒基地。"
+    
+        }
+      },
+
+    "highlights": [
+      {
+        "heading": {
+          "en": "Exceptional check-in experience",
+          "ja": "スムーズなチェックイン体験",
+          "zh": "卓越的入住體驗"
+        },
+        "content": {
+          "en": "Recent guests gave the check-in process a 5-star rating.",
+          "ja": "最近ご宿泊のお客様からチェックインの流れが最高評価（5つ星）を受けています。",
+          "zh": "近期住客給予入住流程五星評價。"
+        }
+      },
+      {
+        "heading": {
+          "en": "Extra spacious",
+          "ja": "広々とした空間",
+          "zh": "超寬敞空間"
+        },
+        "content": {
+          "en": "Guests love this home's spaciousness for a comfortable stay.",
+          "ja": "この家のゆったりとした広さは、多くのお客様に快適とご好評いただいています。",
+          "zh": "客人喜愛這個家的寬敞空間，享受舒適的住宿體驗。"
+        }
+      },
+      {
+        "heading": {
+          "en": "Calm and convenient location",
+          "ja": "静かで便利なロケーション",
+          "zh": "寧靜便利的位置"
+        },
+        "content": {
+          "en": "Guests say this area is peaceful and it's easy to get around.",
+          "ja": "周辺はとても静かで、移動や観光にも便利とお客様から評価されています。",
+          "zh": "客人表示這個區域非常寧靜，交通便利。"
+        }
+      }
+    ]
+  },
+
   "echo-villa": {
     "title": {
       "en": "Echo Villa",
