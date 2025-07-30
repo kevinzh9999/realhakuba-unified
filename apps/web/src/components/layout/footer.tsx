@@ -25,13 +25,13 @@ export default function Footer() {
 
         {/* 右侧保持不变 */}
         <div className="flex items-center space-x-6 justify-end">
-          <Link href="#" aria-label={t('social.facebook')} className="hover:text-gray-700">
+          <Link href="https://www.facebook.com/profile.php?id=61578575926167" aria-label={t('social.facebook')} className="hover:text-gray-700">
             <FaFacebook size={20} />
           </Link>
-          <Link href="#" aria-label={t('social.x')} className="hover:text-gray-700">
+          {/*<Link href="#" aria-label={t('social.x')} className="hover:text-gray-700">
             <SiX size={20} />
-          </Link>
-          <Link href="#" aria-label={t('social.instagram')} className="hover:text-gray-700">
+          </Link>*/}
+          <Link href="https://www.instagram.com/realhakuba/" aria-label={t('social.instagram')} className="hover:text-gray-700">
             <FaInstagram size={20} /> 
           </Link>
         </div>
