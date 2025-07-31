@@ -10,7 +10,8 @@ import {
   Settings, 
   LogOut,
   Menu,
-  X
+  X,
+  Home
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -35,6 +36,12 @@ export default function AdminSidebar({ locale }: AdminSidebarProps) {
       label: t('nav.charge'), 
       icon: CreditCard,
       key: 'charge'
+    },
+    { 
+      href: `/${locale}/properties`, 
+      label: '物业管理', // 可以添加到翻译文件中
+      icon: Home,
+      key: 'properties'
     },
     { 
       href: `/${locale}/settings`, 
