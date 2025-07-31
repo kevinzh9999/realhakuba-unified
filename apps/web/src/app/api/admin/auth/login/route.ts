@@ -1,17 +1,17 @@
 // apps/web/src/app/api/admin/auth/login/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
+import { createClient } from '@supabase/supabase-js';
 import crypto from 'crypto';
 
-// 临时的管理员账户（生产环境应该使用数据库）
-const ADMIN_CREDENTIALS = {
-  email: process.env.ADMIN_EMAIL || 'admin@realhakuba.com',
-  // 密码: AdminReal2024! (这是示例，请更改)
-  passwordHash: process.env.ADMIN_PASSWORD_HASH || 
-    crypto.createHash('sha256').update('AdminReal2024!').digest('hex')
-};
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SECRET_KEY!
+);
 
-// 生成简单的 token（生产环境应该使用 JWT）
+function hashPassword(password: string): string {
+  return crypto.createHash('sha256').update(password).digest('hex');
+}
+
 function generateToken(email: string): string {
   const timestamp = Date.now();
   const data = `${email}:${timestamp}:${process.env.ADMIN_JWT_SECRET || 'secret-key'}`;
@@ -30,8 +30,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 验证邮箱
-    if (email !== ADMIN_CREDENTIALS.email) {
+    // 从数据库查询用户
+    const { data: user, error } = await supabase
+      .from('admin_users')
+      .select('*')
+      .eq('email', email)
+      .single();
+
+    if (error || !user) {
+      console.log('[ADMIN LOGIN] User not found:', email);
       return NextResponse.json(
         { error: 'Invalid credentials' },
         { status: 401 }
@@ -39,35 +46,34 @@ export async function POST(request: NextRequest) {
     }
 
     // 验证密码
-    const passwordHash = crypto.createHash('sha256').update(password).digest('hex');
-    if (passwordHash !== ADMIN_CREDENTIALS.passwordHash) {
+    const passwordHash = hashPassword(password);
+    if (passwordHash !== user.password_hash) {
+      console.log('[ADMIN LOGIN] Password mismatch for:', email);
       return NextResponse.json(
         { error: 'Invalid credentials' },
         { status: 401 }
       );
     }
 
-    // 生成 token
+    // 生成token
     const token = generateToken(email);
 
     // 创建响应
     const response = NextResponse.json({
       success: true,
-      user: { email }
+      user: { email: user.email, role: user.role }
     });
 
-    // 设置 cookie - 这是修复的关键部分
+    // 设置cookie
     response.cookies.set('admin-auth', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
-      maxAge: 60 * 60 * 24, // 24 小时
+      maxAge: 60 * 60 * 24, // 24小时
       path: '/'
     });
 
-    // 记录登录日志（可选）
     console.log(`[ADMIN LOGIN] Success: ${email} at ${new Date().toISOString()}`);
-
     return response;
 
   } catch (error) {

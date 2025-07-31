@@ -2,12 +2,14 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
-export default function AdminLoginForm() {  // 不需要 locale 参数
+export default function AdminLoginForm() {
   const t = useTranslations('Admin');
   const router = useRouter();
+  const params = useParams();
+  const locale = params.locale as string;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -32,7 +34,8 @@ export default function AdminLoginForm() {  // 不需要 locale 参数
         return;
       }
 
-      router.push('/admin/bookings');
+      // 修复：包含 locale 的完整重定向路径
+      router.push(`/${locale}/bookings`);
       router.refresh();
     } catch (err) {
       setError(t('networkError'));

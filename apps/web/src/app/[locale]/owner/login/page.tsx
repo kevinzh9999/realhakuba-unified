@@ -2,13 +2,15 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Eye, EyeOff, LogIn, Home } from 'lucide-react';
 
 export default function OwnerLoginPage() {
   const router = useRouter();
+  const params = useParams();
+  const locale = params.locale as string;
   
   const [propertyName, setPropertyName] = useState('');
   const [password, setPassword] = useState('');
@@ -35,8 +37,8 @@ export default function OwnerLoginPage() {
         return;
       }
 
-      // 登录成功，跳转到owner dashboard
-      router.push('/owner/dashboard');
+      // 登录成功，重定向到dashboard
+      router.push(`/${locale}/dashboard`);
     } catch (err) {
       setError('Network error');
     } finally {
