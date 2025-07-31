@@ -1,6 +1,6 @@
 import React from "react";
 import dayjs from "dayjs";
-import type { PropertySummary } from "../[propname]/ClientPage.backup";
+import type { PropertySummary } from "../[propname]/ClientPage";
 
 const LOCALE_TEXT = {
   en: {
