@@ -2,13 +2,13 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import OwnerLoginForm from '@/components/owner/OwnerLoginForm';
 
 export default function OwnerLoginPage() {
-  const params = useParams();
-  const locale = params.locale as string;
+  const t = useTranslations('Owner');
+  const router = useRouter();
   
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
