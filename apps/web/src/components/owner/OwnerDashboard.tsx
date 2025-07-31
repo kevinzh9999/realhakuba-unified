@@ -96,67 +96,10 @@ export default function OwnerDashboard({ propertyId, locale }: OwnerDashboardPro
         </Button>
       </div>
 
-      {/* 快速统计 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">
-              今日状态
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-green-600">可预订</div>
-            <p className="text-xs text-gray-500 mt-1">
-              {new Date().toLocaleDateString('zh-CN')}
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">
-              本月预订
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-blue-600">-</div>
-            <p className="text-xs text-gray-500 mt-1">
-              加载中...
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-gray-600">
-              本月收入
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-purple-600">¥-</div>
-            <p className="text-xs text-gray-500 mt-1">
-              加载中...
-            </p>
-          </CardContent>
-        </Card>
-      </div>
 
       {/* 预订日历 */}
       <BookingCalendar propertyId={propertyId} />
 
-      {/* 帮助信息 */}
-      <Card>
-        <CardHeader>
-          <CardTitle>使用说明</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm text-gray-600 space-y-2">
-          <p>• 日历显示您物业的所有预订情况</p>
-          <p>• 不同颜色代表不同的预订来源（Airbnb、Booking.com等）</p>
-          <p>• 点击预订条可查看详细信息</p>
-          <p>• 使用左右箭头切换月份</p>
-          <p>• 今日日期会用蓝色边框标记</p>
-        </CardContent>
-      </Card>
     </div>
   );
 }
