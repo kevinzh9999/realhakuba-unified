@@ -40,6 +40,7 @@ type PropConfigRaw = {
   highlights?: HighlightRaw[];
   summary: PropertySummary;
   bedrooms: Bedroom[];
+  amenities?: Record<string, boolean>; 
   location?: {
     mapEmbed: string;
     area: LocalizedString;
@@ -57,12 +58,14 @@ type PropConfigLocalized = {
   highlights?: HighlightLocalized[];
   summary: PropertySummary;
   bedrooms: Bedroom[];
+  amenities?: Record<string, boolean>; 
   location?: {
     mapEmbed: string;
     area: string;
     description: string;
   };
 };
+
 
 function extractLocalizedConfig(raw: PropConfigRaw, locale: LocaleKey): PropConfigLocalized {
   return {

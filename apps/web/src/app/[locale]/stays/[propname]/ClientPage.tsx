@@ -55,20 +55,22 @@ export interface Highlight {
 
 export interface PropConfig {
   title: string;
-  subtitle?: string;          // ← 新字段，可选
+  subtitle?: string;
   price: number;
-  hero: string;               // 主图
-  gallery: string[];          // 图集
-  details: string;            // 详情文字
-  highlights?: Highlight[];   // 亮点
-  summary: PropertySummary;   // 房产概述
-  bedrooms: Bedroom[];       // 卧室数组
+  hero: string;
+  gallery: string[];
+  details: string;
+  highlights?: Highlight[];
+  summary: PropertySummary;
+  bedrooms: Bedroom[];
+  amenities?: Record<string, boolean>;
   location?: {
     mapEmbed: string;
     area: string;
     description: string;
   };
 }
+
 
 // --- 房间床型配置 ---
 export interface BedConfig {
@@ -229,7 +231,7 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
             stickyNav ? 'bg-gray-100/0' : 'bg-gray-100/50'
           )}
           onClick={() => {
-            window.location.href = '/';
+            window.location.href = `/${locale}`;
           }} aria-label="Back to home"
         >
           <ArrowLeft size={18} />
@@ -277,7 +279,7 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
           className="object-cover"
         />
       </section>
-      
+
       <div ref={sentinelRef} className="h-1 w-full" />
 
       <main ref={mainRef} style={{ backgroundColor: WARM_SAND, paddingBottom: FOOTER_HEIGHT }} className="relative z-10 rounded-t-3xl">
@@ -366,6 +368,7 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
 
             <div className="border-b border-[#E4E0D6]/60 my-8" />
 
+
             {/* Bedrooms Section */}
             {config.bedrooms && config.bedrooms.length > 0 && (
               <section id="bedrooms" className="my-8">
@@ -373,31 +376,37 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
                   {t('whatWeOffer')}
                 </h2>
 
-                {/* Desktop – arrow carousel */}
-                <div className="hidden md:flex items-center gap-6">
-                  {/* Prev btn */}
+                {/* Desktop – arrow carousel with floating buttons */}
+                <div className="hidden md:block relative">
+                  {/* Prev btn - 浮动在左侧 */}
                   <button
                     onClick={() => scrollRef.current?.scrollBy({ left: -cardWidth, behavior: 'smooth' })}
-                    className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 disabled:opacity-30"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full border border-gray-300 bg-white/90 hover:bg-white shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
                     disabled={!canScrollPrev}
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
 
-                  {/* Track */}
+                  {/* Track - 从左边开始，移除 items-center gap */}
                   <div
                     ref={scrollRef}
                     className="flex overflow-x-auto snap-x snap-mandatory gap-6 scrollbar-hide no-scrollbar"
                   >
                     {config.bedrooms.map((br, i) => (
-                      <BedroomCard key={i} br={br} index={i} desktop={true} />
+                      <BedroomCard
+                        key={i}
+                        br={br}
+                        index={i}
+                        desktop={true}
+                        allBedrooms={config.bedrooms}
+                      />
                     ))}
                   </div>
 
-                  {/* Next btn */}
+                  {/* Next btn - 浮动在右侧 */}
                   <button
                     onClick={() => scrollRef.current?.scrollBy({ left: cardWidth, behavior: 'smooth' })}
-                    className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 disabled:opacity-30"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full border border-gray-300 bg-white/90 hover:bg-white shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
                     disabled={!canScrollNext}
                   >
                     <ChevronRight className="w-5 h-5" />
@@ -407,22 +416,28 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
                 {/* Mobile – swipe carousel */}
                 <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 -ml-4 pl-4 scrollbar-hide no-scrollbar">
                   {config.bedrooms.map((br, i) => (
-                    <BedroomCard key={i} br={br} index={i} desktop={false} />
+                    <BedroomCard
+                      key={i}
+                      br={br}
+                      index={i}
+                      desktop={false}
+                      allBedrooms={config.bedrooms}
+                    />
                   ))}
                 </div>
               </section>
             )}
 
-            <div className="border-b border-[#E4E0D6]/60 my-8" />
+            <div className="border-b border-[#E4E0D6]/60 mb-2 mt-4" />
 
             {/* Amenities Section */}
-            <Amenities />
+            <Amenities amenities={config.amenities} />
 
           </div>
         </div>
 
         <div className="max-w-6xl mx-auto px-6">
-          <div className="border-b border-[#E4E0D6]/60 my-2" />
+          <div className="border-b border-[#E4E0D6]/60 mt-[-10px] mb-6" />
         </div>
 
         {/* Location Section */}

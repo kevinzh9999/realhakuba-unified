@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { SiX } from 'react-icons/si';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import ContactModal from '@/components/features/contact-modal';
 import { useLocale } from 'next-intl';
@@ -46,18 +47,23 @@ export default function SectionFooter() {
               <button
                 type="button"
                 onClick={() => setContactOpen(true)}
-                className="hover:underline"
+                className="flex items-center gap-2 hover:underline"
               >
+                <Mail className="w-4 h-4 text-gray-500" />
                 {t('contacts.email')}
               </button>
             </li>
             <li>
-              <a href="tel:+819079055323" className="hover:underline">
+              <a href="tel:+819079055323" className="flex items-center gap-2 hover:underline">
+                <Phone className="w-4 h-4 text-gray-500" />
                 {t('contacts.phone')}
               </a>
             </li>
             <li>
-              <Link href="#">{t('contacts.address')}</Link>
+              <Link href="#" className="flex items-center gap-2 hover:underline">
+                <MapPin className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                {t('contacts.address')}
+              </Link>
             </li>
           </ul>
         </div>
@@ -88,7 +94,6 @@ export default function SectionFooter() {
           <Link href="/legal/privacy" className="hover:underline">
             {t('privacy')}
           </Link>
- 
         </div>
 
         {/* 右侧保持不变 */}

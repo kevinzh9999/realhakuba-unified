@@ -35,6 +35,39 @@
       "bathrooms": 1.5,
       "petsAllowed": true
     },
+    "amenities": {
+      "wifi": true,
+      "kitchen": true,
+      "washer": true,
+      "dryer": true,
+      "parking": true,
+      "bathtub": true,
+      "airConditioning": true,
+      "heating": true,
+      "tv": true,
+      "coffee": true,
+      "dishwasher": false,
+      "hotTub": true,
+      "garden": true,
+      "security": true,
+      "babyFriendly": true,
+      "petFriendly": true,
+      "smoking": false,
+      "fireplace": true,
+      "balcony": true,
+      "terrace": false,
+      "soundSystem": false,
+      "securityCamera": true,
+      "gym": false,
+      "gameRoom": false,
+      "library": false,
+      "piano": false,
+      "bbq": true,
+      "selfCheckIn": true,
+      "goodLocation": true,
+      "projector": false,
+      "loghouse": true
+    },
     "bedrooms": [
       {
         "image": "/stays/riverside-loghouse/images/bedroom1.jpg",
@@ -121,6 +154,7 @@
       }
     ]
   },
+
   "moyai-house": {
     "title": {
       "en": "Moyai House",
@@ -156,6 +190,39 @@
       "bedrooms": 2,
       "bathrooms": 1,
       "petsAllowed": true
+    },
+    "amenities": {
+      "wifi": true,
+      "kitchen": true,
+      "washer": true,
+      "dryer": false,
+      "parking": true,
+      "bathtub": true,
+      "airConditioning": false,
+      "heating": true,
+      "tv": true,
+      "coffee": true,
+      "dishwasher": false,
+      "hotTub": false,
+      "garden": true,
+      "security": false,
+      "babyFriendly": true,
+      "petFriendly": true,
+      "smoking": false,
+      "fireplace": true,
+      "balcony": false,
+      "terrace": true,
+      "soundSystem": false,
+      "securityCamera": false,
+      "gym": false,
+      "gameRoom": false,
+      "library": false,
+      "piano": false,
+      "bbq": false,
+      "selfCheckIn": true,
+      "goodLocation": true,
+      "projector": false,
+      "loghouse": false
     },
     "bedrooms": [
       {
@@ -272,6 +339,39 @@
       "bathrooms": 1.5,
       "petsAllowed": false
     },
+    "amenities": {
+      "wifi": true,
+      "kitchen": true,
+      "washer": true,
+      "dryer": true,
+      "parking": true,
+      "bathtub": true,
+      "airConditioning": true,
+      "heating": true,
+      "tv": true,
+      "coffee": true,
+      "dishwasher": true,
+      "hotTub": false,
+      "garden": true,
+      "security": true,
+      "babyFriendly": false,
+      "petFriendly": false,
+      "smoking": false,
+      "fireplace": true,
+      "balcony": true,
+      "terrace": false,
+      "soundSystem": true,
+      "securityCamera": true,
+      "gym": false,
+      "gameRoom": false,
+      "library": false,
+      "piano": false,
+      "bbq": true,
+      "selfCheckIn": true,
+      "goodLocation": true,
+      "projector": true,
+      "loghouse": false
+    },
     "bedrooms": [
       {
         "image": "/stays/kaflihaus/images/bedroom1.jpg",
@@ -306,13 +406,11 @@
         "zh": "日本長野縣白馬村五龍地區"
       },
       "description": {
-          "en": "Tucked between the slopes of Goryu and the forests of Hakuba, the Goryu Area is a tranquil alpine retreat cherished by skiers, hikers, and nature lovers alike. Charming chalets and cozy lodges dot the landscape, offering stunning views of snow-covered peaks in winter and vibrant greenery in summer. Just steps from the Goryu and Hakuba 47 ski lifts, and a short drive to restaurants, onsens, and local shops, it’s an ideal setting for both adventure and relaxation throughout the year.",
-          "ja": "五竜と白馬の森の間に広がる五竜エリアは、スキーやハイキング、自然を愛する人々に人気の静かな山間の隠れ家です。美しい山の景色を望むシャレーやロッジが点在し、冬は雪景色、夏は新緑に包まれた四季折々の魅力を楽しめます。五竜・Hakuba47のリフトから徒歩圏内、レストランや温泉、ショップも車ですぐ。アクティブにも、のんびりにも最適なロケーションです。",
-          "zh": "五龍地區坐落於白馬的森林與山坡之間，是滑雪、健行與親近自然的理想避世之地。可愛的木屋與舒適的小旅館散布其間，冬日可遠眺白雪皚皚的山巒，夏季則被翠綠山林包圍。步行即可抵達五龍與Hakuba47滑雪纜車，開車幾分鐘內便能享受當地美食、溫泉與商店，是全年皆宜的冒險與療癒基地。"
-    
-        }
-      },
-
+        "en": "Tucked between the slopes of Goryu and the forests of Hakuba, the Goryu Area is a tranquil alpine retreat cherished by skiers, hikers, and nature lovers alike. Charming chalets and cozy lodges dot the landscape, offering stunning views of snow-covered peaks in winter and vibrant greenery in summer. Just steps from the Goryu and Hakuba 47 ski lifts, and a short drive to restaurants, onsens, and local shops, it's an ideal setting for both adventure and relaxation throughout the year.",
+        "ja": "五竜と白馬の森の間に広がる五竜エリアは、スキーやハイキング、自然を愛する人々に人気の静かな山間の隠れ家です。美しい山の景色を望むシャレーやロッジが点在し、冬は雪景色、夏は新緑に包まれた四季折々の魅力を楽しめます。五竜・Hakuba47のリフトから徒歩圏内、レストランや温泉、ショップも車ですぐ。アクティブにも、のんびりにも最適なロケーションです。",
+        "zh": "五龍地區坐落於白馬的森林與山坡之間，是滑雪、健行與親近自然的理想避世之地。可愛的木屋與舒適的小旅館散布其間，冬日可遠眺白雪皚皚的山巒，夏季則被翠綠山林包圍。步行即可抵達五龍與Hakuba47滑雪纜車，開車幾分鐘內便能享受當地美食、溫泉與商店，是全年皆宜的冒險與療癒基地。"
+      }
+    },
     "highlights": [
       {
         "heading": {
@@ -388,6 +486,39 @@
       "bedrooms": 7,
       "bathrooms": 2,
       "petsAllowed": true
+    },
+    "amenities": {
+      "wifi": true,
+      "kitchen": true,
+      "washer": true,
+      "dryer": true,
+      "parking": true,
+      "bathtub": true,
+      "airConditioning": false,
+      "heating": true,
+      "tv": true,
+      "coffee": true,
+      "dishwasher": false,
+      "hotTub": false,
+      "garden": false,
+      "security": false,
+      "babyFriendly": true,
+      "petFriendly": true,
+      "smoking": false,
+      "fireplace": false,
+      "balcony": false,
+      "terrace": false,
+      "soundSystem": false,
+      "securityCamera": false,
+      "gym": false,
+      "gameRoom": true,
+      "library": false,
+      "piano": false,
+      "bbq": false,
+      "selfCheckIn": true,
+      "goodLocation": true,
+      "projector": false,
+      "loghouse": false
     },
     "bedrooms": [
       {
