@@ -35,7 +35,7 @@ import { ThingsToKnow } from "../_components/things-to-know";
 import Amenities from "../_components/amenities";
 
 export interface ClientPageProps {
-  propname: string;     // dynamic segment of the URL e.g. “riversideloghouse”
+  propname: string;     // dynamic segment of the URL e.g. "riversideloghouse"
   config: PropConfig;   // full JSON blob for that property (title, gallery…)
   locale: string;
 }
@@ -91,13 +91,18 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
   const [stickyNav, setStickyNav] = useState(false);
   const [compress, setCompress] = useState(0);
   const sentinelRef = useRef<HTMLDivElement>(null);
+  const [whatsappInHeader, setWhatsappInHeader] = useState(false); // 新增：WhatsApp 图标状态
+
   const t = useTranslations('StaysApp.ClientPage');
 
   useEffect(() => {
     const handleScroll = () => {
       if (mainRef.current) {
         const rect = mainRef.current.getBoundingClientRect();
-        setStickyNav(rect.top <= HEADER_HEIGHT - HEADER_COMP);
+        const isMainTouchingHeader = rect.top <= HEADER_HEIGHT - HEADER_COMP;
+
+        setStickyNav(isMainTouchingHeader);
+        setWhatsappInHeader(isMainTouchingHeader); // WhatsApp 图标跟随 sticky nav 状态
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -211,6 +216,11 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
   const maxGuests = config.summary.guests;
   const HIGHLIGHT_ICONS = [Key, House, MapPin];
 
+  // WhatsApp 点击处理
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/8613910989120', '_blank');
+  };
+
 
   return (
     <div className="font-sans text-gray-800 scroll-smooth">
@@ -242,16 +252,17 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
           {config.title}
         </span>
 
-        {/* 右侧：移动端 WhatsApp */}
+        {/* 右侧：WhatsApp 图标 - 当 main 接触到 header 时显示 */}
         <button
           className={clsx(
-            'md:hidden p-2 rounded-full hover:bg-gray-100',
-            stickyNav ? 'bg-gray-100/0' : 'bg-gray-100/50'
+            'md:hidden p-2 rounded-full hover:bg-gray-100 transition-all duration-300',
+            stickyNav ? 'bg-gray-100/0' : 'bg-gray-100/50',
+            whatsappInHeader ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'
           )}
-          onClick={() => window.open('https://wa.me/8613910989120', '_blank')}
+          onClick={handleWhatsAppClick}
           aria-label="Chat on WhatsApp"
         >
-          <FaWhatsapp size={18} />
+          <FaWhatsapp size={20} />
         </button>
 
         {/* 桌面端导航保持原状 */}
@@ -281,6 +292,22 @@ export default function ClientPage({ propname, config, locale }: ClientPageProps
       </section>
 
       <div ref={sentinelRef} className="h-1 w-full" />
+
+      {/* 页面内的 WhatsApp 图标 - 跟随页面内容滚动，相对于 main 定位 */}
+      <button
+        className={clsx(
+          'md:hidden absolute w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 z-20',
+          whatsappInHeader ? 'opacity-0 scale-75 pointer-events-none' : 'opacity-100 scale-100'
+        )}
+        style={{
+          bottom: '-58px',  // 距离 main 顶部 150px
+          right: '12px',
+        }}
+        onClick={handleWhatsAppClick}
+        aria-label="Chat on WhatsApp"
+      >
+        <FaWhatsapp size={24} className="text-white" />
+      </button>
 
       <main ref={mainRef} style={{ backgroundColor: WARM_SAND, paddingBottom: FOOTER_HEIGHT }} className="relative z-10 rounded-t-3xl">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-20 px-6 py-12">
