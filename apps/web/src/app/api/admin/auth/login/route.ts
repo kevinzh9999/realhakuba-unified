@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import crypto from 'crypto';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.SUPABASE_KEY!;
+//const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+//const supabaseKey = process.env.SUPABASE_SECRET_KEY!;
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+//const supabase = createClient(supabaseUrl, supabaseKey);
 
 function hashPassword(password: string): string {
   return crypto.createHash('sha256').update(password).digest('hex');
@@ -19,6 +19,19 @@ function generateToken(email: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  console.log('=== Environment Check ===');
+  console.log('NODE_ENV:', process.env.NODE_ENV);
+  console.log('SUPABASE_URL exists:', !!process.env.NEXT_PUBLIC_SUPABASE_URL);
+  console.log('SUPABASE_KEY exists:', !!process.env.SUPABASE_KEY);
+  console.log('SUPABASE_URL value:', process.env.NEXT_PUBLIC_SUPABASE_URL?.substring(0, 20) + '...');
+  
+  // 在这里创建客户端
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SECRET_KEY!
+  );
+  
+
   try {
     const { email, password } = await request.json();
 
