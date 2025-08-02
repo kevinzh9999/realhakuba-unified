@@ -471,6 +471,15 @@
       "checkAvailability": "空室状況を確認",
       "maxCapacityExceeded": "定員を超えています",
       "guestsSummary": "{count}名様"
+    },
+    "Reviews": {
+      "platformReviews": "ゲストレビュー",
+      "reviews": "件のレビュー",
+      "showMore": "もっと見る", 
+      "showAllReviews": "全 {count} 件のレビューを表示",
+      "visitUsOn": "{platform} で見る",
+      "visitOnAirbnb": "Airbnbで見る",
+      "noReviewsYet": "まだレビューがありません"
     }
   },
   "FAQPage": {

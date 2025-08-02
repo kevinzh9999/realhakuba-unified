@@ -1,0 +1,90 @@
+{
+  "airbnb": {
+    "rating": 5,
+    "totalReviews": 10,
+    "reviews": [
+      {
+        "id": "airbnb-1754122798832-0",
+        "author": "宗永",
+        "rating": 5,
+        "comment": "お庭もおうちも快適でした。近くの川でも楽しめたし、出かけるにも立地が便利でした。スーパーは近くのビッグより、駅近くにいったコープの方が品揃え良くてよかったです。地元の野菜やパン屋さんのパンが買えます。",
+         "date": "2025-08-02",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-0",
+        "author": "雨函",
+        "rating": 5,
+        "comment": "房屋：非常漂亮温馨的木屋，搭建木屋使用的木头非常粗大，房屋相当结实。窗户的设计很漂亮，仅在家中就能感受到冬天的美。由于是木屋的原因，卧室之间的隔音不会太好，但我们完全接受这一点。\n\n位置：位于安静的别墅区域，离白马村最热闹的区域有一定距离。对于驾车而来的住客，位置相当方便，去哪里都不远。附近有大型超市，餐厅和服装店，多个雪场，（最近是白马五龙和白马 47 雪场），对于没有驾车前往的住客而言，步行外出并不太方便，但 Taku 是位非常好的房东，他考虑到我们的情况，主动提出接送我们，在我们需要的时候，总是提供及时的帮助，我们非常感激他。\n\n服务：如上所述，Taku 是位非常善良且有礼貌的本地房东，回复消息及时，我们感到非常温暖！此外家里的物品基本是应有尽有，很多的餐具，暖气供应充足，还有两块供娱乐的滑板。\n\n总之我会为以后去往白马村的朋友推荐这间屋子。",
+        "date": "2024-12-20",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-1",
+        "author": "Abror",
+        "rating": 5,
+        "comment": "我们非常喜欢这间舒适的木制小屋！ 不仅迷人舒适，而且地理位置优越，紧邻我们最喜爱的Hira河。 夏天，没有什么比靠近白马村凉爽、清澈的河流更好的了，这个地方正好能让您体验到这一点。 流水的声音、清新的空气和周围宁静的大自然使我们的住宿非常放松和有趣。 如果您在温暖的月份访问白马村，住在河边会有很大的不同——这个地方很棒。强烈推荐！",
+        "date": "2025-06-20",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-2",
+        "author": "Josh",
+        "rating": 5,
+        "comment": "我们在这间小屋住了大约五天，就该地区和所花时间来说，价格物有所值。  房东善于沟通，见闻广博，对我们的需求和要求回应迅速。  如果您有家人，正在寻找白马村的住宿，我推荐您考虑此房源。",
+        "date": "2025-03-01",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-3",
+        "author": "Qiang",
+        "rating": 5,
+        "comment": "在Hakuba Riverside Loghouse住得很愉快！ 地理位置完美，非常靠近滑雪胜地，尤其是Hakuba47和Goryu。 小屋本身温馨、设施齐备，非常舒适。 房东是一对可爱的年轻夫妇，非常热情，竭尽全力，为我提供了往返火车站的免费接送服务。 我很幸运地体验到了过去几年来12月最大的一场暴雪。 一切都很棒，超出了我的预期。 如果您参观白马，我绝对推荐这个地方。 感谢您让我的旅程如此特别。",
+        "date": "2024-12-10",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-4",
+        "author": "Cheng-Hao",
+        "rating": 5,
+        "comment": "A fantastic landlord, always willing to help. I will definitely come back next time I visit.",
+        "date": "2025-03-11",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-5",
+        "author": "Alex",
+        "rating": 5,
+        "comment": "Outstanding hosts. Anything you needed with you had a response to very quickly.  Ensured everything was alright.  Beautiful and well furnished home that made it feel at home.",
+        "date": "2024-12-30",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-6",
+        "author": "Canaan",
+        "rating": 5,
+        "comment": "The cabin was amazing and made the trip so much better.",
+        "date": "2025-03-15",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-7",
+        "author": "Justin",
+        "rating": 5,
+        "comment": "Beautiful cosy log house, Teku was very responsive and helpful, enjoyed our stay so much we would love to come back",
+        "date": "2025-01-20",
+        "platform": "airbnb"
+      },
+      {
+        "id": "airbnb-1754122798851-8",
+        "author": "Muhammed Safraz",
+        "rating": 5,
+        "comment": "Very very nice place for stay alot of snow",
+        "date": "2025-01-30",
+        "platform": "airbnb"
+      }
+    ],
+    "lastUpdated": "2025-08-02T08:20:02.586Z",
+    "platformUrl": "https://www.airbnb.com/rooms/1291787894037079002"
+  }
+}

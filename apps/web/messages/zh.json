@@ -471,6 +471,15 @@
       "checkAvailability": "查看空房",
       "maxCapacityExceeded": "超過最大容納人數",
       "guestsSummary": "{count}位客人"
+    },
+    "Reviews": {
+      "platformReviews": "客人評價",
+      "reviews": "條評價", 
+      "showMore": "查看更多",
+      "showAllReviews": "查看全部 {count} 條評價",
+      "visitUsOn": "在 {platform} 上查看",
+      "visitOnAirbnb": "在Airbnb上查看",
+      "noReviewsYet": "尚無評論"
     }
   },
   "FAQPage": {

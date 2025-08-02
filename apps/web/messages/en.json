@@ -471,6 +471,16 @@
       "checkAvailability": "Check availability",
       "maxCapacityExceeded": "Max capacity exceeded",
       "guestsSummary": "{count} guest{count, plural, one {} other {s}}"
+    },
+    "Reviews": {
+      "platformReviews": "Guest Reviews",
+      "reviews": "reviews",
+      "showMore": "Show more",
+      "showAllReviews": "Show all {count} reviews",
+      "visitUsOn": "Visit us on {platform}",
+      "visitOnAirbnb": "Visit us on Airbnb",
+      "noReviewsYet": "No reviews yet"
+
     }
   },
   "FAQPage": {

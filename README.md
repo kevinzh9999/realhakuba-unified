@@ -4,7 +4,11 @@
 
 本项目是一个酒店预订系统，集成了 Stripe 支付和 Beds24 房态管理。
 
-## 支付流程（软启动版本）
+在http://admin.localhost:3000/en/review-scraper
+通过调用api/scraper/review 可以读取airbnb的review
+通过调用api/reviews/save 存入src/data/reviews/[propname].json
+数据可能需要人工清洗
+
 
 ```mermaid
 graph TD
